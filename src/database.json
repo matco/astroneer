@@ -1,0 +1,2806 @@
+{
+	"resources": [
+		{
+			"id": "resin",
+			"label": {
+				"en-US": "Resin",
+				"fr-FR": "Résine"
+			}
+		},
+		{
+			"id": "quartz",
+			"label": {
+				"en-US": "Quartz",
+				"fr-FR": "Quartz"
+			}
+		},
+		{
+			"id": "compound",
+			"label": {
+				"en-US": "Compound",
+				"fr-FR": "Composite"
+			}
+		},
+		{
+			"id": "organic",
+			"label": {
+				"en-US": "Organic",
+				"fr-FR": "Organique"
+			}
+		},
+		{
+			"id": "wolframite",
+			"label": {
+				"en-US": "Wolframite",
+				"fr-FR": "Wolframite"
+			}
+		},
+		{
+			"id": "clay",
+			"label": {
+				"en-US": "Clay",
+				"fr-FR": "Argile"
+			}
+		},
+		{
+			"id": "hematite",
+			"label": {
+				"en-US": "Hematite",
+				"fr-FR": "Hématite"
+			}
+		},
+		{
+			"id": "malachite",
+			"label": {
+				"en-US": "Malachite",
+				"fr-FR": "Malachite"
+			}
+		},
+		{
+			"id": "laterite",
+			"label": {
+				"en-US": "Laterite",
+				"fr-FR": "Laterite"
+			}
+		},
+		{
+			"id": "ammonium",
+			"label": {
+				"en-US": "Ammonium",
+				"fr-FR": "Ammonium"
+			}
+		},
+		{
+			"id": "graphite",
+			"label": {
+				"en-US": "Graphite",
+				"fr-FR": "Graphite"
+			}
+		},
+		{
+			"id": "titanite",
+			"label": {
+				"en-US": "Titanite",
+				"fr-FR": "Titanite"
+			}
+		},
+		{
+			"id": "lithium",
+			"label": {
+				"en-US": "Lithium",
+				"fr-FR": "Lithium"
+			}
+		},
+		{
+			"id": "sphalerite",
+			"label": {
+				"en-US": "Sphalerite",
+				"fr-FR": "Sphalerite"
+			}
+		},
+		{
+			"id": "astronium",
+			"label": {
+				"en-US": "Astronium",
+				"fr-FR": "Astronium"
+			}
+		},
+		{
+			"id": "glass",
+			"label": {
+				"en-US": "Glass",
+				"fr-FR": "Verre"
+			},
+			"crafted": "smelting_furnace",
+			"dependencies": [
+				{
+					"id": "quartz",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "carbon",
+			"label": {
+				"en-US": "Carbon",
+				"fr-FR": "Carbone"
+			},
+			"crafted": "smelting_furnace",
+			"dependencies": [
+				{
+					"id": "organic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "tungsten",
+			"label": {
+				"en-US": "Tungsten",
+				"fr-FR": "Tungstène"
+			},
+			"crafted": "smelting_furnace",
+			"dependencies": [
+				{
+					"id": "wolframite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "ceramic",
+			"label": {
+				"en-US": "Ceramic",
+				"fr-FR": "Céramique"
+			},
+			"crafted": "smelting_furnace",
+			"dependencies": [
+				{
+					"id": "clay",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "iron",
+			"label": {
+				"en-US": "Iron",
+				"fr-FR": "Fer"
+			},
+			"crafted": "smelting_furnace",
+			"dependencies": [
+				{
+					"id": "hematite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "copper",
+			"label": {
+				"en-US": "Copper",
+				"fr-FR": "Cuivre"
+			},
+			"crafted": "smelting_furnace",
+			"dependencies": [
+				{
+					"id": "malachite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "aluminium",
+			"label": {
+				"en-US": "Aluminium",
+				"fr-FR": "Aluminium"
+			},
+			"crafted": "smelting_furnace",
+			"dependencies": [
+				{
+					"id": "laterite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "titanium",
+			"label": {
+				"en-US": "Titanium",
+				"fr-FR": "Titane"
+			},
+			"crafted": "smelting_furnace",
+			"dependencies": [
+				{
+					"id": "titanite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "zinc",
+			"label": {
+				"en-US": "Zinc",
+				"fr-FR": "Zinc"
+			},
+			"crafted": "smelting_furnace",
+			"dependencies": [
+				{
+					"id": "sphalerite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "methane",
+			"label": {
+				"en-US": "Methane",
+				"fr-FR": "Méthane"
+			},
+			"crafted": "atmospheric_condenser"
+		},
+		{
+			"id": "sulfur",
+			"label": {
+				"en-US": "Sulfur",
+				"fr-FR": "Soufre"
+			},
+			"crafted": "atmospheric_condenser"
+		},
+		{
+			"id": "argon",
+			"label": {
+				"en-US": "Argon",
+				"fr-FR": "Argon"
+			},
+			"crafted": "atmospheric_condenser"
+		},
+		{
+			"id": "hydrogen",
+			"label": {
+				"en-US": "Hydrogen",
+				"fr-FR": "Hydrogène"
+			},
+			"crafted": "atmospheric_condenser"
+		},
+		{
+			"id": "nitrogen",
+			"label": {
+				"en-US": "Nitrogen",
+				"fr-FR": "Nitrogène"
+			},
+			"crafted": "atmospheric_condenser"
+		},
+		{
+			"id": "helium",
+			"label": {
+				"en-US": "Helium",
+				"fr-FR": "Hélium"
+			},
+			"crafted": "atmospheric_condenser"
+		},
+		{
+			"id": "silicone",
+			"label": {
+				"en-US": "Silicone",
+				"fr-FR": "Silicone"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 1
+				},
+				{
+					"id": "quartz",
+					"quantity": 1
+				},
+				{
+					"id": "methane",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "rubber",
+			"label": {
+				"en-US": "Rubber",
+				"fr-FR": "Caoutchouc"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 1
+				},
+				{
+					"id": "organic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "plastic",
+			"label": {
+				"en-US": "Plastic",
+				"fr-FR": "Plastique"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 1
+				},
+				{
+					"id": "carbon",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "explosive_powder",
+			"label": {
+				"en-US": "Explosive Powder",
+				"fr-FR": "Poudre explosive"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "carbon",
+					"quantity": 2
+				},
+				{
+					"id": "sulfur",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "steel",
+			"label": {
+				"en-US": "Steel",
+				"fr-FR": "Acier"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "carbon",
+					"quantity": 1
+				},
+				{
+					"id": "argon",
+					"quantity": 1
+				},
+				{
+					"id": "iron",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "tungsten_carbide",
+			"label": {
+				"en-US": "Tungsten Carbide",
+				"fr-FR": "Carbure de tungstène"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "carbon",
+					"quantity": 1
+				},
+				{
+					"id": "tungsten",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "aluminium_alloy",
+			"label": {
+				"en-US": "Aluminium Alloy",
+				"fr-FR": "Alliage d'aluminium"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "copper",
+					"quantity": 1
+				},
+				{
+					"id": "aluminium",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "hydrazine",
+			"label": {
+				"en-US": "Hydrazine",
+				"fr-FR": "Hydrazine"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "ammonium",
+					"quantity": 2
+				},
+				{
+					"id": "hydrogen",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "graphene",
+			"label": {
+				"en-US": "Graphene",
+				"fr-FR": "Graphène"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "hydrazine",
+					"quantity": 1
+				},
+				{
+					"id": "graphite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "titanium_alloy",
+			"label": {
+				"en-US": "Titanium Alloy",
+				"fr-FR": "Alliage de titane"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "titanium",
+					"quantity": 1
+				},
+				{
+					"id": "graphene",
+					"quantity": 1
+				},
+				{
+					"id": "nitrogen",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "nanocarbon_alloy",
+			"label": {
+				"en-US": "Nanocarbon Alloy",
+				"fr-FR": "Alliage de nano-carbone"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "steel",
+					"quantity": 1
+				},
+				{
+					"id": "helium",
+					"quantity": 1
+				},
+				{
+					"id": "titanium_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "diamond",
+			"label": {
+				"en-US": "Diamond",
+				"fr-FR": "Diamant"
+			},
+			"crafted": "chemistry_lab",
+			"dependencies": [
+				{
+					"id": "graphene",
+					"quantity": 2
+				}
+			]
+		}
+	],
+	"objects": [
+		{
+			"id": "large_platform_b",
+			"label": {
+				"en-US": "Large Platform B",
+				"fr-FR": "Plateforme large B"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 3
+				}
+			]
+		},
+		{
+			"id": "backpack",
+			"label": {
+				"en-US": "Backpack",
+				"fr-FR": "Sac à dos"
+			},
+			"printer": true
+		},
+		{
+			"id": "small_printer",
+			"label": {
+				"en-US": "Small Printer",
+				"fr-FR": "Petite imprimante"
+			},
+			"printer": true,
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "packager",
+			"label": {
+				"en-US": "Packager",
+				"fr-FR": "Emballeur"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "graphite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "tethers",
+			"label": {
+				"en-US": "Tethers",
+				"fr-FR": "Rallonges"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "oxygen_filters",
+			"label": {
+				"en-US": "Oxygen Filters",
+				"fr-FR": "Filtres d'oxygène"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "oxygen_tank",
+			"label": {
+				"en-US": "Oxygen Tank",
+				"fr-FR": "Réservoir d'oxygène"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "glass",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "portable_oxygenator",
+			"label": {
+				"en-US": "Portable Oxygenator",
+				"fr-FR": "Oxygénateur Portable"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "nanocarbon_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "small_canister",
+			"label": {
+				"en-US": "Small Canister",
+				"fr-FR": "Petite Bonbonne"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "beacon",
+			"label": {
+				"en-US": "Beacon",
+				"fr-FR": "Balise"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "quartz",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "worklight",
+			"label": {
+				"en-US": "Worklight",
+				"fr-FR": "Éclairage"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "copper",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "glowsticks",
+			"label": {
+				"en-US": "Glowsticks",
+				"fr-FR": "Bâtons Lumineux"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "organic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "floodlight",
+			"label": {
+				"en-US": "Floodlight",
+				"fr-FR": "Projecteur"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "tungsten",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "small_generator",
+			"label": {
+				"en-US": "Small Generator",
+				"fr-FR": "Petit Générateur"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "power_cells",
+			"label": {
+				"en-US": "Power Cells",
+				"fr-FR": "Piles"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "graphite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "small_solar_panel",
+			"label": {
+				"en-US": "Small Solar Panel",
+				"fr-FR": "Petit Panneau Solaire"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "copper",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "small_wind_turbine",
+			"label": {
+				"en-US": "Small Wind Turbine",
+				"fr-FR": "Petite éolienne"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "ceramic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "small_battery",
+			"label": {
+				"en-US": "Small Battery",
+				"fr-FR": "Petite Batterie"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "boost_mod",
+			"label": {
+				"en-US": "Boost Mod",
+				"fr-FR": "Accessoire Booster"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "wide_mod",
+			"label": {
+				"en-US": "Wide Mod",
+				"fr-FR": "Module Large"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "narrow_mod",
+			"label": {
+				"en-US": "Narrow Mod",
+				"fr-FR": "Module étroit"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "inhibitor_mod",
+			"label": {
+				"en-US": "Inhibitor Mod",
+				"fr-FR": "Inhibiteur"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "alignment_mod",
+			"label": {
+				"en-US": "Alignment Mod",
+				"fr-FR": "Module d'alignement"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "drill_mod_1",
+			"label": {
+				"en-US": "Drill Mod 1",
+				"fr-FR": "Module de foret 1"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "ceramic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "drill_mod_2",
+			"label": {
+				"en-US": "Drill Mod 2",
+				"fr-FR": "Module de foret 2"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "tungsten_carbide",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "drill_mod_3",
+			"label": {
+				"en-US": "Drill Mod 3",
+				"fr-FR": "Module de foret 3"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "diamond",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "dynamite",
+			"label": {
+				"en-US": "Dynamite",
+				"fr-FR": "Dynamite"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "explosive_powder",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "fireworks",
+			"label": {
+				"en-US": "Fireworks",
+				"fr-FR": "Feu d'artifice"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "explosive_powder",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "small_camera",
+			"label": {
+				"en-US": "Small Camera",
+				"fr-FR": "Petit appareil photo"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "steel",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "small_trumpet_horn",
+			"label": {
+				"en-US": "Small Trumpet Horn",
+				"fr-FR": "Petit klaxon trompette"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "plastic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "holographic_figurine",
+			"label": {
+				"en-US": "Holographic Figurine",
+				"fr-FR": "Figurine holographique"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "plastic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "terrain_analyzer",
+			"label": {
+				"en-US": "Terrain Analyzer",
+				"fr-FR": "Analyseur de terrain"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "probe_scanner",
+			"label": {
+				"en-US": "Probe Scanner",
+				"fr-FR": "Scanner de sonde"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "steel",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "solid_fuel_jump_jet",
+			"label": {
+				"en-US": "Solid-Fuel Jump Jet",
+				"fr-FR": "Réacteur à carburant solide"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "aluminium_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "hydrazine_jet_pack",
+			"label": {
+				"en-US": "Hydrazine Jet Pack",
+				"fr-FR": "Réacteur à hydrazine"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "titanium_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_printer",
+			"label": {
+				"en-US": "Medium printer",
+				"fr-FR": "Imprimante moyenne"
+			},
+			"printer": true,
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "oxygenator",
+			"label": {
+				"en-US": "Oxygenator",
+				"fr-FR": "Oxygénateur"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "aluminium",
+					"quantity": 1
+				},
+				{
+					"id": "ceramic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_shredder",
+			"label": {
+				"en-US": "Medium shredder",
+				"fr-FR": "Broyeur moyen"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "iron",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "field_shelter",
+			"label": {
+				"en-US": "Field shelter",
+				"fr-FR": "Abri mobile"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "silicone",
+					"quantity": 1
+				},
+				{
+					"id": "graphene",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "auto_arm",
+			"label": {
+				"en-US": "Auto arm",
+				"fr-FR": "Bras auto"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "aluminium",
+					"quantity": 1
+				},
+				{
+					"id": "graphite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_resource_canister",
+			"label": {
+				"en-US": "Medium Resource Canister",
+				"fr-FR": "Bonbonne de ressource moyenne"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "plastic",
+					"quantity": 1
+				},
+				{
+					"id": "glass",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_fluid_soil_canister",
+			"label": {
+				"en-US": "Medium Fluid & Soil Canister",
+				"fr-FR": "Bonbonne moyenne de fluide et sol"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "plastic",
+					"quantity": 1
+				},
+				{
+					"id": "glass",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_gas_canister",
+			"label": {
+				"en-US": "Medium Gaz Canister",
+				"fr-FR": "Bonbonne de gaz moyenne"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "silicone",
+					"quantity": 1
+				},
+				{
+					"id": "glass",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "power_sensor",
+			"label": {
+				"en-US": "Power sensor",
+				"fr-FR": "Capteur d’alimentation"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "copper",
+					"quantity": 1
+				},
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "storage_sensor",
+			"label": {
+				"en-US": "Storage sensor",
+				"fr-FR": "Capteur de stockage"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "quartz",
+					"quantity": 1
+				},
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "battery_sensor",
+			"label": {
+				"en-US": "Battery sensor",
+				"fr-FR": "Capteur de batterie"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "graphite",
+					"quantity": 1
+				},
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "button_repeater",
+			"label": {
+				"en-US": "Button repeater",
+				"fr-FR": "Répéteur de bouton"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "count_repeater",
+			"label": {
+				"en-US": "Count repeater",
+				"fr-FR": "Répéteur de compte"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "delay_repeater",
+			"label": {
+				"en-US": "Delay repeater",
+				"fr-FR": "Répéteur de retard"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "extenders",
+			"label": {
+				"en-US": "Extenders",
+				"fr-FR": "Prolongateurs"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "copper",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "power_switch",
+			"label": {
+				"en-US": "Power Switch",
+				"fr-FR": "Interrupteur"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "copper",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "splitter",
+			"label": {
+				"en-US": "Splitter",
+				"fr-FR": "Répartiteur"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "copper",
+					"quantity": 1
+				},
+				{
+					"id": "graphite",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_generator",
+			"label": {
+				"en-US": "Medium Generator",
+				"fr-FR": "Générateur moyen"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "tungsten",
+					"quantity": 1
+				},
+				{
+					"id": "aluminium",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_solar_panel",
+			"label": {
+				"en-US": "Medium Solar Panel",
+				"fr-FR": "Panneau solaire moyen"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "copper",
+					"quantity": 1
+				},
+				{
+					"id": "glass",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_wind_turbine",
+			"label": {
+				"en-US": "Medium Wind Turbine",
+				"fr-FR": "Éolienne moyenne"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "aluminium",
+					"quantity": 1
+				},
+				{
+					"id": "ceramic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_battery",
+			"label": {
+				"en-US": "Medium battery",
+				"fr-FR": "Batterie moyenne"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				},
+				{
+					"id": "lithium",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "rtg",
+			"label": {
+				"en-US": "RTG",
+				"fr-FR": "GTR"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "nanocarbon_alloy",
+					"quantity": 1
+				},
+				{
+					"id": "lithium",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_platform_A",
+			"label": {
+				"en-US": "Medium Platform A",
+				"fr-FR": "Plateforme moyenne A"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_platform_B",
+			"label": {
+				"en-US": "Medium Platform B",
+				"fr-FR": "Plateforme moyenne B"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "medium_platform_C",
+			"label": {
+				"en-US": "Medium Platform C",
+				"fr-FR": "Plateforme moyenne C"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "tall_platform",
+			"label": {
+				"en-US": "Tall Platform",
+				"fr-FR": "Plateforme élevée"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "ceramic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_t_platform",
+			"label": {
+				"en-US": "Medium T-Platform",
+				"fr-FR": "Plateforme moyenne en T"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "medium_storage",
+			"label": {
+				"en-US": "Medium Storage",
+				"fr-FR": "Stockage moyen"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "medium_storage_silo",
+			"label": {
+				"en-US": "Medium Storage Silo",
+				"fr-FR": "Silo de stockage moyen"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "titanium",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "rover_seat",
+			"label": {
+				"en-US": "Rover Seat",
+				"fr-FR": "Siège de rover"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "tractor",
+			"label": {
+				"en-US": "Tractor",
+				"fr-FR": "Tracteur"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "aluminium",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "trailer",
+			"label": {
+				"en-US": "Trailer",
+				"fr-FR": "Remorque"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 1
+				},
+				{
+					"id": "aluminium",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_buggy_horn",
+			"label": {
+				"en-US": "Medium Buggy Horn",
+				"fr-FR": "Klaxon à buggy moyen"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "plastic",
+					"quantity": 1
+				},
+				{
+					"id": "rubber",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "winch",
+			"label": {
+				"en-US": "Winch",
+				"fr-FR": "Treuil"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "rubber",
+					"quantity": 1
+				},
+				{
+					"id": "tungsten",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "paver",
+			"label": {
+				"en-US": "Paver",
+				"fr-FR": "Finisseur"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "silicone",
+					"quantity": 1
+				},
+				{
+					"id": "aluminium_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "drill_strength_1",
+			"label": {
+				"en-US": "Drill strength 1",
+				"fr-FR": "Puissance de foret 1"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "ceramic",
+					"quantity": 1
+				},
+				{
+					"id": "tungsten_carbide",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "drill_strength_2",
+			"label": {
+				"en-US": "Drill strength 2",
+				"fr-FR": "Puissance de foret 2"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "titanium_alloy",
+					"quantity": 1
+				},
+				{
+					"id": "tungsten_carbide",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "drill_strength_3",
+			"label": {
+				"en-US": "Drill strength 3",
+				"fr-FR": "Puissance de foret 3"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "titanium_alloy",
+					"quantity": 1
+				},
+				{
+					"id": "diamond",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "solid_fuel_thruster",
+			"label": {
+				"en-US": "Solid-Fuel thruster",
+				"fr-FR": "Propulseur à carburant solide"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "aluminium",
+					"quantity": 1
+				},
+				{
+					"id": "ammonium",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "hydrazine_thruster",
+			"label": {
+				"en-US": "Hydrazine thruster",
+				"fr-FR": "Propulseur à hydrazine"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "tungsten",
+					"quantity": 1
+				},
+				{
+					"id": "steel",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_printer",
+			"label": {
+				"en-US": "Large Printer",
+				"fr-FR": "Grande Imprimante"
+			},
+			"printer": true,
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 3
+				}
+			]
+		},
+		{
+			"id": "smelting_furnace",
+			"label": {
+				"en-US": "Smelting Furnace",
+				"fr-FR": "Four de fusion"
+			},
+			"crafter": true,
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 2
+				},
+				{
+					"id": "compound",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "soil_centrifuge",
+			"label": {
+				"en-US": "Soil Centrifuge",
+				"fr-FR": "Centrifugeuse de terre"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 2
+				},
+				{
+					"id": "aluminium",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "chemistry_lab",
+			"label": {
+				"en-US": "Chemistry Lab",
+				"fr-FR": "Labo de chimie"
+			},
+			"crafter": true,
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "tungsten",
+					"quantity": 1
+				},
+				{
+					"id": "glass",
+					"quantity": 1
+				},
+				{
+					"id": "ceramic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "atmospheric_condenser",
+			"label": {
+				"en-US": "Atmospheric Condenser",
+				"fr-FR": "Condensateur atmosphérique"
+			},
+			"crafter": true,
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "plastic",
+					"quantity": 1
+				},
+				{
+					"id": "glass",
+					"quantity": 1
+				},
+				{
+					"id": "iron",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "research_chamber",
+			"label": {
+				"en-US": "Research Chamber",
+				"fr-FR": "Salle de recherche"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 2
+				},
+				{
+					"id": "resin",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "exo_request_platform",
+			"label": {
+				"en-US": "EXO Request Platform",
+				"fr-FR": "Plateforme de requête EXO"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 2
+				},
+				{
+					"id": "ceramic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "trade_platform",
+			"label": {
+				"en-US": "Trade Platform",
+				"fr-FR": "Plateforme d'échange"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "iron",
+					"quantity": 1
+				},
+				{
+					"id": "tungsten",
+					"quantity": 1
+				},
+				{
+					"id": "compound",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_shredder",
+			"label": {
+				"en-US": "Large Shredder",
+				"fr-FR": "Grand broyeur"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "tungsten_carbide",
+					"quantity": 1
+				},
+				{
+					"id": "iron",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "large_solar_panel",
+			"label": {
+				"en-US": "Large Solar Panel",
+				"fr-FR": "Grand panneau solaire"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "aluminium_alloy",
+					"quantity": 1
+				},
+				{
+					"id": "glass",
+					"quantity": 1
+				},
+				{
+					"id": "copper",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_wind_turbine",
+			"label": {
+				"en-US": "Large Wind Turbine",
+				"fr-FR": "Grande éolienne"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "aluminium_alloy",
+					"quantity": 1
+				},
+				{
+					"id": "glass",
+					"quantity": 1
+				},
+				{
+					"id": "ceramic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_platform_a",
+			"label": {
+				"en-US": "Large Platform A",
+				"fr-FR": "Grande plateforme A"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "large_platform_b",
+			"label": {
+				"en-US": "Large Platform B",
+				"fr-FR": "Grande plateforme B"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 3
+				}
+			]
+		},
+		{
+			"id": "large_platform_c",
+			"label": {
+				"en-US": "Large Platform C",
+				"fr-FR": "Grande plateforme C"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 1
+				},
+				{
+					"id": "iron",
+					"quantity": 1
+				},
+				{
+					"id": "ceramic",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_t_platform",
+			"label": {
+				"en-US": "Large T-Platform",
+				"fr-FR": "Grande plateforme en T"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "aluminium",
+					"quantity": 2
+				},
+				{
+					"id": "resin",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_curved_platform",
+			"label": {
+				"en-US": "Large Curved Platform",
+				"fr-FR": "Grande plateforme incurvée"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "ceramic",
+					"quantity": 2
+				},
+				{
+					"id": "compound",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_extended_platform",
+			"label": {
+				"en-US": "Large Extended Platform",
+				"fr-FR": "Grande plateforme étendue"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "large_resource_canister",
+			"label": {
+				"en-US": "Large Resource Canister",
+				"fr-FR": "Grande bombonne de ressource"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "glass",
+					"quantity": 1
+				},
+				{
+					"id": "titanium",
+					"quantity": 1
+				},
+				{
+					"id": "nanocarbon_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_storage",
+			"label": {
+				"en-US": "Large Storage",
+				"fr-FR": "Grand stockage"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "ceramic",
+					"quantity": 3
+				}
+			]
+		},
+		{
+			"id": "large_storage_silo_a",
+			"label": {
+				"en-US": "Large Storage Silo A",
+				"fr-FR": "Grand silo de stockage A"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "aluminium",
+					"quantity": 2
+				},
+				{
+					"id": "steel",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_storage_silo_b",
+			"label": {
+				"en-US": "Large Storage Silo B",
+				"fr-FR": "Grand silo de stockage B"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "steel",
+					"quantity": 3
+				}
+			]
+		},
+		{
+			"id": "large_active_storage",
+			"label": {
+				"en-US": "Large Active Storage",
+				"fr-FR": "Grand stockage actif"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				},
+				{
+					"id": "aluminium",
+					"quantity": 1
+				},
+				{
+					"id": "resin",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "buggy",
+			"label": {
+				"en-US": "Buggy",
+				"fr-FR": "Buggy"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 1
+				},
+				{
+					"id": "aluminium",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_rover_seat",
+			"label": {
+				"en-US": "Large Rover Seat",
+				"fr-FR": "Siège de grand rover"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "compound",
+					"quantity": 1
+				},
+				{
+					"id": "plastic",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "medium_rover",
+			"label": {
+				"en-US": "Medium Rover",
+				"fr-FR": "Rover moyen"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "rubber",
+					"quantity": 1
+				},
+				{
+					"id": "plastic",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "crane",
+			"label": {
+				"en-US": "Crane",
+				"fr-FR": "Grue"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "steel",
+					"quantity": 1
+				},
+				{
+					"id": "silicone",
+					"quantity": 1
+				},
+				{
+					"id": "titanium",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_fog_horn",
+			"label": {
+				"en-US": "Large Fog Horn",
+				"fr-FR": "Grande corne de brume"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "plastic",
+					"quantity": 1
+				},
+				{
+					"id": "rubber",
+					"quantity": 1
+				},
+				{
+					"id": "steel",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "recreational_sphere",
+			"label": {
+				"en-US": "Recreational Sphere",
+				"fr-FR": "Sphère récréative"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "rubber",
+					"quantity": 1
+				},
+				{
+					"id": "aluminium_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "shelter",
+			"label": {
+				"en-US": "Shelter",
+				"fr-FR": "Abri"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "silicone",
+					"quantity": 2
+				},
+				{
+					"id": "plastic",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "auto_extractor",
+			"label": {
+				"en-US": "Auto Extractor",
+				"fr-FR": "Extracteur automatique"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "rubber",
+					"quantity": 1
+				},
+				{
+					"id": "tungsten_carbide",
+					"quantity": 1
+				},
+				{
+					"id": "steel",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "extra_large_shredder",
+			"label": {
+				"en-US": "Extra Large Shredder",
+				"fr-FR": "Broyeur extra grand"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "steel",
+					"quantity": 2
+				},
+				{
+					"id": "tungsten_carbide",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "solar_array",
+			"label": {
+				"en-US": "Solar Array",
+				"fr-FR": "Panneaux solaires"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "graphene",
+					"quantity": 1
+				},
+				{
+					"id": "aluminium_alloy",
+					"quantity": 1
+				},
+				{
+					"id": "glass",
+					"quantity": 1
+				},
+				{
+					"id": "copper",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "xl_wind_turbine",
+			"label": {
+				"en-US": "XL Wind Turbine",
+				"fr-FR": "Éolienne XL"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "iron",
+					"quantity": 1
+				},
+				{
+					"id": "ceramic",
+					"quantity": 1
+				},
+				{
+					"id": "graphene",
+					"quantity": 1
+				},
+				{
+					"id": "aluminium_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "medium_sensor_arch",
+			"label": {
+				"en-US": "Medium Sensor Arch",
+				"fr-FR": "Arche à capteur moyenne"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				},
+				{
+					"id": "quartz",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "xl_sensor_arch",
+			"label": {
+				"en-US": "XL Sensor Arch",
+				"fr-FR": "Arche à capteur XL"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 2
+				},
+				{
+					"id": "quartz",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "xl_sensor_canopy",
+			"label": {
+				"en-US": "XL Sensor Canopy",
+				"fr-FR": "Auvent à capteur XL"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 2
+				},
+				{
+					"id": "quartz",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "large_sensor_ring",
+			"label": {
+				"en-US": "Large Sensor Ring",
+				"fr-FR": "Grand anneau à capteur"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				},
+				{
+					"id": "quartz",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_sensor_hoop_A",
+			"label": {
+				"en-US": "Large Sensor Hoop A",
+				"fr-FR": "Grand arceau à capteur A"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 1
+				},
+				{
+					"id": "quartz",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "large_sensor_hoop_B",
+			"label": {
+				"en-US": "Large Sensor Hoop B",
+				"fr-FR": "Grand arceau à capteur B"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 2
+				},
+				{
+					"id": "quartz",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "xl_sensor_hoop_A",
+			"label": {
+				"en-US": "XL Sensor Hoop A",
+				"fr-FR": "XL arceau à capteur A"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 2
+				},
+				{
+					"id": "quartz",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "xl_sensor_hoop_B",
+			"label": {
+				"en-US": "XL Sensor Hoop B",
+				"fr-FR": "XL arceau à capteur B"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "zinc",
+					"quantity": 3
+				},
+				{
+					"id": "quartz",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "extra_large_platform_A",
+			"label": {
+				"en-US": "Extra Large Platform A",
+				"fr-FR": "Plateforme extra grande A"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "iron",
+					"quantity": 2
+				},
+				{
+					"id": "ceramic",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "extra_large_platform_B",
+			"label": {
+				"en-US": "Extra Large Platform B",
+				"fr-FR": "Plateforme extra grande B"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "iron",
+					"quantity": 4
+				}
+			]
+		},
+		{
+			"id": "extra_large_platform_C",
+			"label": {
+				"en-US": "Extra Large Platform C",
+				"fr-FR": "Plateforme extra grande C"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "iron",
+					"quantity": 2
+				},
+				{
+					"id": "resin",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "extra_large_curved_platform",
+			"label": {
+				"en-US": "Extra Large Curved Platform",
+				"fr-FR": "Plateforme incurvée extra grande"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "ceramic",
+					"quantity": 2
+				},
+				{
+					"id": "compound",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "xl_extended_platform",
+			"label": {
+				"en-US": "XL Extended Platform",
+				"fr-FR": "Plateforme étendue XL"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 3
+				}
+			]
+		},
+		{
+			"id": "figurine_platform",
+			"label": {
+				"en-US": "Figurine Platform",
+				"fr-FR": "Plateforme à figurine"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "iron",
+					"quantity": 4
+				}
+			]
+		},
+		{
+			"id": "extra_large_storage",
+			"label": {
+				"en-US": "Extra Large Storage",
+				"fr-FR": "Stockage extra grand"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "iron",
+					"quantity": 2
+				},
+				{
+					"id": "ceramic",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "large_rover",
+			"label": {
+				"en-US": "Large Rover",
+				"fr-FR": "Grand rover"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "aluminium_alloy",
+					"quantity": 2
+				},
+				{
+					"id": "rubber",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "landing_pad",
+			"label": {
+				"en-US": "Landing Pad",
+				"fr-FR": "Aire d'atterrissage"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "aluminium",
+					"quantity": 1
+				},
+				{
+					"id": "ceramic",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "small_shuttle",
+			"label": {
+				"en-US": "Small Shuttle",
+				"fr-FR": "Petite navette"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "aluminium",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "medium_shuttle",
+			"label": {
+				"en-US": "Medium Shuttle",
+				"fr-FR": "Navette moyenne"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "ceramic",
+					"quantity": 2
+				},
+				{
+					"id": "aluminium_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "large_shuttle",
+			"label": {
+				"en-US": "Large Shuttle",
+				"fr-FR": "Grande navette"
+			},
+			"printed": "large_printer",
+			"dependencies": [
+				{
+					"id": "ceramic",
+					"quantity": 2
+				},
+				{
+					"id": "titanium_alloy",
+					"quantity": 2
+				}
+			]
+		}
+	],
+	"planets": [
+		{
+			"id": "sylva",
+			"name": "Sylva",
+			"primary_resources": [
+				"resin",
+				"compound",
+				"organic",
+				"laterite",
+				"ammonium",
+				"graphite",
+				"sphalerite"
+			],
+			"secondary_resources": [
+				"quartz",
+				"clay",
+				"malachite"
+			],
+			"at_core": [
+				"astronium"
+			],
+			"atmospheric_resources": [
+				"hydrogen",
+				"nitrogen"
+			]
+		},
+		{
+			"id": "desolo",
+			"name": "Desolo",
+			"primary_resources": [
+				"resin",
+				"compound",
+				"organic",
+				"wolframite",
+				"laterite",
+				"graphite"
+			],
+			"secondary_resources": [
+				"quartz",
+				"clay",
+				"ammonium",
+				"sphalerite"
+			],
+			"at_core": [
+				"astronium"
+			],
+			"atmospheric_resources": []
+		},
+		{
+			"id": "calidor",
+			"name": "Calidor",
+			"primary_resources": [
+				"resin",
+				"quartz",
+				"compound",
+				"organic",
+				"malachite"
+			],
+			"secondary_resources": [
+				"wolframite",
+				"clay",
+				"laterite",
+				"graphite"
+			],
+			"at_core": [
+				"astronium"
+			],
+			"atmospheric_resources": [
+				"sulfur",
+				"hydrogen"
+			]
+		},
+		{
+			"id": "vesania",
+			"name": "Vesania",
+			"primary_resources": [
+				"resin",
+				"quartz",
+				"compound",
+				"organic",
+				"graphite",
+				"lithium"
+			],
+			"secondary_resources": [
+				"clay",
+				"laterite",
+				"ammonium",
+				"titanite"
+			],
+			"at_core": [
+				"astronium"
+			],
+			"atmospheric_resources": [
+				"hydrogen",
+				"nitrogen",
+				"argon"
+			]
+		},
+		{
+			"id": "novus",
+			"name": "Novus",
+			"primary_resources": [
+				"organic",
+				"hematite",
+				"laterite"
+			],
+			"secondary_resources": [
+				"resin",
+				"quartz",
+				"compound",
+				"clay",
+				"ammonium",
+				"graphite",
+				"lithium"
+			],
+			"at_core": [
+				"astronium"
+			],
+			"atmospheric_resources": [
+				"hydrogen",
+				"methane"
+			]
+		},
+		{
+			"id": "glacio",
+			"name": "Glacio",
+			"primary_resources": [
+				"resin",
+				"compound",
+				"organic",
+				"titanite"
+			],
+			"secondary_resources": [
+				"quartz",
+				"clay",
+				"hematite",
+				"laterite",
+				"ammonium",
+				"graphite"
+			],
+			"at_core": [
+				"astronium"
+			],
+			"atmospheric_resources": [
+				"argon"
+			]
+		},
+		{
+			"id": "atrox",
+			"name": "Atrox",
+			"primary_resources": [
+				"quartz",
+				"organic",
+				"laterite"
+			],
+			"secondary_resources": [
+				"resin",
+				"compound",
+				"clay",
+				"ammonium",
+				"graphite"
+			],
+			"at_core": [
+				"astronium"
+			],
+			"atmospheric_resources": [
+				"methane",
+				"sulfur",
+				"nitrogen",
+				"helium"
+			]
+		}
+	]
+}

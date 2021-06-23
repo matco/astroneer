@@ -1,0 +1,15 @@
+{
+	"files.exclude": {
+		"package-lock.json": true,
+		"node_modules": true,
+		"*.tgz": true,
+		"dist": true
+	},
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+	"typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+	"eslint.lintTask.enable": true
+}

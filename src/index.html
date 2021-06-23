@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+		<link rel="manifest" href="manifest.json">
+		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/favicon-180x180.png" />
+		<title>Astroneer Helper</title>
+	</head>
+	<body class="disabled">
+		<h1><a href="#" title="{{ go_back_home }}">Astroneer Helper</a></h1>
+		<form id="item">
+			<input name="search" autocomplete="off" type="search" placeholder="{{ search_placeholder }}" />
+			<ul id="items"></ul>
+		</form>
+		<section id="home">
+			<div>
+				<h3>{{ resources }}</h3>
+				<ul id="home_resources"></ul>
+				<h3>{{ objects }}</h3>
+				<ul id="home_objects"></ul>
+				<h3>{{ planets }}</h3>
+				<ul id="home_planets"></ul>
+			</div>
+		</section>
+		<section id="resource">
+			<h2 id="resource_name"></h2>
+			<div>
+				<div id="resource_natural">
+					<p>{{ natural_resource }}</p>
+					<div id="resource_in_primary_planets">
+						<h3>{{ resource_primary_planets }}</h3>
+						<ul id="resource_primary_planets"></ul>
+					</div>
+					<div id="resource_in_secondary_planets">
+						<h3>{{ resource_secondary_planets }}</h3>
+						<ul id="resource_secondary_planets"></ul>
+					</div>
+					<div id="resource_in_at_core">
+						<h3>{{ resource_at_core }}</h3>
+						<ul id="resource_at_core"></ul>
+					</div>
+				</div>
+				<div id="resource_crafted">
+					<svg id="resource_tree" xmlns="http://www.w3.org/2000/svg"></svg>
+				</div>
+				<div id="resource_in_atmosphere">
+					<h3>{{ resource_planets }}</h3>
+					<ul id="resource_planets"></ul>
+				</div>
+				</div>
+				<div id="resource_in_objects">
+					<h3>{{ resource_objects }}</h3>
+					<ul id="resource_objects"></ul>
+				</div>
+			</div>
+		</section>
+		<section id="object">
+			<h2 id="object_name"></h2>
+			<div>
+				<svg id="object_tree" xmlns="http://www.w3.org/2000/svg"></svg>
+				<div id="object_is_printer">
+					<h3>{{ object_printer_objects }}</h3>
+					<ul id="object_printer_objects"></ul>
+				</div>
+				<div id="object_is_crafter">
+					<h3>{{ object_craft_resources }}</h3>
+					<ul id="object_craft_resources"></ul>
+				</div>
+			</div>
+		</section>
+		<section id="planet">
+			<h2 id="planet_name"></h2>
+			<div>
+				<h3>{{ planet_primary_resources }}</h3>
+				<ul id="planet_primary_resources"></ul>
+				<h3>{{ planet_secondary_resources }}</h3>
+				<ul id="planet_secondary_resources"></ul>
+				<h3>{{ planet_at_core }}</h3>
+				<ul id="planet_at_core"></ul>
+				<h3>{{ planet_atmospheric_resources }}</h3>
+				<ul id="planet_atmospheric_resources"></ul>
+			</div>
+		</section>
+		<footer>All images are the property of <a href="https://systemera.net">System Era Softworks ©</a>.</footer>
+	</body>
+</html>

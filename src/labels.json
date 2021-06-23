@@ -1,0 +1,20 @@
+{
+	"go_back": {"en-US": "Back", "fr-FR": "Retour"},
+	"go_back_home": {"en-US": "Back to home", "fr-FR": "Retour à l'accueil"},
+	"search_placeholder": {"en-US": "resource, object, planet...", "fr-FR": "resource, objet, planète..."},
+	"resources": {"en-US": "Resources", "fr-FR": "Ressources"},
+	"objects": {"en-US": "Objects", "fr-FR": "Objets"},
+	"planets": {"en-US": "Planets", "fr-FR": "Planètes"},
+	"natural_resource": {"en-US": "This is a natural resource", "fr-FR": "Resource naturelle"},
+	"resource_primary_planets": {"en-US": "Primary planets", "fr-FR": "Planètes principales"},
+	"resource_secondary_planets": {"en-US": "Secondary planets", "fr-FR": "Planètes secondaires"},
+	"resource_at_core": {"en-US": "At core", "fr-FR": "Au noyau"},
+	"resource_planets": {"en-US": "Planets", "fr-FR": "Planètes"},
+	"resource_objects": {"en-US": "Required by objects", "fr-FR": "Requis pour les objets"},
+	"object_printer_objects": {"en-US": "Prints", "fr-FR": "Imprime"},
+	"object_craft_resources": {"en-US": "Crafts", "fr-FR": "Fabrique"},
+	"planet_primary_resources": {"en-US": "Primary resources", "fr-FR": "Ressources primaires"},
+	"planet_secondary_resources": {"en-US": "Secondary resources", "fr-FR": "Ressources secondaires"},
+	"planet_at_core": {"en-US": "At core", "fr-FR": "Au noyau"},
+	"planet_atmospheric_resources": {"en-US": "Atmospheric resources", "fr-FR": "Resources atmosphériques"}
+}

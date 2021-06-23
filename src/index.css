@@ -1,0 +1,192 @@
+@font-face {
+	font-family: 'Astroneer';
+	src: url('fonts/NDAstroneer-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Astroneer-Bold';
+	font-weight: 700;
+	src: url('fonts/NDAstroneer-Bold.ttf') format('truetype');
+}
+
+:root {
+	--title-font-color: white;
+	--main-background-color: #e1eef8;
+	--main-font-color: #3e4544;
+}
+
+html {
+	min-height: 100%;
+}
+body {
+	font-family: 'Astroneer';
+	color: var(--main-font-color);
+	background: linear-gradient(to bottom, #164ab2, #73d8c6);
+	width: 80%;
+	min-height: 100%;
+	margin: auto;
+	width: 70rem;
+}
+/* disable interaction on the web page */
+body.disabled {
+	opacity: 0;
+	pointer-events: none;
+}
+h1 {
+	font-family: 'Astroneer-Bold';
+	font-size: 2rem;
+	margin: 0 0 0.5rem 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+h1 > a {
+	text-decoration: none;
+	color: white;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+footer {
+	margin: 1rem;
+	font-size: 0.6rem;
+	text-align: center;
+	color: white;
+}
+footer > a {
+	color: white;
+}
+svg {
+	margin: auto;
+}
+svg path {
+	fill: none;
+	stroke: black;
+	stroke-width: 3;
+}
+svg text {
+	font-size: 0.8rem;
+}
+
+
+.item {
+	display: inline-block;
+	padding: 0.5rem 0;
+	text-decoration: none;
+	color: var(--main-font-color);
+}
+.item img {
+	width: 2rem;
+	margin-right: 0.5rem;
+	vertical-align: middle;
+}
+
+#item {
+	position: relative;
+}
+#item input {
+	font-family: 'Astroneer';
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.7rem;
+	font-size: 1.2rem;
+	text-align: center;
+	background-color: var(--main-background-color);
+	border: 5px solid var(--title-font-color);
+	border-radius: 5px;
+}
+#item input:focus {
+	outline: none;
+}
+#item input:focus::-moz-placeholder {
+	color: transparent;
+}
+#item input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+#items {
+	display: none;
+	position: absolute;
+	z-index: 100;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	margin: 0.5rem 0 0 0;
+	padding: 0;
+	list-style-type: none;
+	background-color: var(--main-background-color);
+	border: 5px solid var(--title-font-color);
+	border-radius: 5px;
+	box-shadow: 0 0 2rem var(--main-font-color);
+}
+#items > li {
+	cursor: pointer;
+	color: #3e4544;
+	padding: 0.3rem;
+}
+#items > li.selected {
+	background-color: #263531;
+	color: white;
+}
+#items > li .highlight {
+	color: #4ab2e3;
+}
+#items > li > img {
+	width: 2rem;
+	margin-right: 0.5rem;
+	vertical-align: middle;
+}
+
+section {
+	position: relative;
+	display: none;
+	margin-top: 1rem;
+	background-color: var(--main-background-color);
+	border: 5px solid var(--title-font-color);
+	border-radius: 5px;
+}
+section > h2 {
+	font-size: 1.5rem;
+	color: var(--title-font-color);
+	text-align: center;
+	text-decoration: none;
+	padding: 0.5rem 0;
+	margin: 0;
+	background-color: #4ab2e3;
+	border-style: solid;
+	border-color: var(--title-font-color);
+	border-width: 5px 0 5px 0;
+}
+section > h2:first-child {
+	border-top: none;
+}
+section > h2 > button {
+	font-family: 'Astroneer-Bold';
+	font-size: 1.5rem;
+	position: absolute;
+	left: 0;
+	padding: 0 1rem;
+	color: var(--title-font-color);
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+section > h2 > img {
+	width: 2rem;
+	margin-right: 0.5rem;
+	vertical-align: middle;
+}
+section > div {
+	padding: 1rem;
+}
+section h3 {
+	text-align: center;
+}
+
+@media (max-width: 800px) {
+	body {
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
