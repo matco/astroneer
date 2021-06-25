@@ -57,19 +57,19 @@ function draw_item(item, value) {
 	return item_li;
 }
 
-function select_item(item_type, item_id) {
+function select_item(item) {
 	Router.Reset();
-	switch(item_type) {
+	switch(item.type) {
 		case ITEM_TYPE.RESOURCE: {
-			Router.SelectResource(Database.GetResource(item_id));
+			Router.SelectResource(item);
 			break;
 		}
 		case ITEM_TYPE.OBJECT: {
-			Router.SelectObject(Database.GetObject(item_id));
+			Router.SelectObject(item);
 			break;
 		}
 		case ITEM_TYPE.PLANET: {
-			Router.SelectPlanet(Database.GetPlanet(item_id));
+			Router.SelectPlanet(item);
 			break;
 		}
 		default: alert('No match for your search!');
@@ -148,14 +148,20 @@ window.addEventListener(
 			document.getElementById('items'),
 			provide_item,
 			draw_item,
-			item => select_item(item.type, item.id)
+			select_item
 		);
 
 		document.getElementById('item').addEventListener(
 			'submit',
 			function(event) {
+				//the form is submitted and the autocomplete has not been used
 				event.stop();
-				select_item(this['search'].value);
+				const value = this['search'].value;
+				//trying to find the item using the input value
+				const enhanced_item = items.find(i => i.label === value) || items.find(i => i.tag === normalize_text(value));
+				if(enhanced_item) {
+					select_item(enhanced_item.item);
+				}
 			}
 		);
 
