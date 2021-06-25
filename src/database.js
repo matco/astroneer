@@ -25,7 +25,7 @@ const ITEM_TYPE = {
 
 const Database = {
 	Init: async () => {
-		const response = await fetch('/database.json');
+		const response = await fetch('/data.json');
 		database = await response.json();
 		//add type to all items
 		database.resources.forEach(r => r.type = ITEM_TYPE.RESOURCE);
