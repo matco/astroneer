@@ -1,8 +1,8 @@
 import {SVG} from '@matco/basic-tools/svg.js';
-import {Utils} from './utils.js';
-import {Database} from './database.js';
-import {Router} from './router.js';
-import {MOBILE_MEDIA} from './mobile.js';
+import {Utils} from './utils';
+import {Database} from './database';
+import {Router} from './router';
+import {MOBILE_MEDIA} from './mobile';
 
 const DIMENSIONS = {
 	item: undefined,
@@ -61,7 +61,7 @@ function get_natural_resources_number(item) {
  * y is a useless parameter (it has been kept because it could be used for an alternative representation)
  * the y-axis coordinate is absolute and is calculated according to the item level
  */
-function draw_resource_tree(svg, x, y, item, quantity) {
+function draw_resource_tree(svg, x, y, item, quantity?) {
 	//create a group at the item position
 	const group = SVG.Group({transform: `translate(${x},${y + DIMENSIONS.item / 2})`});
 	svg.appendChild(group);

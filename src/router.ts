@@ -1,9 +1,9 @@
 import {Hash} from '@matco/basic-tools/hash.js';
-import {Database} from './database.js';
-import {Resources} from './resources.js';
-import {Objects} from './objects.js';
-import {Utils} from './utils.js';
-import {Planets} from './planets.js';
+import {Database} from './database';
+import {Resources} from './resources';
+import {Objects} from './objects';
+import {Utils} from './utils';
+import {Planets} from './planets';
 
 const STATE_PREFIX = 'Astroneer Helper';
 

@@ -1,8 +1,8 @@
-import {Utils} from './utils.js';
-import {Resources} from './resources.js';
-import {Database} from './database.js';
-import {Router} from './router.js';
-import {Items} from './items.js';
+import {Utils} from './utils';
+import {Resources} from './resources';
+import {Database} from './database';
+import {Router} from './router';
+import {Items} from './items';
 
 export const Objects = {
 	DrawImage: object => {

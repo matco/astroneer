@@ -7,7 +7,7 @@
 		"http-server": "http-server dist",
 		"build": "webpack",
 		"lint": "eslint .",
-		"tsc": "tsc"
+		"tsc-check": "tsc --noEmit"
 	},
 	"type": "module",
 	"keywords": [],
@@ -15,7 +15,6 @@
 		"name": "Matthieu Corageoud",
 		"email": "matthieu.corageoud@gmail.com"
 	},
-	"browser": "src/index.js",
 	"files": [
 		"src"
 	],
@@ -39,6 +38,7 @@
 		"http-server": "^0.12.3",
 		"node-static": "^0.7.11",
 		"style-loader": "^2.0.0",
+		"ts-loader": "^9.2.3",
 		"typescript": "^4.3.4",
 		"webpack": "^5.40.0",
 		"webpack-cli": "^4.7.0",

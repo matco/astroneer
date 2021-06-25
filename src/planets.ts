@@ -1,7 +1,7 @@
-import {Database} from './database.js';
-import {Resources} from './resources.js';
-import {Router} from './router.js';
-import {Utils} from './utils.js';
+import {Database} from './database';
+import {Resources} from './resources';
+import {Router} from './router';
+import {Utils} from './utils';
 
 export const Planets = {
 	DrawImage: planet => {

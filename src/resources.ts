@@ -1,9 +1,9 @@
-import {Database} from './database.js';
-import {Items} from './items.js';
-import {Objects} from './objects.js';
-import {Planets} from './planets.js';
-import {Router} from './router.js';
-import {Utils} from './utils.js';
+import {Database} from './database';
+import {Items} from './items';
+import {Objects} from './objects';
+import {Planets} from './planets';
+import {Router} from './router';
+import {Utils} from './utils';
 
 export const Resources = {
 	DrawImage: resource => {
@@ -15,7 +15,7 @@ export const Resources = {
 		link.appendChild(document.createTextNode(Utils.Localize(resource.label)));
 		return link;
 	},
-	DrawForList: (resource, quantity) => {
+	DrawForList: (resource, quantity?: number) => {
 		const element = document.createFullElement('li');
 		if(quantity !== undefined) {
 			element.appendChild(document.createFullElement('span', {style: 'margin-right: 1rem'}, quantity.toString()));

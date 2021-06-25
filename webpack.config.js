@@ -11,7 +11,7 @@ export default {
 	devtool: 'source-map',
 	context: path.resolve(__dirname, 'src'),
 	entry: [
-		'./index.js',
+		'./index.ts',
 		'./index.css'
 	],
 	output: {
@@ -39,6 +39,11 @@ export default {
 	module: {
 		rules: [
 			{
+				test: /\.ts$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
+			},
+			{
 				test: /\.css$/,
 				use: [
 					'style-loader',
@@ -54,8 +59,11 @@ export default {
 			{
 				test: /\.(ttf)$/i,
 				type: 'asset/resource'
-			},
+			}
 		]
+	},
+	resolve: {
+		extensions: ['.ts', '.js'],
 	},
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),

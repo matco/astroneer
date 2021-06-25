@@ -2,14 +2,14 @@ import '@matco/basic-tools/extension.js';
 import '@matco/basic-tools/dom_extension.js';
 
 import {Forms} from './tools/forms.js';
-import {MOBILE_MEDIA} from './mobile.js';
-import {Utils} from './utils.js';
-import {Router} from './router.js';
-import {Database, ITEM_TYPE} from './database.js';
-import {Resources} from './resources.js';
-import {Objects} from './objects.js';
-import {Planets} from './planets.js';
-import {Items} from './items.js';
+import {MOBILE_MEDIA} from './mobile';
+import {Utils} from './utils';
+import {Router} from './router';
+import {Database, ITEM_TYPE} from './database';
+import {Resources} from './resources';
+import {Objects} from './objects';
+import {Planets} from './planets';
+import {Items} from './items';
 
 const REGEXP = /{{ *([a-z_-]+) *}}/gi;
 let items;
