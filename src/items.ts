@@ -18,13 +18,6 @@ function update_dimensions() {
 	DIMENSIONS.y_margin = DIMENSIONS.item * (MOBILE_MEDIA.matches ? 3 : 2.5);
 }
 
-SVG.ImageCentered = function(x, y, width, height, href, properties) {
-	return SVG.Image(x - width / 2, y - height / 2, width, height, href, properties);
-};
-SVG.ImageCenteredHorizontally = function(x, y, width, height, href, properties) {
-	return SVG.Image(x - width / 2, y, width, height, href, properties);
-};
-
 function get_level(item) {
 	if(!item.dependencies) {
 		return 0;

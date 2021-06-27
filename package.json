@@ -27,7 +27,7 @@
 		"url": "https://github.com/matco/astroneer-helper/issues"
 	},
 	"dependencies": {
-		"@matco/basic-tools": "^1.1.0"
+		"@matco/basic-tools": "^1.2.0"
 	},
 	"devDependencies": {
 		"copy-webpack-plugin": "^9.0.0",
