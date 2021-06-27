@@ -7,7 +7,7 @@ import {Utils} from './utils';
 import {Router} from './router';
 import {Database, THING_TYPE} from './database';
 import {Resources} from './resources';
-import {Objects} from './objects';
+import {Items} from './items';
 import {Planets} from './planets';
 import {Things} from './things';
 
@@ -64,8 +64,8 @@ function select_thing(thing) {
 			Router.SelectResource(thing);
 			break;
 		}
-		case THING_TYPE.OBJECT: {
-			Router.SelectObject(thing);
+		case THING_TYPE.ITEM: {
+			Router.SelectItem(thing);
 			break;
 		}
 		case THING_TYPE.PLANET: {
@@ -169,10 +169,10 @@ window.addEventListener(
 			.sort(Things.Sort)
 			.map(r => Resources.DrawForList(r))
 			.forEach(Node.prototype.appendChild, document.getElementById('home_resources'));
-		Database.GetObjects()
+		Database.GetItems()
 			.sort(Things.Sort)
-			.map(Objects.DrawForList)
-			.forEach(Node.prototype.appendChild, document.getElementById('home_objects'));
+			.map(Items.DrawForList)
+			.forEach(Node.prototype.appendChild, document.getElementById('home_items'));
 		Database.GetPlanets()
 			.sort(Things.Sort)
 			.map(Planets.DrawForList)

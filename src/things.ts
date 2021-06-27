@@ -29,7 +29,7 @@ function get_level(thing) {
 
 /**
  *
- * @param {*} thing the thing (resource of object) used to perform the calculation
+ * @param {*} thing the thing (resource of item) used to perform the calculation
  * @returns the number of natural resources required to build the thing
  */
 function get_natural_resources_number(thing) {
@@ -47,7 +47,7 @@ function get_natural_resources_number(thing) {
  * @param {SVGElement} svg the SVG element where drawing will be made
  * @param {*} x the x position in the SVG
  * @param {*} y the y position in the SVG
- * @param {*} thing the thing (object or resource) to draw
+ * @param {*} thing the thing (item or resource) to draw
  * @param {*} quantity
  * Pay attention to the coordinates:
  * x is important because it is relative to the previous thing
@@ -88,7 +88,7 @@ function draw_resource_tree(svg, x, y, thing, quantity?) {
 			draw_resource_tree(svg, dependency_x, dependency_y, resource, dependency.quantity);
 		});
 		//draw module
-		const module = thing.printed ? Database.GetObject(thing.printed) : Database.GetObject(thing.crafted);
+		const module = thing.printed ? Database.GetItem(thing.printed) : Database.GetItem(thing.crafted);
 		const module_link = SVG.Link(Router.GetURL(module));
 		group.appendChild(module_link);
 		module_link.appendChild(SVG.ImageCentered(0, module_y, DIMENSIONS.module, DIMENSIONS.module, Database.GetThingImage(module)));
@@ -105,23 +105,23 @@ export const Things = {
 	Sort: (thing1, thing2) => thing1.id.compareTo(thing2.id),
 	DrawResourceTree: (thing, svg) => {
 		update_dimensions();
-		//find selected object level
-		const object_level = get_level(thing);
-		const object_resources_number = get_natural_resources_number(thing);
+		//find selected item level
+		const item_level = get_level(thing);
+		const item_resources_number = get_natural_resources_number(thing);
 
 		//calculate position of the root thing
-		const object_width = object_resources_number * (DIMENSIONS.thing + DIMENSIONS.x_margin);
-		const object_height = object_level * (DIMENSIONS.thing + DIMENSIONS.y_margin);
+		const item_width = item_resources_number * (DIMENSIONS.thing + DIMENSIONS.x_margin);
+		const item_height = item_level * (DIMENSIONS.thing + DIMENSIONS.y_margin);
 
 		svg.empty();
 		//add a margin to width to let some room for bordered things
-		svg.style.width = `${object_width + 20}px`;
+		svg.style.width = `${item_width + 20}px`;
 		//add a margin to height to let some room for the root thing and its caption
-		svg.style.height = `${object_height + DIMENSIONS.thing + 20}px`;
+		svg.style.height = `${item_height + DIMENSIONS.thing + 20}px`;
 		//it is necessary to redraw the svg so the browser adapts the size of the container
 		svg.style.display = 'none';
 		svg.style.display = 'block';
 
-		draw_resource_tree(svg, object_width / 2 + 10, object_height, thing);
+		draw_resource_tree(svg, item_width / 2 + 10, item_height, thing);
 	}
 };

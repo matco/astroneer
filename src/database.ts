@@ -13,9 +13,9 @@ const THING_TYPE = {
 		name: 'resource',
 		plural: 'resources'
 	},
-	OBJECT: {
-		name: 'object',
-		plural: 'objects'
+	ITEM: {
+		name: 'item',
+		plural: 'items'
 	},
 	PLANET: {
 		name: 'planet',
@@ -29,20 +29,20 @@ const Database = {
 		database = await response.json();
 		//add type to all things
 		database.resources.forEach(r => r.type = THING_TYPE.RESOURCE);
-		database.objects.forEach(o => o.type = THING_TYPE.OBJECT);
+		database.items.forEach(i => i.type = THING_TYPE.ITEM);
 		database.planets.forEach(p => p.type = THING_TYPE.PLANET);
 	},
 	GetAll: () => {
 		return [
 			...database.resources,
-			...database.objects,
+			...database.items,
 			...database.planets
 		];
 	},
 	GetThings: type => {
 		switch(type) {
 			case THING_TYPE.RESOURCE: return database.resources;
-			case THING_TYPE.OBJECT: return database.objects;
+			case THING_TYPE.ITEM: return database.items;
 			case THING_TYPE.PLANET: return database.planets;
 		}
 		//satisfy Typescript compiler
@@ -55,11 +55,11 @@ const Database = {
 	GetResource: resource_id => {
 		return find_or_throw(THING_TYPE.RESOURCE, resource_id);
 	},
-	GetObjects: () => {
-		return Database.GetThings(THING_TYPE.OBJECT);
+	GetItems: () => {
+		return Database.GetThings(THING_TYPE.ITEM);
 	},
-	GetObject: object_id => {
-		return find_or_throw(THING_TYPE.OBJECT, object_id);
+	GetItem: item_id => {
+		return find_or_throw(THING_TYPE.ITEM, item_id);
 	},
 	GetPlanets: () => {
 		return Database.GetThings(THING_TYPE.PLANET);

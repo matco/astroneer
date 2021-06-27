@@ -1,6 +1,6 @@
 import {Database} from './database';
 import {Things} from './things';
-import {Objects} from './objects';
+import {Items} from './items';
 import {Planets} from './planets';
 import {Router} from './router';
 import {Utils} from './utils';
@@ -32,7 +32,7 @@ export const Resources = {
 		document.getElementById('resource_natural').style.display = 'none';
 		document.getElementById('resource_crafted').style.display = 'none';
 		document.getElementById('resource_in_atmosphere').style.display = 'none';
-		document.getElementById('resource_in_objects').style.display = 'none';
+		document.getElementById('resource_in_items').style.display = 'none';
 
 		//update title
 		const resource_name = document.getElementById('resource_name');
@@ -96,13 +96,13 @@ export const Resources = {
 			}
 		}
 
-		//objects
-		const objects = Database.GetObjects().filter(o => o.dependencies && o.dependencies.some(d => d.id === resource.id));
-		if(!objects.isEmpty()) {
-			objects
-				.map(Objects.DrawForList)
-				.forEach(Node.prototype.appendChild, document.getElementById('resource_objects').empty());
-			document.getElementById('resource_in_objects').style.display = 'block';
+		//items
+		const items = Database.GetItems().filter(i => i.dependencies && i.dependencies.some(d => d.id === resource.id));
+		if(!items.isEmpty()) {
+			items
+				.map(Items.DrawForList)
+				.forEach(Node.prototype.appendChild, document.getElementById('resource_items').empty());
+			document.getElementById('resource_in_items').style.display = 'block';
 		}
 
 		document.getElementById('resource').style.visibility = '';
