@@ -5,10 +5,10 @@ import {Utils} from './utils';
 
 export const Planets = {
 	DrawImage: planet => {
-		return document.createFullElement('img', {src: Database.GetItemImage(planet)});
+		return document.createFullElement('img', {src: Database.GetThingImage(planet)});
 	},
 	Draw: planet => {
-		const link = document.createFullElement('a', {class: 'item', href: Router.GetURL(planet)});
+		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(planet)});
 		link.appendChild(Planets.DrawImage(planet));
 		link.appendChild(document.createTextNode(planet.name));
 		return link;

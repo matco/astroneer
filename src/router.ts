@@ -11,9 +11,9 @@ export const Router = {
 	Reset: () => {
 		document.getElementById('home').style.display = 'none';
 		document.querySelectorAll('section').forEach(i => i.style.display = 'none');
-		document.getElementById('item')['search'].value = '';
+		document.getElementById('thing')['search'].value = '';
 	},
-	GetURL: item => `#${item.type.name}=${item.id}`,
+	GetURL: thing => `#${thing.type.name}=${thing.id}`,
 	Reload: () => {
 		const event = new UIEvent('hashchange', {bubbles: true, cancelable: true, detail: 1});
 		window.dispatchEvent(event);

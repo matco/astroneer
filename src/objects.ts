@@ -2,14 +2,14 @@ import {Utils} from './utils';
 import {Resources} from './resources';
 import {Database} from './database';
 import {Router} from './router';
-import {Items} from './items';
+import {Things} from './things';
 
 export const Objects = {
 	DrawImage: object => {
-		return document.createFullElement('img', {src: Database.GetItemImage(object)});
+		return document.createFullElement('img', {src: Database.GetThingImage(object)});
 	},
 	Draw: object => {
-		const link = document.createFullElement('a', {class: 'item', href: Router.GetURL(object)});
+		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(object)});
 		link.appendChild(Objects.DrawImage(object));
 		link.appendChild(document.createTextNode(Utils.Localize(object.label)));
 		return link;
@@ -34,7 +34,7 @@ export const Objects = {
 		//draw resource tree after the container is displayed
 		if(object.printed) {
 			const object_tree = /**@type {SVGElement}*/ (/**@type {unknown}*/ (document.getElementById('object_tree')));
-			Items.DrawResourceTree(object, object_tree);
+			Things.DrawResourceTree(object, object_tree);
 		}
 
 		const object_is_printer = document.getElementById('object_is_printer');

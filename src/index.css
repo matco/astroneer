@@ -69,22 +69,22 @@ svg text {
 }
 
 
-.item {
+.thing {
 	display: inline-block;
 	padding: 0.5rem 0;
 	text-decoration: none;
 	color: var(--main-font-color);
 }
-.item img {
+.thing img {
 	width: 2rem;
 	margin-right: 0.5rem;
 	vertical-align: middle;
 }
 
-#item {
+#thing {
 	position: relative;
 }
-#item input {
+#thing input {
 	font-family: 'Astroneer';
 	box-sizing: border-box;
 	width: 100%;
@@ -95,17 +95,17 @@ svg text {
 	border: 5px solid var(--title-font-color);
 	border-radius: 5px;
 }
-#item input:focus {
+#thing input:focus {
 	outline: none;
 }
-#item input:focus::-moz-placeholder {
+#thing input:focus::-moz-placeholder {
 	color: transparent;
 }
-#item input:focus::-webkit-input-placeholder {
+#thing input:focus::-webkit-input-placeholder {
 	color: transparent;
 }
 
-#items {
+#things {
 	display: none;
 	position: absolute;
 	z-index: 100;
@@ -120,19 +120,19 @@ svg text {
 	border-radius: 5px;
 	box-shadow: 0 0 2rem var(--main-font-color);
 }
-#items > li {
+#things > li {
 	cursor: pointer;
 	color: #3e4544;
 	padding: 0.3rem;
 }
-#items > li.selected {
+#things > li.selected {
 	background-color: #263531;
 	color: white;
 }
-#items > li .highlight {
+#things > li .highlight {
 	color: #4ab2e3;
 }
-#items > li > img {
+#things > li > img {
 	width: 2rem;
 	margin-right: 0.5rem;
 	vertical-align: middle;

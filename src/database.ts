@@ -1,14 +1,14 @@
 let database;
 
-function find_or_throw(item_type, item_id) {
-	const item = Database.GetItems(item_type).find(i => i.id === item_id);
-	if(!item) {
-		throw new Error(`No ${item_type} with id ${item_id}`);
+function find_or_throw(thing_type, thing_id) {
+	const thing = Database.GetThings(thing_type).find(t => t.id === thing_id);
+	if(!thing) {
+		throw new Error(`No ${thing_type} with id ${thing_id}`);
 	}
-	return item;
+	return thing;
 }
 
-const ITEM_TYPE = {
+const THING_TYPE = {
 	RESOURCE: {
 		name: 'resource',
 		plural: 'resources'
@@ -27,10 +27,10 @@ const Database = {
 	Init: async () => {
 		const response = await fetch('/data.json');
 		database = await response.json();
-		//add type to all items
-		database.resources.forEach(r => r.type = ITEM_TYPE.RESOURCE);
-		database.objects.forEach(o => o.type = ITEM_TYPE.OBJECT);
-		database.planets.forEach(p => p.type = ITEM_TYPE.PLANET);
+		//add type to all things
+		database.resources.forEach(r => r.type = THING_TYPE.RESOURCE);
+		database.objects.forEach(o => o.type = THING_TYPE.OBJECT);
+		database.planets.forEach(p => p.type = THING_TYPE.PLANET);
 	},
 	GetAll: () => {
 		return [
@@ -39,34 +39,34 @@ const Database = {
 			...database.planets
 		];
 	},
-	GetItems: type => {
+	GetThings: type => {
 		switch(type) {
-			case ITEM_TYPE.RESOURCE: return database.resources;
-			case ITEM_TYPE.OBJECT: return database.objects;
-			case ITEM_TYPE.PLANET: return database.planets;
+			case THING_TYPE.RESOURCE: return database.resources;
+			case THING_TYPE.OBJECT: return database.objects;
+			case THING_TYPE.PLANET: return database.planets;
 		}
 		//satisfy Typescript compiler
 		throw new Error();
 	},
-	GetItemImage: item => `images/${item.type.plural}/${item.id}.png`,
+	GetThingImage: thing => `images/${thing.type.plural}/${thing.id}.png`,
 	GetResources: () => {
-		return Database.GetItems(ITEM_TYPE.RESOURCE);
+		return Database.GetThings(THING_TYPE.RESOURCE);
 	},
 	GetResource: resource_id => {
-		return find_or_throw(ITEM_TYPE.RESOURCE, resource_id);
+		return find_or_throw(THING_TYPE.RESOURCE, resource_id);
 	},
 	GetObjects: () => {
-		return Database.GetItems(ITEM_TYPE.OBJECT);
+		return Database.GetThings(THING_TYPE.OBJECT);
 	},
 	GetObject: object_id => {
-		return find_or_throw(ITEM_TYPE.OBJECT, object_id);
+		return find_or_throw(THING_TYPE.OBJECT, object_id);
 	},
 	GetPlanets: () => {
-		return Database.GetItems(ITEM_TYPE.PLANET);
+		return Database.GetThings(THING_TYPE.PLANET);
 	},
 	GetPlanet: planet_id => {
-		return find_or_throw(ITEM_TYPE.PLANET, planet_id);
+		return find_or_throw(THING_TYPE.PLANET, planet_id);
 	}
 };
 
-export {Database, ITEM_TYPE};
+export {Database, THING_TYPE};

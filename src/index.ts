@@ -5,71 +5,71 @@ import {Forms} from './tools/forms.js';
 import {MOBILE_MEDIA} from './mobile';
 import {Utils} from './utils';
 import {Router} from './router';
-import {Database, ITEM_TYPE} from './database';
+import {Database, THING_TYPE} from './database';
 import {Resources} from './resources';
 import {Objects} from './objects';
 import {Planets} from './planets';
-import {Items} from './items';
+import {Things} from './things';
 
 const REGEXP = /{{ *([a-z_-]+) *}}/gi;
-let items;
+let things;
 
 function normalize_text(text) {
 	return text.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
 }
 
-function provide_item(input) {
+function provide_thing(input) {
 	const text = normalize_text(input);
-	const matching_items = [];
-	let other_items = [];
-	//find items that start with the input
-	items.forEach(i => i.tag.startsWith(text) ? matching_items.push(i) : other_items.push(i));
-	//return these items if there is enough choice
-	if(matching_items.length > 5) {
-		return matching_items.slice(0, 10).map(i => i.item);
+	const matching_things = [];
+	let other_things = [];
+	//find things that start with the input
+	things.forEach(t => t.tag.startsWith(text) ? matching_things.push(t) : other_things.push(t));
+	//return these things if there is enough choice
+	if(matching_things.length > 5) {
+		return matching_things.slice(0, 10).map(t => t.thing);
 	}
-	//update rest items
-	const rest_items = other_items.slice();
-	other_items = [];
-	//find items that include with the input
-	rest_items.forEach(i => i.tag.includes(text) ? matching_items.push(i) : other_items.push(i));
-	//return these items if there is enough choice
-	if(matching_items.length > 5) {
-		return matching_items.slice(0, 10).map(i => i.item);
+	//update rest things
+	const rest_things = other_things.slice();
+	other_things = [];
+	//find things that include with the input
+	rest_things.forEach(t => t.tag.includes(text) ? matching_things.push(t) : other_things.push(t));
+	//return these things if there is enough choice
+	if(matching_things.length > 5) {
+		return matching_things.slice(0, 10).map(t => t.thing);
 	}
 	//fuzzy search
-	other_items.forEach(i => i.distance = levenshtein_distance(i.label, text));
-	const fuzzy_items = other_items.filter(i => i.distance < 4);
-	fuzzy_items.sort((i1, i2) => i1.distance - i2.distance);
-	return [...matching_items, ...fuzzy_items].slice(0, 10).map(i => i.item);
+	other_things.forEach(t => t.distance = levenshtein_distance(t.label, text));
+	const fuzzy_things = other_things.filter(t => t.distance < 4);
+	fuzzy_things.sort((t1, t2) => t1.distance - t2.distance);
+	return [...matching_things, ...fuzzy_things].slice(0, 10).map(t => t.thing);
 }
 
-function draw_item(item, value) {
-	//retrieve item label
-	const label = item.name || Utils.Localize(item.label);
-	const item_li = document.createFullElement('li', {'data-value': label});
-	item_li.appendChild(document.createFullElement('img', {src: Database.GetItemImage(item)}));
+function draw_thing(thing, value) {
+	//retrieve thing label
+	const label = thing.name || Utils.Localize(thing.label);
+	const thing_li = document.createFullElement('li', {'data-value': label});
+	thing_li.appendChild(document.createFullElement('img', {src: Database.GetThingImage(thing)}));
 	//prepare regexp to highlight part of ingredient matching the search
 	const regexp = new RegExp(`(${value})`, 'gi');
-	const item_label = document.createElement('span');
-	item_label.innerHTML = label.replace(regexp, '<span class="highlight">$1</span>');
-	item_li.appendChild(item_label);
-	return item_li;
+	const thing_label = document.createElement('span');
+	thing_label.innerHTML = label.replace(regexp, '<span class="highlight">$1</span>');
+	thing_li.appendChild(thing_label);
+	return thing_li;
 }
 
-function select_item(item) {
+function select_thing(thing) {
 	Router.Reset();
-	switch(item.type) {
-		case ITEM_TYPE.RESOURCE: {
-			Router.SelectResource(item);
+	switch(thing.type) {
+		case THING_TYPE.RESOURCE: {
+			Router.SelectResource(thing);
 			break;
 		}
-		case ITEM_TYPE.OBJECT: {
-			Router.SelectObject(item);
+		case THING_TYPE.OBJECT: {
+			Router.SelectObject(thing);
 			break;
 		}
-		case ITEM_TYPE.PLANET: {
-			Router.SelectPlanet(item);
+		case THING_TYPE.PLANET: {
+			Router.SelectPlanet(thing);
 			break;
 		}
 		default: alert('No match for your search!');
@@ -139,47 +139,47 @@ window.addEventListener(
 				});
 		}
 
-		//retrieve all items and prepare them for a search
-		items = Database.GetAll().map(i => {return {item: i, label: i.name || Utils.Localize(i.label), distance: undefined, tag: undefined};});
-		items.forEach(i => i.tag = normalize_text(i.label));
+		//retrieve all things and prepare them for a search
+		things = Database.GetAll().map(t => {return {thing: t, label: t.name || Utils.Localize(t.label), distance: undefined, tag: undefined};});
+		things.forEach(t => t.tag = normalize_text(t.label));
 
 		Forms.Autocomplete(
-			document.getElementById('item')['search'],
-			document.getElementById('items'),
-			provide_item,
-			draw_item,
-			select_item
+			document.getElementById('thing')['search'],
+			document.getElementById('things'),
+			provide_thing,
+			draw_thing,
+			select_thing
 		);
 
-		document.getElementById('item').addEventListener(
+		document.getElementById('thing').addEventListener(
 			'submit',
 			function(event) {
 				//the form is submitted and the autocomplete has not been used
 				event.stop();
 				const value = this['search'].value;
-				//trying to find the item using the input value
-				const enhanced_item = items.find(i => i.label === value) || items.find(i => i.tag === normalize_text(value));
-				if(enhanced_item) {
-					select_item(enhanced_item.item);
+				//trying to find the thing using the input value
+				const enhanced_thing = things.find(t => t.label === value) || things.find(t => t.tag === normalize_text(value));
+				if(enhanced_thing) {
+					select_thing(enhanced_thing.thing);
 				}
 			}
 		);
 
 		Database.GetResources()
-			.sort(Items.Sort)
+			.sort(Things.Sort)
 			.map(r => Resources.DrawForList(r))
 			.forEach(Node.prototype.appendChild, document.getElementById('home_resources'));
 		Database.GetObjects()
-			.sort(Items.Sort)
+			.sort(Things.Sort)
 			.map(Objects.DrawForList)
 			.forEach(Node.prototype.appendChild, document.getElementById('home_objects'));
 		Database.GetPlanets()
-			.sort(Items.Sort)
+			.sort(Things.Sort)
 			.map(Planets.DrawForList)
 			.forEach(Node.prototype.appendChild, document.getElementById('home_planets'));
 
 
-		//restore selected item
+		//restore selected thing
 		Router.Reload();
 		MOBILE_MEDIA.addEventListener('change', () => Router.Reload());
 

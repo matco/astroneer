@@ -1,5 +1,5 @@
 import {Database} from './database';
-import {Items} from './items';
+import {Things} from './things';
 import {Objects} from './objects';
 import {Planets} from './planets';
 import {Router} from './router';
@@ -7,10 +7,10 @@ import {Utils} from './utils';
 
 export const Resources = {
 	DrawImage: resource => {
-		return document.createFullElement('img', {src: Database.GetItemImage(resource)});
+		return document.createFullElement('img', {src: Database.GetThingImage(resource)});
 	},
 	Draw: resource => {
-		const link = document.createFullElement('a', {class: 'item', href: Router.GetURL(resource)});
+		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(resource)});
 		link.appendChild(Resources.DrawImage(resource));
 		link.appendChild(document.createTextNode(Utils.Localize(resource.label)));
 		return link;
@@ -85,7 +85,7 @@ export const Resources = {
 				//set display block to draw the SVG properly
 				document.getElementById('resource_crafted').style.display = 'block';
 				const resource_tree = /**@type {SVGElement}*/ (/**@type {unknown}*/ (document.getElementById('resource_tree')));
-				Items.DrawResourceTree(resource, resource_tree);
+				Things.DrawResourceTree(resource, resource_tree);
 			}
 			else {
 				Database.GetPlanets()
