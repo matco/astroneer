@@ -13,7 +13,7 @@ export const Router = {
 		document.querySelectorAll('section').forEach(i => i.style.display = 'none');
 		document.getElementById('thing')['search'].value = '';
 	},
-	GetURL: thing => `#${thing.type.name}=${thing.id}`,
+	GetURL: thing => `#${thing.type}=${thing.id}`,
 	Reload: () => {
 		const event = new UIEvent('hashchange', {bubbles: true, cancelable: true, detail: 1});
 		window.dispatchEvent(event);

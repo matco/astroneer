@@ -5,7 +5,7 @@ import {Forms} from './tools/forms.js';
 import {MOBILE_MEDIA} from './mobile';
 import {Utils} from './utils';
 import {Router} from './router';
-import {Database, THING_TYPE} from './database';
+import {Database, ThingType} from './database';
 import {Resources} from './resources';
 import {Items} from './items';
 import {Planets} from './planets';
@@ -60,15 +60,15 @@ function draw_thing(thing, value) {
 function select_thing(thing) {
 	Router.Reset();
 	switch(thing.type) {
-		case THING_TYPE.RESOURCE: {
+		case ThingType.Resource: {
 			Router.SelectResource(thing);
 			break;
 		}
-		case THING_TYPE.ITEM: {
+		case ThingType.Item: {
 			Router.SelectItem(thing);
 			break;
 		}
-		case THING_TYPE.PLANET: {
+		case ThingType.Planet: {
 			Router.SelectPlanet(thing);
 			break;
 		}
