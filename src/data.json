@@ -106,6 +106,13 @@
 			}
 		},
 		{
+			"id": "exo_chip",
+			"label": {
+				"en-US": "EXO Chip",
+				"fr-FR": "Puce EXO"
+			}
+		},
+		{
 			"id": "glass",
 			"label": {
 				"en-US": "Glass",
@@ -905,7 +912,7 @@
 			"printed": "backpack",
 			"dependencies": [
 				{
-					"id": "steel",
+					"id": "exo_chip",
 					"quantity": 1
 				}
 			]
@@ -990,6 +997,20 @@
 			"dependencies": [
 				{
 					"id": "titanium_alloy",
+					"quantity": 1
+				}
+			]
+		},
+		{
+			"id": "hoverboard",
+			"label": {
+				"en-US": "Hoverboard",
+				"fr-FR": "Hoverboard"
+			},
+			"printed": "backpack",
+			"dependencies": [
+				{
+					"id": "exo_chip",
 					"quantity": 1
 				}
 			]
@@ -1534,11 +1555,11 @@
 			"printed": "small_printer",
 			"dependencies": [
 				{
-					"id": "rubber",
+					"id": "exo_chip",
 					"quantity": 1
 				},
 				{
-					"id": "tungsten",
+					"id": "rubber",
 					"quantity": 1
 				}
 			]
@@ -1642,7 +1663,7 @@
 			"printed": "small_printer",
 			"dependencies": [
 				{
-					"id": "tungsten",
+					"id": "exo_chip",
 					"quantity": 1
 				},
 				{
@@ -1802,7 +1823,7 @@
 					"quantity": 1
 				},
 				{
-					"id": "compound",
+					"id": "exo_chip",
 					"quantity": 1
 				}
 			]
@@ -1821,7 +1842,11 @@
 				},
 				{
 					"id": "iron",
-					"quantity": 2
+					"quantity": 1
+				},
+				{
+					"id": "exo_chip",
+					"quantity": 1
 				}
 			]
 		},
@@ -2176,6 +2201,28 @@
 			]
 		},
 		{
+			"id": "vtol",
+			"label": {
+				"en-US": "VTOL",
+				"fr-FR": "VTOL"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "exo_chip",
+					"quantity": 1
+				},
+				{
+					"id": "tungsten_carbide",
+					"quantity": 1
+				},
+				{
+					"id": "silicone",
+					"quantity": 1
+				}
+			]
+		},
+		{
 			"id": "shelter",
 			"label": {
 				"en-US": "Shelter",
@@ -2211,7 +2258,11 @@
 				},
 				{
 					"id": "steel",
-					"quantity": 2
+					"quantity": 1
+				},
+				{
+					"id": "exo_chip",
+					"quantity": 1
 				}
 			]
 		},
@@ -2225,10 +2276,14 @@
 			"dependencies": [
 				{
 					"id": "steel",
-					"quantity": 2
+					"quantity": 1
 				},
 				{
 					"id": "tungsten_carbide",
+					"quantity": 1
+				},
+				{
+					"id": "exo_chip",
 					"quantity": 2
 				}
 			]
@@ -2553,10 +2608,14 @@
 			"dependencies": [
 				{
 					"id": "aluminium_alloy",
-					"quantity": 2
+					"quantity": 1
 				},
 				{
 					"id": "rubber",
+					"quantity": 1
+				},
+				{
+					"id": "exo_chip",
 					"quantity": 2
 				}
 			]
@@ -2621,10 +2680,14 @@
 			"dependencies": [
 				{
 					"id": "ceramic",
-					"quantity": 2
+					"quantity": 1
 				},
 				{
 					"id": "titanium_alloy",
+					"quantity": 1
+				},
+				{
+					"id": "exo_chip",
 					"quantity": 2
 				}
 			]
@@ -2641,7 +2704,8 @@
 				"laterite",
 				"ammonium",
 				"graphite",
-				"sphalerite"
+				"sphalerite",
+				"exo_chip"
 			],
 			"secondary_resources": [
 				"quartz",
@@ -2665,7 +2729,8 @@
 				"organic",
 				"wolframite",
 				"laterite",
-				"graphite"
+				"graphite",
+				"exo_chip"
 			],
 			"secondary_resources": [
 				"quartz",
@@ -2686,7 +2751,8 @@
 				"quartz",
 				"compound",
 				"organic",
-				"malachite"
+				"malachite",
+				"exo_chip"
 			],
 			"secondary_resources": [
 				"wolframite",
@@ -2711,7 +2777,8 @@
 				"compound",
 				"organic",
 				"graphite",
-				"lithium"
+				"lithium",
+				"exo_chip"
 			],
 			"secondary_resources": [
 				"clay",
@@ -2734,7 +2801,8 @@
 			"primary_resources": [
 				"organic",
 				"hematite",
-				"laterite"
+				"laterite",
+				"exo_chip"
 			],
 			"secondary_resources": [
 				"resin",
@@ -2760,7 +2828,8 @@
 				"resin",
 				"compound",
 				"organic",
-				"titanite"
+				"titanite",
+				"exo_chip"
 			],
 			"secondary_resources": [
 				"quartz",
@@ -2783,7 +2852,8 @@
 			"primary_resources": [
 				"quartz",
 				"organic",
-				"laterite"
+				"laterite",
+				"exo_chip"
 			],
 			"secondary_resources": [
 				"resin",
