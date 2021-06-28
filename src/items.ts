@@ -3,23 +3,24 @@ import {Resources} from './resources';
 import {Database} from './database';
 import {Router} from './router';
 import {Things} from './things';
+import {Item} from './types';
 
 export const Items = {
-	DrawImage: item => {
+	DrawImage: (item: Item): HTMLImageElement => {
 		return document.createFullElement('img', {src: Database.GetThingImage(item)});
 	},
-	Draw: item => {
+	Draw: (item: Item): HTMLAnchorElement => {
 		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(item)});
 		link.appendChild(Items.DrawImage(item));
 		link.appendChild(document.createTextNode(Utils.Localize(item.label)));
 		return link;
 	},
-	DrawForList: item => {
+	DrawForList: (item: Item): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		element.appendChild(Items.Draw(item));
 		return element;
 	},
-	Open: item => {
+	Open: (item: Item) => {
 		//use display block to draw the SVG properly but hide the container while it is not fully loaded
 		document.getElementById('item').style.display = 'block';
 		document.getElementById('item').style.visibility = 'hidden';
@@ -33,7 +34,7 @@ export const Items = {
 
 		//draw resource tree after the container is displayed
 		if(item.printed) {
-			const item_tree = /**@type {SVGElement}*/ (/**@type {unknown}*/ (document.getElementById('item_tree')));
+			const item_tree = <SVGElement><any>document.getElementById('item_tree');
 			Things.DrawResourceTree(item, item_tree);
 		}
 

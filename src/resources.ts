@@ -4,18 +4,19 @@ import {Items} from './items';
 import {Planets} from './planets';
 import {Router} from './router';
 import {Utils} from './utils';
+import {Resource} from './types';
 
 export const Resources = {
-	DrawImage: resource => {
+	DrawImage: (resource: Resource): HTMLImageElement => {
 		return document.createFullElement('img', {src: Database.GetThingImage(resource)});
 	},
-	Draw: resource => {
+	Draw: (resource: Resource): HTMLAnchorElement => {
 		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(resource)});
 		link.appendChild(Resources.DrawImage(resource));
 		link.appendChild(document.createTextNode(Utils.Localize(resource.label)));
 		return link;
 	},
-	DrawForList: (resource, quantity?: number) => {
+	DrawForList: (resource: Resource, quantity?: number): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		if(quantity !== undefined) {
 			element.appendChild(document.createFullElement('span', {style: 'margin-right: 1rem'}, quantity.toString()));
@@ -23,7 +24,7 @@ export const Resources = {
 		element.appendChild(Resources.Draw(resource));
 		return element;
 	},
-	Open: resource => {
+	Open: (resource: Resource) => {
 		//use display block to draw the SVG properly but hide the container while it is not fully loaded
 		document.getElementById('resource').style.display = 'block';
 		document.getElementById('resource').style.visibility = 'hidden';
@@ -84,7 +85,7 @@ export const Resources = {
 			if(resource.dependencies) {
 				//set display block to draw the SVG properly
 				document.getElementById('resource_crafted').style.display = 'block';
-				const resource_tree = /**@type {SVGElement}*/ (/**@type {unknown}*/ (document.getElementById('resource_tree')));
+				const resource_tree = <SVGElement><any>document.getElementById('resource_tree');
 				Things.DrawResourceTree(resource, resource_tree);
 			}
 			else {

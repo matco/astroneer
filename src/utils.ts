@@ -10,8 +10,8 @@ export const Utils = {
 		const response = await fetch('/labels.json');
 		labels = await response.json();
 	},
-	Localize: label => label[language] || label[DEFAULT_LANGUAGE],
-	GetLabel: label_id => {
+	Localize: (label: {[key: string]: string}): string => label[language] || label[DEFAULT_LANGUAGE],
+	GetLabel: (label_id: string): string => {
 		//check that label exist
 		const label = labels[label_id];
 		if(!label) {

@@ -4,6 +4,7 @@ import {Resources} from './resources';
 import {Items} from './items';
 import {Utils} from './utils';
 import {Planets} from './planets';
+import {Item, Planet, Resource, Thing} from './types';
 
 const STATE_PREFIX = 'Astroneer Helper';
 
@@ -13,7 +14,7 @@ export const Router = {
 		document.querySelectorAll('section').forEach(i => i.style.display = 'none');
 		document.getElementById('thing')['search'].value = '';
 	},
-	GetURL: thing => `#${thing.type}=${thing.id}`,
+	GetURL: (thing: Thing): string => `#${thing.type}=${thing.id}`,
 	Reload: () => {
 		const event = new UIEvent('hashchange', {bubbles: true, cancelable: true, detail: 1});
 		window.dispatchEvent(event);
@@ -21,7 +22,7 @@ export const Router = {
 	DisplayHome: () => {
 		document.getElementById('home').style.display = 'block';
 	},
-	SelectResource: resource => {
+	SelectResource: (resource: Resource) => {
 		Resources.Open(resource);
 
 		//generate state
@@ -32,7 +33,7 @@ export const Router = {
 			history.pushState(state, `${STATE_PREFIX} - ${Utils.Localize(resource.label)}`, hash);
 		}
 	},
-	SelectItem: item => {
+	SelectItem: (item: Item) => {
 		Items.Open(item);
 
 		//generate state
@@ -43,7 +44,7 @@ export const Router = {
 			history.pushState(state, `${STATE_PREFIX} - ${Utils.Localize(item.label)}`, hash);
 		}
 	},
-	SelectPlanet: planet => {
+	SelectPlanet: (planet: Planet) => {
 		Planets.Open(planet);
 
 		//generate state

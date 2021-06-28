@@ -10,15 +10,16 @@ import {Resources} from './resources';
 import {Items} from './items';
 import {Planets} from './planets';
 import {Things} from './things';
+import {Thing} from './types.js';
 
 const REGEXP = /{{ *([a-z_-]+) *}}/gi;
 let things;
 
-function normalize_text(text) {
+function normalize_text(text: string): string {
 	return text.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
 }
 
-function provide_thing(input) {
+function provide_thing(input: string): Thing[] {
 	const text = normalize_text(input);
 	const matching_things = [];
 	let other_things = [];
@@ -44,9 +45,9 @@ function provide_thing(input) {
 	return [...matching_things, ...fuzzy_things].slice(0, 10).map(t => t.thing);
 }
 
-function draw_thing(thing, value) {
+function draw_thing(thing: Thing, value: string): HTMLLIElement {
 	//retrieve thing label
-	const label = thing.name || Utils.Localize(thing.label);
+	const label = thing.type === ThingType.Planet ? thing.name : Utils.Localize(thing.label);
 	const thing_li = document.createFullElement('li', {'data-value': label});
 	thing_li.appendChild(document.createFullElement('img', {src: Database.GetThingImage(thing)}));
 	//prepare regexp to highlight part of ingredient matching the search
@@ -57,7 +58,7 @@ function draw_thing(thing, value) {
 	return thing_li;
 }
 
-function select_thing(thing) {
+function select_thing(thing: Thing) {
 	Router.Reset();
 	switch(thing.type) {
 		case ThingType.Resource: {
@@ -75,7 +76,7 @@ function select_thing(thing) {
 	}
 }
 
-function levenshtein_distance(source, target) {
+function levenshtein_distance(source: string, target: string): number {
 	if(source.length === 0) {
 		return target.length;
 	}
@@ -139,7 +140,7 @@ window.addEventListener(
 		}
 
 		//retrieve all things and prepare them for a search
-		things = Database.GetAll().map(t => {return {thing: t, label: t.name || Utils.Localize(t.label), distance: undefined, tag: undefined};});
+		things = Database.GetAll().map(t => {return {thing: t, label: t.type === ThingType.Planet ? t.name : Utils.Localize(t.label), distance: undefined, tag: undefined};});
 		things.forEach(t => t.tag = normalize_text(t.label));
 
 		Forms.Autocomplete(

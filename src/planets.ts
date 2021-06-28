@@ -1,24 +1,25 @@
 import {Database} from './database';
 import {Resources} from './resources';
 import {Router} from './router';
+import {Planet} from './types';
 import {Utils} from './utils';
 
 export const Planets = {
-	DrawImage: planet => {
+	DrawImage: (planet: Planet): HTMLImageElement => {
 		return document.createFullElement('img', {src: Database.GetThingImage(planet)});
 	},
-	Draw: planet => {
+	Draw: (planet: Planet): HTMLAnchorElement => {
 		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(planet)});
 		link.appendChild(Planets.DrawImage(planet));
 		link.appendChild(document.createTextNode(planet.name));
 		return link;
 	},
-	DrawForList: planet => {
+	DrawForList: (planet: Planet): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		element.appendChild(Planets.Draw(planet));
 		return element;
 	},
-	Open: planet => {
+	Open: (planet: Planet) => {
 		//update title
 		const planet_name = document.getElementById('planet_name');
 		planet_name.empty();

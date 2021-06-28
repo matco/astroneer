@@ -1,8 +1,9 @@
 import {SVG} from '@matco/basic-tools/svg.js';
 import {Utils} from './utils';
-import {Database} from './database';
+import {Database, ThingType} from './database';
 import {Router} from './router';
 import {MOBILE_MEDIA} from './mobile';
+import {Item, Resource, Thing} from './types';
 
 const DIMENSIONS = {
 	thing: undefined,
@@ -18,7 +19,7 @@ function update_dimensions() {
 	DIMENSIONS.y_margin = DIMENSIONS.thing * (MOBILE_MEDIA.matches ? 3 : 2.5);
 }
 
-function get_level(thing) {
+function get_level(thing: Resource|Item): number {
 	if(!thing.dependencies) {
 		return 0;
 	}
@@ -29,10 +30,10 @@ function get_level(thing) {
 
 /**
  *
- * @param {*} thing the thing (resource of item) used to perform the calculation
+ * @param {Resource|Item} thing the thing (resource of item) used to perform the calculation
  * @returns the number of natural resources required to build the thing
  */
-function get_natural_resources_number(thing) {
+function get_natural_resources_number(thing: Resource|Item): number {
 	if(!thing.dependencies) {
 		return 1;
 	}
@@ -45,16 +46,16 @@ function get_natural_resources_number(thing) {
 /**
  *
  * @param {SVGElement} svg the SVG element where drawing will be made
- * @param {*} x the x position in the SVG
- * @param {*} y the y position in the SVG
- * @param {*} thing the thing (item or resource) to draw
- * @param {*} quantity
+ * @param {number} x the x position in the SVG
+ * @param {number} y the y position in the SVG
+ * @param {Resource|Item} thing the thing (item or resource) to draw
+ * @param {number} quantity
  * Pay attention to the coordinates:
  * x is important because it is relative to the previous thing
  * y is a useless parameter (it has been kept because it could be used for an alternative representation)
  * the y-axis coordinate is absolute and is calculated according to the thing level
  */
-function draw_resource_tree(svg, x, y, thing, quantity?) {
+function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resource|Item, quantity?: number) {
 	//create a group at the thing position
 	const group = SVG.Group({transform: `translate(${x},${y + DIMENSIONS.thing / 2})`});
 	svg.appendChild(group);
@@ -88,7 +89,7 @@ function draw_resource_tree(svg, x, y, thing, quantity?) {
 			draw_resource_tree(svg, dependency_x, dependency_y, resource, dependency.quantity);
 		});
 		//draw module
-		const module = thing.printed ? Database.GetItem(thing.printed) : Database.GetItem(thing.crafted);
+		const module = thing.type === ThingType.Item ? Database.GetItem(thing.printed) : Database.GetItem(thing.crafted);
 		const module_link = SVG.Link(Router.GetURL(module));
 		group.appendChild(module_link);
 		module_link.appendChild(SVG.ImageCentered(0, module_y, DIMENSIONS.module, DIMENSIONS.module, Database.GetThingImage(module)));
@@ -102,8 +103,8 @@ function draw_resource_tree(svg, x, y, thing, quantity?) {
 }
 
 export const Things = {
-	Sort: (thing1, thing2) => thing1.id.compareTo(thing2.id),
-	DrawResourceTree: (thing, svg) => {
+	Sort: (thing1: Thing, thing2: Thing): number => thing1.id.compareTo(thing2.id),
+	DrawResourceTree: (thing: Resource|Item, svg: SVGElement) => {
 		update_dimensions();
 		//find selected item level
 		const item_level = get_level(thing);

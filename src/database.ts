@@ -1,9 +1,11 @@
+import {Item, Planet, Resource, Thing} from './types';
+
 let database;
 
-function find_or_throw(thing_type, thing_id) {
-	const thing = Database.GetThings(thing_type).find(t => t.id === thing_id);
+function find_or_throw<T extends Thing>(things: T[], thing_id: string): T {
+	const thing = things.find(t => t.id === thing_id);
 	if(!thing) {
-		throw new Error(`No ${thing_type} with id ${thing_id}`);
+		throw new Error(`No thing with id ${thing_id}`);
 	}
 	return thing;
 }
@@ -17,14 +19,14 @@ enum ThingType {
 const Database = {
 	Init: async () => {
 		const response = await fetch('/data.json');
-		database = await response.json();
+		database = Object.seal(await response.json());
 		//add type to all things
 		database.resources.forEach(r => r.type = ThingType.Resource);
 		database.items.forEach(i => i.type = ThingType.Item);
 		database.planets.forEach(p => p.type = ThingType.Planet);
 	},
-	GetAll: () => [...database.resources, ...database.items, ...database.planets],
-	GetThings: type => {
+	GetAll: (): Thing[] => [...database.resources, ...database.items, ...database.planets],
+	GetThings: (type: ThingType): Thing[] => {
 		switch(type) {
 			case ThingType.Resource: return database.resources;
 			case ThingType.Item: return database.items;
@@ -33,13 +35,13 @@ const Database = {
 		//satisfy Typescript compiler
 		throw new Error();
 	},
-	GetThingImage: thing => `images/${thing.type}/${thing.id}.png`,
-	GetResources: () => Database.GetThings(ThingType.Resource),
-	GetResource: resource_id => find_or_throw(ThingType.Resource, resource_id),
-	GetItems: () => Database.GetThings(ThingType.Item),
-	GetItem: item_id => find_or_throw(ThingType.Item, item_id),
-	GetPlanets: () => Database.GetThings(ThingType.Planet),
-	GetPlanet: planet_id => find_or_throw(ThingType.Planet, planet_id)
+	GetThingImage: (thing: Thing): string => `images/${thing.type}/${thing.id}.png`,
+	GetResources: (): Resource[] => database.resources.slice(),
+	GetResource: (resource_id: string): Resource => find_or_throw(Database.GetResources(), resource_id),
+	GetItems: (): Item[] => database.items.slice(),
+	GetItem: (item_id: string): Item => find_or_throw(Database.GetItems(), item_id),
+	GetPlanets: (): Planet[] => database.planets.slice(),
+	GetPlanet: (planet_id: string): Planet => find_or_throw(Database.GetPlanets(), planet_id)
 };
 
 export {Database, ThingType};
