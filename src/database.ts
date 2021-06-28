@@ -32,13 +32,7 @@ const Database = {
 		database.items.forEach(i => i.type = THING_TYPE.ITEM);
 		database.planets.forEach(p => p.type = THING_TYPE.PLANET);
 	},
-	GetAll: () => {
-		return [
-			...database.resources,
-			...database.items,
-			...database.planets
-		];
-	},
+	GetAll: () => [...database.resources, ...database.items, ...database.planets],
 	GetThings: type => {
 		switch(type) {
 			case THING_TYPE.RESOURCE: return database.resources;
@@ -49,24 +43,12 @@ const Database = {
 		throw new Error();
 	},
 	GetThingImage: thing => `images/${thing.type.plural}/${thing.id}.png`,
-	GetResources: () => {
-		return Database.GetThings(THING_TYPE.RESOURCE);
-	},
-	GetResource: resource_id => {
-		return find_or_throw(THING_TYPE.RESOURCE, resource_id);
-	},
-	GetItems: () => {
-		return Database.GetThings(THING_TYPE.ITEM);
-	},
-	GetItem: item_id => {
-		return find_or_throw(THING_TYPE.ITEM, item_id);
-	},
-	GetPlanets: () => {
-		return Database.GetThings(THING_TYPE.PLANET);
-	},
-	GetPlanet: planet_id => {
-		return find_or_throw(THING_TYPE.PLANET, planet_id);
-	}
+	GetResources: () => Database.GetThings(THING_TYPE.RESOURCE),
+	GetResource: resource_id => find_or_throw(THING_TYPE.RESOURCE, resource_id),
+	GetItems: () => Database.GetThings(THING_TYPE.ITEM),
+	GetItem: item_id => find_or_throw(THING_TYPE.ITEM, item_id),
+	GetPlanets: () => Database.GetThings(THING_TYPE.PLANET),
+	GetPlanet: planet_id => find_or_throw(THING_TYPE.PLANET, planet_id)
 };
 
 export {Database, THING_TYPE};
