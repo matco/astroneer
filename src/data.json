@@ -1018,7 +1018,7 @@
 		{
 			"id": "medium_printer",
 			"label": {
-				"en-US": "Medium printer",
+				"en-US": "Medium Printer",
 				"fr-FR": "Imprimante moyenne"
 			},
 			"printer": true,
@@ -1051,7 +1051,7 @@
 		{
 			"id": "medium_shredder",
 			"label": {
-				"en-US": "Medium shredder",
+				"en-US": "Medium Shredder",
 				"fr-FR": "Broyeur moyen"
 			},
 			"printed": "small_printer",
@@ -1065,7 +1065,7 @@
 		{
 			"id": "field_shelter",
 			"label": {
-				"en-US": "Field shelter",
+				"en-US": "Field Shelter",
 				"fr-FR": "Abri mobile"
 			},
 			"printed": "small_printer",
@@ -1083,7 +1083,7 @@
 		{
 			"id": "auto_arm",
 			"label": {
-				"en-US": "Auto arm",
+				"en-US": "Auto Arm",
 				"fr-FR": "Bras auto"
 			},
 			"printed": "small_printer",
@@ -1155,7 +1155,7 @@
 		{
 			"id": "power_sensor",
 			"label": {
-				"en-US": "Power sensor",
+				"en-US": "Power Sensor",
 				"fr-FR": "Capteur d’alimentation"
 			},
 			"printed": "small_printer",
@@ -1173,7 +1173,7 @@
 		{
 			"id": "storage_sensor",
 			"label": {
-				"en-US": "Storage sensor",
+				"en-US": "Storage Sensor",
 				"fr-FR": "Capteur de stockage"
 			},
 			"printed": "small_printer",
@@ -1191,7 +1191,7 @@
 		{
 			"id": "battery_sensor",
 			"label": {
-				"en-US": "Battery sensor",
+				"en-US": "Battery Sensor",
 				"fr-FR": "Capteur de batterie"
 			},
 			"printed": "small_printer",
@@ -1209,7 +1209,7 @@
 		{
 			"id": "button_repeater",
 			"label": {
-				"en-US": "Button repeater",
+				"en-US": "Button Repeater",
 				"fr-FR": "Répéteur de bouton"
 			},
 			"printed": "small_printer",
@@ -1223,7 +1223,7 @@
 		{
 			"id": "count_repeater",
 			"label": {
-				"en-US": "Count repeater",
+				"en-US": "Count Repeater",
 				"fr-FR": "Répéteur de compte"
 			},
 			"printed": "small_printer",
@@ -1237,7 +1237,7 @@
 		{
 			"id": "delay_repeater",
 			"label": {
-				"en-US": "Delay repeater",
+				"en-US": "Delay Repeater",
 				"fr-FR": "Répéteur de retard"
 			},
 			"printed": "small_printer",
@@ -1351,7 +1351,7 @@
 		{
 			"id": "medium_battery",
 			"label": {
-				"en-US": "Medium battery",
+				"en-US": "Medium Battery",
 				"fr-FR": "Batterie moyenne"
 			},
 			"printed": "small_printer",
@@ -1585,7 +1585,7 @@
 		{
 			"id": "drill_strength_1",
 			"label": {
-				"en-US": "Drill strength 1",
+				"en-US": "Drill Strength 1",
 				"fr-FR": "Puissance de foret 1"
 			},
 			"printed": "small_printer",
@@ -1603,7 +1603,7 @@
 		{
 			"id": "drill_strength_2",
 			"label": {
-				"en-US": "Drill strength 2",
+				"en-US": "Drill Strength 2",
 				"fr-FR": "Puissance de foret 2"
 			},
 			"printed": "small_printer",
@@ -1621,7 +1621,7 @@
 		{
 			"id": "drill_strength_3",
 			"label": {
-				"en-US": "Drill strength 3",
+				"en-US": "Drill Strength 3",
 				"fr-FR": "Puissance de foret 3"
 			},
 			"printed": "small_printer",
@@ -1639,7 +1639,7 @@
 		{
 			"id": "solid_fuel_thruster",
 			"label": {
-				"en-US": "Solid-Fuel thruster",
+				"en-US": "Solid-Fuel Thruster",
 				"fr-FR": "Propulseur à carburant solide"
 			},
 			"printed": "small_printer",
@@ -1657,7 +1657,7 @@
 		{
 			"id": "hydrazine_thruster",
 			"label": {
-				"en-US": "Hydrazine thruster",
+				"en-US": "Hydrazine Thruster",
 				"fr-FR": "Propulseur à hydrazine"
 			},
 			"printed": "small_printer",
