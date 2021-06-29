@@ -72,7 +72,6 @@ function select_thing(thing) {
 			Router.SelectPlanet(thing);
 			break;
 		}
-		default: alert('No match for your search!');
 	}
 }
 
