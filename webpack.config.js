@@ -31,7 +31,7 @@ export default {
 		}),
 		new CopyPlugin({
 			patterns: [
-				{from: './*.json', to: '[name].json'},
+				{from: '*.json'},
 				{from: './images', to: 'images'}
 			],
 		})
