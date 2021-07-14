@@ -68,19 +68,20 @@ window.addEventListener(
 			//retrieve ingredient
 			const resource = Database.GetResource(data.resource);
 			Router.SelectResource(resource);
+			return;
 		}
-		else if(data.hasOwnProperty('item')) {
+		if(data.hasOwnProperty('item')) {
 			//retrieve ingredient
 			const printer = Database.GetItem(data.item);
 			Router.SelectItem(printer);
+			return;
 		}
-		else if(data.hasOwnProperty('planet')) {
+		if(data.hasOwnProperty('planet')) {
 			//retrieve ingredient
 			const planet = Database.GetPlanet(data.planet);
 			Router.SelectPlanet(planet);
+			return;
 		}
-		else {
-			Router.DisplayHome();
-		}
+		Router.DisplayHome();
 	}
 );
