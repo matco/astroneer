@@ -1,9 +1,9 @@
-const DEFAULT_LANGUAGE = 'en-US';
+const LANGUAGES = ['en-US', 'fr-FR'];
+const DEFAULT_LANGUAGE = LANGUAGES[0];
 const REGEXP = /{{ *([a-z_-]+) *}}/gi;
 
 //manage navigator language hazardously
-const language = navigator.language.includes('fr') ? 'fr-FR' : 'us-US';
-
+const selected_language = LANGUAGES.find(l => l.includes(navigator.language)) || DEFAULT_LANGUAGE;
 let labels;
 
 export const Labels = {
@@ -11,7 +11,7 @@ export const Labels = {
 		const response = await fetch('/labels.json');
 		labels = await response.json();
 	},
-	Localize: (label: {[key: string]: string}): string => label[language] || label[DEFAULT_LANGUAGE],
+	Localize: (label: {[key: string]: string}): string => label[selected_language] || label[DEFAULT_LANGUAGE],
 	GetLabel: (label_id: string): string => {
 		//check that label exist
 		const label = labels[label_id];
