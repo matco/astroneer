@@ -1,6 +1,6 @@
 const LANGUAGES = ['en-US', 'fr-FR'];
 const DEFAULT_LANGUAGE = LANGUAGES[0];
-const REGEXP = /{{ *([a-z_-]+) *}}/gi;
+const REGEXP = /{{ *([a-z_-]+?) *}}/gi;
 
 //manage navigator language hazardously
 const selected_language = LANGUAGES.find(l => l.includes(navigator.language)) || DEFAULT_LANGUAGE;
