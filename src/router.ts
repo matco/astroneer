@@ -5,6 +5,7 @@ import {Items} from './items';
 import {Labels} from './labels';
 import {Planets} from './planets';
 import {Item, Planet, Resource, Thing} from './types';
+import {Home} from './home';
 
 const STATE_PREFIX = 'Astroneer Helper';
 
@@ -20,7 +21,7 @@ export const Router = {
 		window.dispatchEvent(event);
 	},
 	DisplayHome: () => {
-		document.getElementById('home').style.display = 'block';
+		Home.Open();
 	},
 	SelectResource: (resource: Resource) => {
 		Resources.Open(resource);

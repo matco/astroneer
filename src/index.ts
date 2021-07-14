@@ -151,21 +151,7 @@ window.addEventListener(
 			}
 		);
 
-		Database.GetResources()
-			.sort(Things.Sort)
-			.map(r => Resources.DrawForList(r))
-			.forEach(Node.prototype.appendChild, document.getElementById('home_resources'));
-		Database.GetItems()
-			.sort(Things.Sort)
-			.map(Items.DrawForList)
-			.forEach(Node.prototype.appendChild, document.getElementById('home_items'));
-		Database.GetPlanets()
-			.sort(Things.Sort)
-			.map(Planets.DrawForList)
-			.forEach(Node.prototype.appendChild, document.getElementById('home_planets'));
-
-
-		//restore selected thing
+		//restore selected state
 		Router.Reload();
 		MOBILE_MEDIA.addEventListener('change', () => Router.Reload());
 
