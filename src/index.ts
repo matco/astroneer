@@ -12,7 +12,6 @@ import {Planets} from './planets';
 import {Things} from './things';
 import {Thing} from './types';
 
-const REGEXP = /{{ *([a-z_-]+) *}}/gi;
 let things;
 
 function normalize_text(text: string): string {
@@ -109,20 +108,7 @@ window.addEventListener(
 	async function() {
 		await Utils.Init();
 		await Database.Init();
-
-		//localize labels
-		document.querySelectorAll('*').forEach(node => {
-			if(node.textContent.startsWith('{{') && node.textContent.endsWith('}}')) {
-				node.textContent = node.textContent.replace(REGEXP, (_, part) => Utils.GetLabel(part));
-			}
-			const attributes = node.attributes;
-			for(let i = 0; i < attributes.length; i++) {
-				const attribute = attributes[i];
-				if(attribute.value.startsWith('{{') && attribute.value.endsWith('}}')) {
-					attribute.value = attribute.value.replace(REGEXP, (_, part) => Utils.GetLabel(part));
-				}
-			}
-		});
+		Utils.LocalizeLabels();
 
 		//register service workers used to cache application
 		const https = window.location.protocol === 'https:';
