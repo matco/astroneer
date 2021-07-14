@@ -10,7 +10,7 @@ import {Resources} from './resources';
 import {Items} from './items';
 import {Planets} from './planets';
 import {Things} from './things';
-import {Thing} from './types.js';
+import {Thing} from './types';
 
 const REGEXP = /{{ *([a-z_-]+) *}}/gi;
 let things;
