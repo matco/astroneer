@@ -8,12 +8,33 @@
 		<title>Astroneer Helper</title>
 	</head>
 	<body class="disabled">
-		<h1><a href="#" title="{{ go_back_home }}">Astroneer Helper</a></h1>
+		<h1>
+			<a href="#" title="{{ go_back_home }}">Astroneer Helper</a>
+			<a id="settings_link" href="#settings" title="{{ manage_settings }}"><img src="images/settings.svg" /></a>
+		</h1>
+		<form id="settings" class="section">
+			<h2>{{ settings }}</h2>
+			<div>
+				<p>
+					<label>
+						{{ setting_language }}
+						<select name="language">
+							<option value="">{{ setting_language_auto }}</option>
+							<option value="en-US">{{ setting_language_en }}</option>
+							<option value="fr-FR">{{ setting_language_fr }}</option>
+						</select>
+					</label>
+				</p>
+				<p style="text-align: center;">
+					<button>{{ setting_save }}</button>
+				</p>
+			</div>
+		</form>
 		<form id="thing">
 			<input name="search" autocomplete="off" type="search" placeholder="{{ search_placeholder }}" />
 			<ul id="things"></ul>
 		</form>
-		<section id="home">
+		<section id="home" class="section">
 			<div>
 				<h3>{{ resources }}</h3>
 				<ul id="home_resources"></ul>
@@ -23,7 +44,7 @@
 				<ul id="home_planets"></ul>
 			</div>
 		</section>
-		<section id="resource">
+		<section id="resource" class="section">
 			<h2 id="resource_name"></h2>
 			<div>
 				<div id="resource_natural">
@@ -55,7 +76,7 @@
 				</div>
 			</div>
 		</section>
-		<section id="item">
+		<section id="item" class="section">
 			<h2 id="item_name"></h2>
 			<div>
 				<svg id="item_tree" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -69,7 +90,7 @@
 				</div>
 			</div>
 		</section>
-		<section id="planet">
+		<section id="planet" class="section">
 			<h2 id="planet_name"></h2>
 			<div>
 				<h3>{{ planet_primary_resources }}</h3>

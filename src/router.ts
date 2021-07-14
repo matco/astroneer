@@ -5,6 +5,7 @@ import {Items} from './items';
 import {Labels} from './labels';
 import {Planets} from './planets';
 import {Item, Planet, Resource, Thing} from './types';
+import {Settings} from './settings';
 import {Home} from './home';
 
 const STATE_PREFIX = 'Astroneer Helper';
@@ -12,7 +13,9 @@ const STATE_PREFIX = 'Astroneer Helper';
 export const Router = {
 	Reset: () => {
 		document.getElementById('home').style.display = 'none';
+		document.getElementById('settings').style.display = 'none';
 		document.querySelectorAll('section').forEach(i => i.style.display = 'none');
+		document.getElementById('thing').style.display = 'none';
 		document.getElementById('thing')['search'].value = '';
 	},
 	GetURL: (thing: Thing): string => `#${thing.type}=${thing.id}`,
@@ -21,9 +24,18 @@ export const Router = {
 		window.dispatchEvent(event);
 	},
 	DisplayHome: () => {
+		document.getElementById('thing').style.display = 'block';
 		Home.Open();
 	},
+	DisplaySettings: () => {
+		Settings.Open();
+		//push state if necessary
+		if(location.hash !== '#settings') {
+			history.pushState(undefined, STATE_PREFIX, '#settings');
+		}
+	},
 	SelectResource: (resource: Resource) => {
+		document.getElementById('thing').style.display = 'block';
 		Resources.Open(resource);
 
 		//generate state
@@ -35,6 +47,7 @@ export const Router = {
 		}
 	},
 	SelectItem: (item: Item) => {
+		document.getElementById('thing').style.display = 'block';
 		Items.Open(item);
 
 		//generate state
@@ -46,6 +59,7 @@ export const Router = {
 		}
 	},
 	SelectPlanet: (planet: Planet) => {
+		document.getElementById('thing').style.display = 'block';
 		Planets.Open(planet);
 
 		//generate state
@@ -63,6 +77,10 @@ window.addEventListener(
 	function() {
 		Router.Reset();
 		//retrieve data encoded in hash
+		if(location.hash === '#settings') {
+			Router.DisplaySettings();
+			return;
+		}
 		const data = Hash.Decode(location.hash);
 		if(data.hasOwnProperty('resource')) {
 			//retrieve ingredient

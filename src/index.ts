@@ -11,6 +11,7 @@ import {Items} from './items';
 import {Planets} from './planets';
 import {Things} from './things';
 import {Thing} from './types';
+import {Settings} from './settings';
 
 let things;
 
@@ -108,6 +109,8 @@ window.addEventListener(
 	async function() {
 		await Labels.Init();
 		await Database.Init();
+		Settings.Init();
+
 		Labels.LocalizeLabels();
 
 		//register service workers used to cache application

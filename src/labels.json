@@ -1,6 +1,13 @@
 {
 	"go_back": {"en-US": "Back", "fr-FR": "Retour"},
 	"go_back_home": {"en-US": "Back to home", "fr-FR": "Retour à l'accueil"},
+	"manage_settings": {"en-US": "Manage settings", "fr-FR": "Gérer les préférences"},
+	"settings": {"en-US": "Settings", "fr-FR": "Préférences"},
+	"setting_language": {"en-US": "Language", "fr-FR": "Langue"},
+	"setting_language_auto": {"en-US": "Automatic", "fr-FR": "Automatique"},
+	"setting_language_en": {"en-US": "English", "fr-FR": "Anglais"},
+	"setting_language_fr": {"en-US": "French", "fr-FR": "Français"},
+	"setting_save": {"en-US": "Save", "fr-FR": "Sauver"},
 	"search_placeholder": {"en-US": "resource, item, planet...", "fr-FR": "ressource, élément, planète..."},
 	"resources": {"en-US": "Resources", "fr-FR": "Ressources"},
 	"items": {"en-US": "Items", "fr-FR": "Eléments"},

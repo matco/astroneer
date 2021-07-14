@@ -2,14 +2,22 @@ const LANGUAGES = ['en-US', 'fr-FR'];
 const DEFAULT_LANGUAGE = LANGUAGES[0];
 const REGEXP = /{{ *([a-z_-]+?) *}}/gi;
 
-//manage navigator language hazardously
-const selected_language = LANGUAGES.find(l => l.includes(navigator.language)) || DEFAULT_LANGUAGE;
+let selected_language;
 let labels;
 
 export const Labels = {
 	Init: async () => {
 		const response = await fetch('/labels.json');
 		labels = await response.json();
+		//retrieve language saved in settings
+		const settings = localStorage.getObject('settings');
+		if(settings && settings['language'] && LANGUAGES.includes(settings['language'])) {
+			selected_language = settings['language'];
+		}
+		//manage navigator language hazardously
+		else {
+			selected_language = LANGUAGES.find(l => l.includes(navigator.language)) || DEFAULT_LANGUAGE;
+		}
 	},
 	Localize: (label: {[key: string]: string}): string => label[selected_language] || label[DEFAULT_LANGUAGE],
 	GetLabel: (label_id: string): string => {
