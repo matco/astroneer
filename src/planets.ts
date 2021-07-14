@@ -2,7 +2,7 @@ import {Database} from './database';
 import {Resources} from './resources';
 import {Router} from './router';
 import {Planet} from './types';
-import {Utils} from './utils';
+import {Labels} from './labels';
 
 export const Planets = {
 	DrawImage: (planet: Planet): HTMLImageElement => {
@@ -23,7 +23,7 @@ export const Planets = {
 		//update title
 		const planet_name = document.getElementById('planet_name');
 		planet_name.empty();
-		planet_name.appendChild(document.createFullElement('button', {title: Utils.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
+		planet_name.appendChild(document.createFullElement('button', {title: Labels.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
 		planet_name.appendChild(Planets.DrawImage(planet));
 		planet_name.appendChild(document.createTextNode(planet.name));
 

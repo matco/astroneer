@@ -3,7 +3,7 @@ import '@matco/basic-tools/dom_extension.js';
 
 import {Forms} from './tools/forms.js';
 import {MOBILE_MEDIA} from './mobile';
-import {Utils} from './utils';
+import {Labels} from './labels';
 import {Router} from './router';
 import {Database, ThingType} from './database';
 import {Resources} from './resources';
@@ -46,7 +46,7 @@ function provide_thing(input: string): Thing[] {
 
 function draw_thing(thing: Thing, value: string): HTMLLIElement {
 	//retrieve thing label
-	const label = thing.type === ThingType.Planet ? thing.name : Utils.Localize(thing.label);
+	const label = thing.type === ThingType.Planet ? thing.name : Labels.Localize(thing.label);
 	const thing_li = document.createFullElement('li', {'data-value': label});
 	thing_li.appendChild(document.createFullElement('img', {src: Database.GetThingImage(thing)}));
 	//prepare regexp to highlight part of ingredient matching the search
@@ -106,9 +106,9 @@ function levenshtein_distance(source: string, target: string): number {
 window.addEventListener(
 	'load',
 	async function() {
-		await Utils.Init();
+		await Labels.Init();
 		await Database.Init();
-		Utils.LocalizeLabels();
+		Labels.LocalizeLabels();
 
 		//register service workers used to cache application
 		const https = window.location.protocol === 'https:';
@@ -126,7 +126,7 @@ window.addEventListener(
 		}
 
 		//retrieve all things and prepare them for a search
-		things = Database.GetAll().map(t => {return {thing: t, label: t.type === ThingType.Planet ? t.name : Utils.Localize(t.label), distance: undefined, tag: undefined};});
+		things = Database.GetAll().map(t => {return {thing: t, label: t.type === ThingType.Planet ? t.name : Labels.Localize(t.label), distance: undefined, tag: undefined};});
 		things.forEach(t => t.tag = normalize_text(t.label));
 
 		Forms.Autocomplete(

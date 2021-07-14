@@ -1,4 +1,4 @@
-import {Utils} from './utils';
+import {Labels} from './labels';
 import {Resources} from './resources';
 import {Database} from './database';
 import {Router} from './router';
@@ -12,7 +12,7 @@ export const Items = {
 	Draw: (item: Item): HTMLAnchorElement => {
 		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(item)});
 		link.appendChild(Items.DrawImage(item));
-		link.appendChild(document.createTextNode(Utils.Localize(item.label)));
+		link.appendChild(document.createTextNode(Labels.Localize(item.label)));
 		return link;
 	},
 	DrawForList: (item: Item): HTMLLIElement => {
@@ -28,9 +28,9 @@ export const Items = {
 		//update title
 		const item_name = document.getElementById('item_name');
 		item_name.empty();
-		item_name.appendChild(document.createFullElement('button', {title: Utils.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
+		item_name.appendChild(document.createFullElement('button', {title: Labels.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
 		item_name.appendChild(Items.DrawImage(item));
-		item_name.appendChild(document.createTextNode(Utils.Localize(item.label)));
+		item_name.appendChild(document.createTextNode(Labels.Localize(item.label)));
 
 		//draw resource tree after the container is displayed
 		if(item.printed) {
@@ -43,7 +43,7 @@ export const Items = {
 		if(item.printer) {
 			Database.GetItems()
 				.filter(i => i.printed === item.id)
-				.sort((i1, i2) => Utils.Localize(i1.label).compareTo(Utils.Localize(i2.label)))
+				.sort((i1, i2) => Labels.Localize(i1.label).compareTo(Labels.Localize(i2.label)))
 				.map(Items.DrawForList)
 				.forEach(Node.prototype.appendChild, document.getElementById('item_printer_items').empty());
 			item_is_printer.style.display = 'block';

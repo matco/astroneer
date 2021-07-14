@@ -3,7 +3,7 @@ import {Things} from './things';
 import {Items} from './items';
 import {Planets} from './planets';
 import {Router} from './router';
-import {Utils} from './utils';
+import {Labels} from './labels';
 import {Resource} from './types';
 
 export const Resources = {
@@ -13,7 +13,7 @@ export const Resources = {
 	Draw: (resource: Resource): HTMLAnchorElement => {
 		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(resource)});
 		link.appendChild(Resources.DrawImage(resource));
-		link.appendChild(document.createTextNode(Utils.Localize(resource.label)));
+		link.appendChild(document.createTextNode(Labels.Localize(resource.label)));
 		return link;
 	},
 	DrawForList: (resource: Resource, quantity?: number): HTMLLIElement => {
@@ -38,9 +38,9 @@ export const Resources = {
 		//update title
 		const resource_name = document.getElementById('resource_name');
 		resource_name.empty();
-		resource_name.appendChild(document.createFullElement('button', {title: Utils.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
+		resource_name.appendChild(document.createFullElement('button', {title: Labels.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
 		resource_name.appendChild(Resources.DrawImage(resource));
-		resource_name.appendChild(document.createTextNode(Utils.Localize(resource.label)));
+		resource_name.appendChild(document.createTextNode(Labels.Localize(resource.label)));
 
 		if(!resource.crafted) {
 			//primary planets
