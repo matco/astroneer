@@ -21,9 +21,12 @@ export const Items = {
 		return element;
 	},
 	Open: (item: Item) => {
+		const item_tree = <SVGElement><any>document.getElementById('item_tree');
+
 		//use display block to draw the SVG properly but hide the container while it is not fully loaded
 		document.getElementById('item').style.display = 'block';
 		document.getElementById('item').style.visibility = 'hidden';
+		item_tree.style.display = 'block';
 
 		//update title
 		const item_name = document.getElementById('item_name');
@@ -32,10 +35,13 @@ export const Items = {
 		item_name.appendChild(Items.DrawImage(item));
 		item_name.appendChild(document.createTextNode(Labels.Localize(item.label)));
 
-		//draw resource tree after the container is displayed
 		if(item.printed) {
-			const item_tree = <SVGElement><any>document.getElementById('item_tree');
+			//draw resource tree after the container is displayed
+			item_tree.style.display = 'block';
 			Things.DrawResourceTree(item, item_tree);
+		}
+		else {
+			item_tree.style.display = 'none';
 		}
 
 		const item_is_printer = document.getElementById('item_is_printer');
