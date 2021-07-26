@@ -18,6 +18,7 @@
 	"resource_at_core": {"en-US": "At core", "fr-FR": "Au noyau"},
 	"resource_planets": {"en-US": "Planets", "fr-FR": "Planètes"},
 	"resource_items": {"en-US": "Required by items", "fr-FR": "Requis pour les éléments"},
+	"resource_crafted_resources": {"en-US": "Required by resources", "fr-FR": "Requis pour les ressources"},
 	"item_printer_items": {"en-US": "Prints", "fr-FR": "Imprime"},
 	"item_craft_resources": {"en-US": "Crafts", "fr-FR": "Fabrique"},
 	"planet_primary_resources": {"en-US": "Primary resources", "fr-FR": "Ressources primaires"},

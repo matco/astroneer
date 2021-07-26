@@ -34,6 +34,7 @@ export const Resources = {
 		document.getElementById('resource_crafted').style.display = 'none';
 		document.getElementById('resource_in_atmosphere').style.display = 'none';
 		document.getElementById('resource_in_items').style.display = 'none';
+		document.getElementById('resource_in_crafted_resources').style.display = 'none';
 
 		//update title
 		const resource_name = document.getElementById('resource_name');
@@ -104,6 +105,15 @@ export const Resources = {
 				.map(Items.DrawForList)
 				.forEach(Node.prototype.appendChild, document.getElementById('resource_items').empty());
 			document.getElementById('resource_in_items').style.display = 'block';
+		}
+
+		//crafted resources
+		const crafted_resources = Database.GetResources().filter(r => r.dependencies && r.dependencies.some(d => d.id === resource.id));
+		if(!crafted_resources.isEmpty()) {
+			crafted_resources
+				.map(r => Resources.DrawForList(r))
+				.forEach(Node.prototype.appendChild, document.getElementById('resource_crafted_resources').empty());
+			document.getElementById('resource_in_crafted_resources').style.display = 'block';
 		}
 
 		document.getElementById('resource').style.visibility = '';
