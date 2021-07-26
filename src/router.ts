@@ -17,6 +17,7 @@ export const Router = {
 		document.querySelectorAll('section').forEach(i => i.style.display = 'none');
 		document.getElementById('thing').style.display = 'none';
 		document.getElementById('thing')['search'].value = '';
+		window.scrollTo(0, 0);
 	},
 	GetURL: (thing: Thing): string => `#${thing.type}=${thing.id}`,
 	Reload: () => {
