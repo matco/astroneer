@@ -51,13 +51,7 @@ export default {
 				]
 			},
 			{
-				test: /\.(png|svg)$/,
-				use: [
-					'file-loader',
-				]
-			},
-			{
-				test: /\.(ttf)$/i,
+				test: /\.(png|svg|ttf)$/,
 				type: 'asset/resource'
 			}
 		]
@@ -66,9 +60,7 @@ export default {
 		extensions: ['.ts', '.js'],
 	},
 	devServer: {
-		contentBase: path.join(__dirname, 'dist'),
 		port: 9000,
-		host: '0.0.0.0',
-		disableHostCheck: true
+		host: '0.0.0.0'
 	}
 };
