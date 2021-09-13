@@ -2204,7 +2204,7 @@
 			"id": "vtol",
 			"label": {
 				"en-US": "VTOL",
-				"fr-FR": "VTOL"
+				"fr-FR": "Décollage à la verticale"
 			},
 			"printed": "medium_printer",
 			"dependencies": [
