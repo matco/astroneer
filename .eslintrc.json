@@ -34,7 +34,6 @@
 		"semi": ["error", "always"],
 		"spaced-comment": ["error", "never"],
 		"strict": "error",
-		"template-curly-spacing": ["error", "never"],
-		"jsdoc/require-jsdoc": 0 //TODO remove this as soon as possible
+		"template-curly-spacing": ["error", "never"]
 	}
 }
