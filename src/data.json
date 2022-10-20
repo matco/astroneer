@@ -1137,7 +1137,7 @@
 		{
 			"id": "medium_gas_canister",
 			"label": {
-				"en-US": "Medium Gaz Canister",
+				"en-US": "Medium Gas Canister",
 				"fr-FR": "Bonbonne de gaz moyenne"
 			},
 			"printed": "small_printer",
