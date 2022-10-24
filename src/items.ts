@@ -4,22 +4,17 @@ import {Database} from './database';
 import {Router} from './router';
 import {Things} from './things';
 import {Item} from './types';
+import {Utilities} from './draw';
 
 export const Items = {
-	DrawImage: (item: Item): HTMLImageElement => {
-		return document.createFullElement('img', {src: Database.GetThingImage(item)});
-	},
-	Draw: (item: Item): HTMLAnchorElement => {
-		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(item)});
-		link.appendChild(Items.DrawImage(item));
-		link.appendChild(document.createTextNode(Labels.Localize(item.label)));
-		return link;
-	},
+	DrawImage: Utilities.DrawImage,
+	Draw: Utilities.Draw,
 	DrawForList: (item: Item): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		element.appendChild(Items.Draw(item));
 		return element;
 	},
+	DrawWiki: Utilities.DrawWiki,
 	Open: (item: Item) => {
 		const item_tree = <SVGElement><any>document.getElementById('item_tree');
 

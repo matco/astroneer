@@ -3,17 +3,12 @@ import {Resources} from './resources';
 import {Router} from './router';
 import {Planet} from './types';
 import {Labels} from './labels';
+import {Utilities} from './draw';
+
 
 export const Planets = {
-	DrawImage: (planet: Planet): HTMLImageElement => {
-		return document.createFullElement('img', {src: Database.GetThingImage(planet)});
-	},
-	Draw: (planet: Planet): HTMLAnchorElement => {
-		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(planet)});
-		link.appendChild(Planets.DrawImage(planet));
-		link.appendChild(document.createTextNode(planet.name));
-		return link;
-	},
+	DrawImage: Utilities.DrawImage,
+	Draw: Utilities.Draw,
 	DrawForList: (planet: Planet): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		element.appendChild(Planets.Draw(planet));

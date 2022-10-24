@@ -5,17 +5,11 @@ import {Planets} from './planets';
 import {Router} from './router';
 import {Labels} from './labels';
 import {Resource} from './types';
+import {Utilities} from './draw';
 
 export const Resources = {
-	DrawImage: (resource: Resource): HTMLImageElement => {
-		return document.createFullElement('img', {src: Database.GetThingImage(resource)});
-	},
-	Draw: (resource: Resource): HTMLAnchorElement => {
-		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(resource)});
-		link.appendChild(Resources.DrawImage(resource));
-		link.appendChild(document.createTextNode(Labels.Localize(resource.label)));
-		return link;
-	},
+	DrawImage: Utilities.DrawImage,
+	Draw: Utilities.Draw,
 	DrawForList: (resource: Resource, quantity?: number): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		if(quantity !== undefined) {
