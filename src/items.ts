@@ -9,12 +9,12 @@ import {Utilities} from './draw';
 export const Items = {
 	DrawImage: Utilities.DrawImage,
 	Draw: Utilities.Draw,
+	DrawWiki: Utilities.DrawWiki,
 	DrawForList: (item: Item): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		element.appendChild(Items.Draw(item));
 		return element;
 	},
-	DrawWiki: Utilities.DrawWiki,
 	Open: (item: Item) => {
 		const item_tree = <SVGElement><any>document.getElementById('item_tree');
 

@@ -10,12 +10,14 @@ import {Utilities} from './draw';
 export const Resources = {
 	DrawImage: Utilities.DrawImage,
 	Draw: Utilities.Draw,
+	DrawWiki: Utilities.DrawWiki,
 	DrawForList: (resource: Resource, quantity?: number): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		if(quantity !== undefined) {
 			element.appendChild(document.createFullElement('span', {style: 'margin-right: 1rem'}, quantity.toString()));
 		}
 		element.appendChild(Resources.Draw(resource));
+		element.appendChild(Planets.DrawWiki(resource));
 		return element;
 	},
 	Open: (resource: Resource) => {

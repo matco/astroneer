@@ -9,9 +9,11 @@ import {Utilities} from './draw';
 export const Planets = {
 	DrawImage: Utilities.DrawImage,
 	Draw: Utilities.Draw,
+	DrawWiki: Utilities.DrawWiki,
 	DrawForList: (planet: Planet): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		element.appendChild(Planets.Draw(planet));
+		element.appendChild(Planets.DrawWiki(planet));
 		return element;
 	},
 	Open: (planet: Planet) => {
