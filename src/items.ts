@@ -13,6 +13,7 @@ export const Items = {
 	DrawForList: (item: Item): HTMLLIElement => {
 		const element = document.createFullElement('li');
 		element.appendChild(Items.Draw(item));
+		element.appendChild(Items.DrawWiki(item));
 		return element;
 	},
 	Open: (item: Item) => {

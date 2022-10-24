@@ -8,13 +8,24 @@ export const Utilities = {
     DrawWiki: (thing: Thing): HTMLElement => {
         const wiki = document.createFullElement('div', {class: 'wiki'});
         const link = document.createFullElement('a', {href: Router.GetWikiUrl(thing), target: '_blank'});
+        const header = document.createFullElement('span', {class: 'header'});
+        const footer = document.createFullElement('span', {class: 'footer'});
+        const highlightText = document.createFullElement('strong');
+        const normalText = document.createTextNode(`${Labels.GetLabel('wiki_category')}: ${thing.type}`);
         if(thing.type === ThingType.Item || thing.type === ThingType.Resource) {
-            link.appendChild(document.createTextNode(`${Labels.GetLabel('wiki_link')} "${Labels.Localize(thing.label)}"`));
+            highlightText.appendChild(document.createTextNode(Labels.Localize(thing.label)));
+            link.appendChild(document.createTextNode(`${Labels.GetLabel('wiki_link')}`));
         }
         if(thing.type === ThingType.Planet) {
-            link.appendChild(document.createTextNode(`${Labels.GetLabel('wiki_link')} "${thing.name}"`));
+            highlightText.appendChild(document.createTextNode(`${thing.name}`));
+            link.appendChild(document.createTextNode(`${Labels.GetLabel('wiki_link')}`));
         }
-        wiki.appendChild(link)
+        header.appendChild(highlightText);
+        header.appendChild(document.createFullElement('br'))
+        header.appendChild(normalText);
+        footer.appendChild(link);
+        wiki.appendChild(header);
+        wiki.appendChild(footer);
         return wiki;
     },
     DrawForList: (thing: Thing): HTMLLIElement => {
