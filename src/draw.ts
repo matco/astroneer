@@ -7,7 +7,7 @@ import {ThingType} from './database';
 export const Utilities = {
     DrawWiki: (thing: Thing): HTMLElement => {
         const wiki = document.createFullElement('div', {class: 'wiki'});
-        const link = document.createFullElement('a', {href: Router.GetWikiUrl(thing)});
+        const link = document.createFullElement('a', {href: Router.GetWikiUrl(thing), target: '_blank'});
         if(thing.type === ThingType.Item || thing.type === ThingType.Resource) {
             link.appendChild(document.createTextNode(`${Labels.GetLabel('wiki_link')} "${Labels.Localize(thing.label)}"`));
         }
