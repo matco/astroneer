@@ -45,6 +45,13 @@ export const Utilities = {
         return link;
     },
     DrawImage: (thing: Thing): HTMLImageElement => {
-        return document.createFullElement('img', {src: Database.GetThingImage(thing)});
+        let alt = '';
+        if(thing.type === ThingType.Item || thing.type === ThingType.Resource) {
+            alt = Labels.Localize(thing.label);
+        }
+        if(thing.type === ThingType.Planet) {
+            alt = thing.name;
+        }
+        return document.createFullElement('img', {src: Database.GetThingImage(thing), alt});
     },
 }
