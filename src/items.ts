@@ -1,7 +1,6 @@
 import {Labels} from './labels';
 import {Resources} from './resources';
 import {Database} from './database';
-import {Router} from './router';
 import {Things} from './things';
 import {Item} from './types';
 import {Utilities} from './draw';
