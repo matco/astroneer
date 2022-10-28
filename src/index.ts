@@ -6,10 +6,6 @@ import {MOBILE_MEDIA} from './mobile';
 import {Labels} from './labels';
 import {Router} from './router';
 import {Database, ThingType} from './database';
-import {Resources} from './resources';
-import {Items} from './items';
-import {Planets} from './planets';
-import {Things} from './things';
 import {Thing} from './types';
 import {Settings} from './settings';
 
