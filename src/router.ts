@@ -21,7 +21,11 @@ export const Router = {
 		window.scrollTo(0, 0);
 	},
 	GetURL: (thing: Thing): string => `#${thing.type}=${thing.id}`,
-	GetWikiUrl: (thing: Thing): string => `${WIKI_URI}${thing.id}`,
+	GetWikiUrl: (thing: Thing): string => {
+		// wiki url structure requires every other word to start capitalized
+		const id = thing.id.split("_").map(t => t.charAt(0).toUpperCase() + t.slice(1)).join("_");
+		return `${WIKI_URI}${id}`;
+	},
 	Reload: () => {
 		const event = new UIEvent('hashchange', {bubbles: true, cancelable: true, detail: 1});
 		window.dispatchEvent(event);
