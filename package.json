@@ -21,10 +21,10 @@
 	"license": "Unlicense",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/matco/astroneer-helper.git"
+		"url": "https://github.com/matco/astroneer.git"
 	},
 	"bugs": {
-		"url": "https://github.com/matco/astroneer-helper/issues"
+		"url": "https://github.com/matco/astroneer/issues"
 	},
 	"dependencies": {
 		"@matco/basic-tools": "^2.3.0"
