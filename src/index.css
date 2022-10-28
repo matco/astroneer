@@ -116,7 +116,7 @@ svg text {
 }
 
 .thing img {
-	width: 2rem;
+	width: 3rem;
 	margin-right: 0.5rem;
 	vertical-align: middle;
 }
@@ -268,6 +268,12 @@ svg text {
 
 .wiki .footer:hover {
 	background-color: rgba(90, 89, 90, 0.9);
+}
+
+.wiki .header img {
+	margin-right: 0.5rem;
+	width: 2rem;
+	float: left;
 }
 
 .wiki a {
