@@ -13,13 +13,13 @@ const DIMENSIONS = {
 };
 
 function update_dimensions() {
-	DIMENSIONS.thing = MOBILE_MEDIA.matches ? 30 : 45;
+	DIMENSIONS.thing = MOBILE_MEDIA.matches ? 30 : 50;
 	DIMENSIONS.module = DIMENSIONS.thing / 2;
 	DIMENSIONS.x_margin = DIMENSIONS.thing;
 	DIMENSIONS.y_margin = DIMENSIONS.thing * (MOBILE_MEDIA.matches ? 3 : 2.5);
 }
 
-function get_level(thing: Resource|Item): number {
+function get_level(thing: Resource | Item): number {
 	if(!thing.dependencies) {
 		return 0;
 	}
@@ -33,7 +33,7 @@ function get_level(thing: Resource|Item): number {
  * @param {Resource|Item} thing the thing (resource of item) used to perform the calculation
  * @returns the number of natural resources required to build the thing
  */
-function get_natural_resources_number(thing: Resource|Item): number {
+function get_natural_resources_number(thing: Resource | Item): number {
 	if(!thing.dependencies) {
 		return 1;
 	}
@@ -55,7 +55,7 @@ function get_natural_resources_number(thing: Resource|Item): number {
  * y is a useless parameter (it has been kept because it could be used for an alternative representation)
  * the y-axis coordinate is absolute and is calculated according to the thing level
  */
-function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resource|Item, quantity?: number) {
+function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resource | Item, quantity?: number) {
 	//create a group at the thing position
 	const group = SVG.Group({transform: `translate(${x},${y + DIMENSIONS.thing / 2})`});
 	svg.appendChild(group);
@@ -75,7 +75,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 	if(thing.dependencies) {
 		const resource_width = get_natural_resources_number(thing) * (DIMENSIONS.thing + DIMENSIONS.x_margin);
 		let dependency_offset = x - resource_width / 2;
-		const module_y = -DIMENSIONS.y_margin / 2 -DIMENSIONS.thing / 2;
+		const module_y = -DIMENSIONS.y_margin / 2 - DIMENSIONS.thing / 2;
 		thing.dependencies.forEach(dependency => {
 			const resource = Database.GetResource(dependency.id);
 			const dependency_dependencies_number = get_natural_resources_number(resource);
@@ -104,7 +104,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 
 export const Things = {
 	Sort: (thing1: Thing, thing2: Thing): number => thing1.id.compareTo(thing2.id),
-	DrawResourceTree: (thing: Resource|Item, svg: SVGElement) => {
+	DrawResourceTree: (thing: Resource | Item, svg: SVGElement) => {
 		update_dimensions();
 		//find selected item level
 		const item_level = get_level(thing);
