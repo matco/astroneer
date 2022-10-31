@@ -103,6 +103,30 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 }
 
 export const Things = {
+	GetLabel: (thing: Thing): string => {
+		if(thing.type === ThingType.Planet) {
+			return thing.name;
+		}
+		return Labels.Localize(thing.label);
+	},
+	DrawImage: (thing: Thing): HTMLImageElement => {
+		return document.createFullElement('img', {src: Database.GetThingImage(thing), alt: Things.GetLabel(thing)});
+	},
+	Draw: (thing: Thing): HTMLAnchorElement => {
+		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(thing)});
+		link.appendChild(Things.DrawImage(thing));
+		link.appendChild(document.createTextNode(Things.GetLabel(thing)));
+		return link;
+	},
+	DrawForList: (thing: Thing, quantity?: number): HTMLLIElement => {
+		const element = document.createFullElement('li');
+		if(quantity !== undefined) {
+			element.appendChild(document.createFullElement('span', {style: 'margin-right: 1rem'}, quantity.toString()));
+		}
+		element.appendChild(Things.Draw(thing));
+
+		return element;
+	},
 	Sort: (thing1: Thing, thing2: Thing): number => thing1.id.compareTo(thing2.id),
 	DrawResourceTree: (thing: Resource|Item, svg: SVGElement) => {
 		update_dimensions();
