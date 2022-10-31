@@ -627,7 +627,7 @@
 			"id": "small_canister",
 			"label": {
 				"en-US": "Small Canister",
-				"fr-FR": "Petite Bonbonne"
+				"fr-FR": "Petite bombonne"
 			},
 			"printed": "backpack",
 			"dependencies": [
@@ -669,7 +669,7 @@
 			"id": "glowsticks",
 			"label": {
 				"en-US": "Glowsticks",
-				"fr-FR": "Bâtons Lumineux"
+				"fr-FR": "Bâtons lumineux"
 			},
 			"printed": "backpack",
 			"dependencies": [
@@ -697,7 +697,7 @@
 			"id": "small_generator",
 			"label": {
 				"en-US": "Small Generator",
-				"fr-FR": "Petit Générateur"
+				"fr-FR": "Petit générateur"
 			},
 			"printed": "backpack",
 			"dependencies": [
@@ -1019,7 +1019,7 @@
 			"id": "medium_printer",
 			"label": {
 				"en-US": "Medium Printer",
-				"fr-FR": "Imprimante moyenne"
+				"fr-FR": "Imprimante Moyenne"
 			},
 			"printer": true,
 			"printed": "small_printer",
@@ -1102,7 +1102,7 @@
 			"id": "medium_resource_canister",
 			"label": {
 				"en-US": "Medium Resource Canister",
-				"fr-FR": "Bonbonne de ressource moyenne"
+				"fr-FR": "Bombonne de ressource moyenne"
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -1120,7 +1120,7 @@
 			"id": "medium_fluid_soil_canister",
 			"label": {
 				"en-US": "Medium Fluid & Soil Canister",
-				"fr-FR": "Bonbonne moyenne de fluide et sol"
+				"fr-FR": "Bonbonne moyenne de fluide & sol"
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -1138,7 +1138,7 @@
 			"id": "medium_gas_canister",
 			"label": {
 				"en-US": "Medium Gas Canister",
-				"fr-FR": "Bonbonne de gaz moyenne"
+				"fr-FR": "Bombonne de gaz moyenne"
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -1156,7 +1156,7 @@
 			"id": "power_sensor",
 			"label": {
 				"en-US": "Power Sensor",
-				"fr-FR": "Capteur d’alimentation"
+				"fr-FR": "Capteur d’alim."
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -1174,7 +1174,7 @@
 			"id": "storage_sensor",
 			"label": {
 				"en-US": "Storage Sensor",
-				"fr-FR": "Capteur de stockage"
+				"fr-FR": "Capteur stockage"
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -1192,7 +1192,7 @@
 			"id": "battery_sensor",
 			"label": {
 				"en-US": "Battery Sensor",
-				"fr-FR": "Capteur de batterie"
+				"fr-FR": "Capteur batterie"
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -1316,7 +1316,7 @@
 			"id": "medium_solar_panel",
 			"label": {
 				"en-US": "Medium Solar Panel",
-				"fr-FR": "Panneau solaire moyen"
+				"fr-FR": "Solaire moyen"
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -1352,7 +1352,7 @@
 			"id": "medium_battery",
 			"label": {
 				"en-US": "Medium Battery",
-				"fr-FR": "Batterie moyenne"
+				"fr-FR": "Batterie (moyenne)"
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -1458,7 +1458,7 @@
 			"id": "medium_storage",
 			"label": {
 				"en-US": "Medium Storage",
-				"fr-FR": "Stockage moyen"
+				"fr-FR": "Stockage (moyen)"
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -1676,7 +1676,7 @@
 			"id": "large_printer",
 			"label": {
 				"en-US": "Large Printer",
-				"fr-FR": "Grande Imprimante"
+				"fr-FR": "Imprimante (grande)"
 			},
 			"printer": true,
 			"printed": "medium_printer",
@@ -1810,7 +1810,7 @@
 			"id": "trade_platform",
 			"label": {
 				"en-US": "Trade Platform",
-				"fr-FR": "Plateforme d'échange"
+				"fr-FR": "Plate-forme d'échange"
 			},
 			"printed": "medium_printer",
 			"dependencies": [
@@ -2020,7 +2020,7 @@
 			"id": "large_storage",
 			"label": {
 				"en-US": "Large Storage",
-				"fr-FR": "Grand stockage"
+				"fr-FR": "Stockage (grand)"
 			},
 			"printed": "medium_printer",
 			"dependencies": [
@@ -2124,7 +2124,7 @@
 			"id": "medium_rover",
 			"label": {
 				"en-US": "Medium Rover",
-				"fr-FR": "Rover moyen"
+				"fr-FR": "Rover (moyen)"
 			},
 			"printed": "medium_printer",
 			"dependencies": [
@@ -2244,7 +2244,7 @@
 			"id": "auto_extractor",
 			"label": {
 				"en-US": "Auto Extractor",
-				"fr-FR": "Extracteur automatique"
+				"fr-FR": "Extracteur auto"
 			},
 			"printed": "large_printer",
 			"dependencies": [
@@ -2452,7 +2452,7 @@
 			"id": "xl_sensor_hoop_A",
 			"label": {
 				"en-US": "XL Sensor Hoop A",
-				"fr-FR": "XL arceau à capteur A"
+				"fr-FR": "Arceau à capteur XL A"
 			},
 			"printed": "large_printer",
 			"dependencies": [
@@ -2470,7 +2470,7 @@
 			"id": "xl_sensor_hoop_B",
 			"label": {
 				"en-US": "XL Sensor Hoop B",
-				"fr-FR": "XL arceau à capteur B"
+				"fr-FR": "Arceau à capteur XL B"
 			},
 			"printed": "large_printer",
 			"dependencies": [
@@ -2538,7 +2538,7 @@
 			"id": "extra_large_curved_platform",
 			"label": {
 				"en-US": "Extra Large Curved Platform",
-				"fr-FR": "Plateforme incurvée extra grande"
+				"fr-FR": "Très grande plateforme incurvée"
 			},
 			"printed": "large_printer",
 			"dependencies": [
@@ -2584,7 +2584,7 @@
 			"id": "extra_large_storage",
 			"label": {
 				"en-US": "Extra Large Storage",
-				"fr-FR": "Stockage extra grand"
+				"fr-FR": "Stockage (extra grand)"
 			},
 			"printed": "large_printer",
 			"dependencies": [
@@ -2602,7 +2602,7 @@
 			"id": "large_rover",
 			"label": {
 				"en-US": "Large Rover",
-				"fr-FR": "Grand rover"
+				"fr-FR": "Rover (grand)"
 			},
 			"printed": "large_printer",
 			"dependencies": [
@@ -2674,7 +2674,7 @@
 			"id": "large_shuttle",
 			"label": {
 				"en-US": "Large Shuttle",
-				"fr-FR": "Grande navette"
+				"fr-FR": "Navette (grande)"
 			},
 			"printed": "large_printer",
 			"dependencies": [
