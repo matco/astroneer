@@ -6,15 +6,6 @@ import {Item} from './types';
 import {Utilities} from './draw';
 
 export const Items = {
-	DrawImage: Utilities.DrawImage,
-	Draw: Utilities.Draw,
-	DrawWiki: Utilities.DrawWiki,
-	DrawForList: (item: Item): HTMLLIElement => {
-		const element = document.createFullElement('li');
-		element.appendChild(Items.Draw(item));
-		element.appendChild(Items.DrawWiki(item));
-		return element;
-	},
 	Open: (item: Item) => {
 		const item_tree = <SVGElement><any>document.getElementById('item_tree');
 
@@ -27,7 +18,7 @@ export const Items = {
 		const item_name = document.getElementById('item_name');
 		item_name.empty();
 		item_name.appendChild(document.createFullElement('button', {title: Labels.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
-		item_name.appendChild(Items.DrawImage(item));
+		item_name.appendChild(Things.DrawImage(item));
 		item_name.appendChild(document.createTextNode(Labels.Localize(item.label)));
 
 		if(item.printed) {
@@ -45,7 +36,7 @@ export const Items = {
 			Database.GetItems()
 				.filter(i => i.printed === item.id)
 				.sort((i1, i2) => Labels.Localize(i1.label).compareTo(Labels.Localize(i2.label)))
-				.map(Items.DrawForList)
+				.map(i => Things.DrawForList(i))
 				.forEach(Node.prototype.appendChild, document.getElementById('item_printer_items').empty());
 			item_is_printer.style.display = 'block';
 		}
@@ -55,7 +46,7 @@ export const Items = {
 		if(item.crafter) {
 			Database.GetResources()
 				.filter(r => r.crafted === item.id)
-				.map(r => Resources.DrawForList(r))
+				.map(r => Things.DrawForList(r))
 				.forEach(Node.prototype.appendChild, document.getElementById('item_craft_resources').empty());
 			item_is_crafter.style.display = 'block';
 		}

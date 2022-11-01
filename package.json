@@ -3,9 +3,9 @@
 	"description": "Astroneer Helper helps you with the tasks you have to perform in the game Astroneer",
 	"version": "1.0.0",
 	"scripts": {
-		"start": "webpack serve",
+		"start": "webpack serve --config webpack.dev.js",
 		"http-server": "http-server dist",
-		"build": "webpack",
+		"build": "webpack --config webpack.prod.js",
 		"lint": "eslint .",
 		"tsc-check": "tsc --noEmit"
 	},
