@@ -63,7 +63,9 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 	const link = SVG.Link(Router.GetURL(thing));
 	group.appendChild(link);
 	link.appendChild(SVG.ImageCentered(0, 0, DIMENSIONS.thing, DIMENSIONS.thing, Database.GetThingImage(thing)));
-	link.appendChild(SVG.Text(0, DIMENSIONS.thing / 2 + 15, Labels.Localize(thing.label), {'text-anchor': 'middle'}));
+	const thing_text = SVG.Text(0, DIMENSIONS.thing / 2 + 15, Labels.Localize(thing.label), {'text-anchor': 'middle'});
+	link.appendChild(thing_text);
+	SVG.TextWrap(thing_text, DIMENSIONS.thing + DIMENSIONS.x_margin / 2);
 	//draw quantity
 	if(quantity) {
 		const quantity_circle = SVG.Circle(DIMENSIONS.thing / 2 - 10, DIMENSIONS.thing / 2 - 10, 10, {style: 'opacity: 0.8; fill: red;'});
@@ -103,6 +105,30 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 }
 
 export const Things = {
+	GetLabel: (thing: Thing): string => {
+		if(thing.type === ThingType.Planet) {
+			return thing.name;
+		}
+		return Labels.Localize(thing.label);
+	},
+	DrawImage: (thing: Thing): HTMLImageElement => {
+		return document.createFullElement('img', {src: Database.GetThingImage(thing), alt: Things.GetLabel(thing)});
+	},
+	Draw: (thing: Thing): HTMLAnchorElement => {
+		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(thing)});
+		link.appendChild(Things.DrawImage(thing));
+		link.appendChild(document.createTextNode(Things.GetLabel(thing)));
+		return link;
+	},
+	DrawForList: (thing: Thing, quantity?: number): HTMLLIElement => {
+		const element = document.createFullElement('li');
+		if(quantity !== undefined) {
+			element.appendChild(document.createFullElement('span', {style: 'margin-right: 1rem'}, quantity.toString()));
+		}
+		element.appendChild(Things.Draw(thing));
+
+		return element;
+	},
 	Sort: (thing1: Thing, thing2: Thing): number => thing1.id.compareTo(thing2.id),
 	DrawResourceTree: (thing: Resource|Item, svg: SVGElement) => {
 		update_dimensions();
@@ -116,13 +142,13 @@ export const Things = {
 
 		svg.empty();
 		//add a margin to width to let some room for bordered things
-		svg.style.width = `${item_width + 20}px`;
-		//add a margin to height to let some room for the root thing and its caption
-		svg.style.height = `${item_height + DIMENSIONS.thing + 20}px`;
+		svg.style.width = `${item_width + 50}px`;
+		//add a margin to height to let some room for the root thing and its caption (that could be multiline)
+		svg.style.height = `${item_height + DIMENSIONS.thing + 40}px`;
 		//it is necessary to redraw the svg so the browser adapts the size of the container
 		svg.style.display = 'none';
 		svg.style.display = 'block';
 
-		draw_resource_tree(svg, item_width / 2 + 10, item_height, thing);
+		draw_resource_tree(svg, item_width / 2 + 25, item_height, thing);
 	}
 };

@@ -208,6 +208,14 @@ svg text {
 .section h3 {
 	text-align: center;
 }
+#home_resources, #home_items, #home_planets {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+:is(#home_resources, #home_items, #home_planets) > li {
+	width: 20rem;
+}
 
 @media (max-width: 800px) {
 	body {
