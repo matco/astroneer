@@ -111,6 +111,29 @@ export const Things = {
 		}
 		return Labels.Localize(thing.label);
 	},
+	DrawWiki: (thing: Thing): HTMLElement => {
+		const wiki = document.createFullElement('div', {class: 'wiki'});
+		const link = document.createFullElement('a', {href: Router.GetWikiUrl(thing), target: '_blank'});
+		const header = document.createFullElement('span', {class: 'header'});
+		const footer = document.createFullElement('span', {class: 'footer'});
+		const highlightText = document.createFullElement('strong');
+		const normalText = document.createTextNode(`${Labels.GetLabel('wiki_category')}: ${Labels.GetLabel(thing.type)}`);
+		if(thing.type === ThingType.Item || thing.type === ThingType.Resource) {
+			highlightText.appendChild(document.createTextNode(Labels.Localize(thing.label)));
+			link.appendChild(document.createTextNode(`${Labels.GetLabel('wiki_link')}`));
+		}
+		if(thing.type === ThingType.Planet) {
+			highlightText.appendChild(document.createTextNode(`${thing.name}`));
+			link.appendChild(document.createTextNode(`${Labels.GetLabel('wiki_link')}`));
+		}
+		header.appendChild(highlightText);
+		header.appendChild(document.createFullElement('br'))
+		header.appendChild(normalText);
+		footer.appendChild(link);
+		wiki.appendChild(header);
+		wiki.appendChild(footer);
+		return wiki;
+	},
 	DrawImage: (thing: Thing): HTMLImageElement => {
 		return document.createFullElement('img', {src: Database.GetThingImage(thing), alt: Things.GetLabel(thing)});
 	},
@@ -126,6 +149,7 @@ export const Things = {
 			element.appendChild(document.createFullElement('span', {style: 'margin-right: 1rem'}, quantity.toString()));
 		}
 		element.appendChild(Things.Draw(thing));
+		element.appendChild(Things.DrawWiki(thing));
 
 		return element;
 	},

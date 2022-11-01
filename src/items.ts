@@ -3,7 +3,6 @@ import {Resources} from './resources';
 import {Database} from './database';
 import {Things} from './things';
 import {Item} from './types';
-import {Utilities} from './draw';
 
 export const Items = {
 	Open: (item: Item) => {

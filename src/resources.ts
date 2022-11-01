@@ -2,7 +2,6 @@ import {Database} from './database';
 import {Things} from './things';
 import {Labels} from './labels';
 import {Resource} from './types';
-import {Utilities} from './draw';
 
 export const Resources = {
 	Open: (resource: Resource) => {
