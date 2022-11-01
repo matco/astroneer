@@ -9,6 +9,7 @@ import {Settings} from './settings';
 import {Home} from './home';
 
 const STATE_PREFIX = 'Astroneer Helper';
+const WIKI_URI = 'https://astroneer.fandom.com/wiki/';
 
 export const Router = {
 	Reset: () => {
@@ -20,6 +21,12 @@ export const Router = {
 		window.scrollTo(0, 0);
 	},
 	GetURL: (thing: Thing): string => `#${thing.type}=${thing.id}`,
+	GetWikiUrl: (thing: Thing): string => {
+		// wiki url structure requires every other word to start capitalized
+		// "some id" will be used as url slug and turned into "Some_Id"
+		const id = thing.id.split("_").map(slug => slug.charAt(0).toUpperCase() + slug.slice(1)).join("_");
+		return `${WIKI_URI}${id}`;
+	},
 	Reload: () => {
 		const event = new UIEvent('hashchange', {bubbles: true, cancelable: true, detail: 1});
 		window.dispatchEvent(event);

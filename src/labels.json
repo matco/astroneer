@@ -24,5 +24,10 @@
 	"planet_primary_resources": {"en-US": "Primary resources", "fr-FR": "Ressources primaires"},
 	"planet_secondary_resources": {"en-US": "Secondary resources", "fr-FR": "Ressources secondaires"},
 	"planet_at_core": {"en-US": "At core", "fr-FR": "Au noyau"},
-	"planet_atmospheric_resources": {"en-US": "Atmospheric resources", "fr-FR": "Ressources atmosphériques"}
+	"planet_atmospheric_resources": {"en-US": "Atmospheric resources", "fr-FR": "Ressources atmosphériques"},
+	"wiki_link": {"en-US": "Open article on Astroneer Wiki", "fr-FR": "Ouvrir l'article sur Astroneer Wiki"},
+	"wiki_category": {"en-US": "Category", "fr-FR": "Catégorie"},
+	"resource": {"en-US": "Resource", "fr-FR": "Ressource"},
+	"item": {"en-US": "Item", "fr-FR": "Objet"},
+	"planet": {"en-US": "Planet", "fr-FR": "Planète"}
 }
