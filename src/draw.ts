@@ -45,7 +45,7 @@ export const Utilities = {
         return link;
     },
     DrawImage: (thing: Thing): HTMLImageElement => {
-        let alt = '';
+        let alt;
         if(thing.type === ThingType.Item || thing.type === ThingType.Resource) {
             alt = Labels.Localize(thing.label);
         }
