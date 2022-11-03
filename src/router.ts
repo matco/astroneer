@@ -24,7 +24,12 @@ export const Router = {
 	GetWikiUrl: (thing: Thing): string => {
 		// wiki url structure requires every other word to start capitalized
 		// "some id" will be used as url slug and turned into "Some_Id"
-		const id = thing.id.split("_").map(slug => slug.charAt(0).toUpperCase() + slug.slice(1)).join("_");
+		const id = thing.id.split("_").map((slug) => {
+			if(["xl", "exo", "rtg", "vtol"].includes(slug)) {
+				slug = slug.toUpperCase()
+			}
+			return slug.charAt(0).toUpperCase() + slug.slice(1)
+		}).join("_");
 		return `${WIKI_URI}${id}`;
 	},
 	Reload: () => {
