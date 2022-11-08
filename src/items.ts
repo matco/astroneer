@@ -1,4 +1,4 @@
-import {Labels} from './labels';
+import {Localization} from './localization';
 import {Database} from './database';
 import {Things} from './things';
 import {Item} from './types';
@@ -15,9 +15,9 @@ export const Items = {
 		//update title
 		const item_name = document.getElementById('item_name');
 		item_name.empty();
-		item_name.appendChild(document.createFullElement('button', {title: Labels.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
+		item_name.appendChild(document.createFullElement('button', {title: Localization.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
 		item_name.appendChild(Things.DrawImage(item));
-		item_name.appendChild(document.createTextNode(Labels.Localize(item.label)));
+		item_name.appendChild(document.createTextNode(Localization.Localize(item.label)));
 
 		if(item.printed) {
 			//draw resource tree after the container is displayed
@@ -33,7 +33,7 @@ export const Items = {
 		if(item.printer) {
 			Database.GetItems()
 				.filter(i => i.printed === item.id)
-				.sort((i1, i2) => Labels.Localize(i1.label).compareTo(Labels.Localize(i2.label)))
+				.sort((i1, i2) => Localization.Localize(i1.label).compareTo(Localization.Localize(i2.label)))
 				.map(i => Things.DrawForList(i))
 				.forEach(Node.prototype.appendChild, document.getElementById('item_printer_items').empty());
 			item_is_printer.style.display = 'block';

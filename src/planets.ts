@@ -1,6 +1,6 @@
 import {Database} from './database';
 import {Planet} from './types';
-import {Labels} from './labels';
+import {Localization} from './localization';
 import {Things} from './things';
 
 export const Planets = {
@@ -8,7 +8,7 @@ export const Planets = {
 		//update title
 		const planet_name = document.getElementById('planet_name');
 		planet_name.empty();
-		planet_name.appendChild(document.createFullElement('button', {title: Labels.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
+		planet_name.appendChild(document.createFullElement('button', {title: Localization.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
 		planet_name.appendChild(Things.DrawImage(planet));
 		planet_name.appendChild(document.createTextNode(planet.name));
 

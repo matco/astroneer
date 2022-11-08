@@ -1,6 +1,6 @@
 import {Database} from './database';
 import {Things} from './things';
-import {Labels} from './labels';
+import {Localization} from './localization';
 import {Resource} from './types';
 
 export const Resources = {
@@ -19,9 +19,9 @@ export const Resources = {
 		//update title
 		const resource_name = document.getElementById('resource_name');
 		resource_name.empty();
-		resource_name.appendChild(document.createFullElement('button', {title: Labels.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
+		resource_name.appendChild(document.createFullElement('button', {title: Localization.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
 		resource_name.appendChild(Things.DrawImage(resource));
-		resource_name.appendChild(document.createTextNode(Labels.Localize(resource.label)));
+		resource_name.appendChild(document.createTextNode(Localization.Localize(resource.label)));
 
 		if(!resource.crafted) {
 			//primary planets

@@ -1,5 +1,5 @@
 import {SVG} from '@matco/basic-tools/svg.js';
-import {Labels} from './labels';
+import {Localization} from './localization';
 import {Database, ThingType} from './database';
 import {Router} from './router';
 import {MOBILE_MEDIA} from './mobile';
@@ -63,7 +63,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 	const link = SVG.Link(Router.GetURL(thing));
 	group.appendChild(link);
 	link.appendChild(SVG.ImageCentered(0, 0, DIMENSIONS.thing, DIMENSIONS.thing, Database.GetThingImage(thing)));
-	const thing_text = SVG.Text(0, DIMENSIONS.thing / 2 + 15, Labels.Localize(thing.label), {'text-anchor': 'middle'});
+	const thing_text = SVG.Text(0, DIMENSIONS.thing / 2 + 15, Localization.Localize(thing.label), {'text-anchor': 'middle'});
 	link.appendChild(thing_text);
 	SVG.TextWrap(thing_text, DIMENSIONS.thing + DIMENSIONS.x_margin / 2);
 	//draw quantity
@@ -95,7 +95,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 		const module_link = SVG.Link(Router.GetURL(module));
 		group.appendChild(module_link);
 		module_link.appendChild(SVG.ImageCentered(0, module_y, DIMENSIONS.module, DIMENSIONS.module, Database.GetThingImage(module)));
-		const module_text = SVG.Text(0, module_y + DIMENSIONS.module / 2 + 15, Labels.Localize(module.label), {'text-anchor': 'middle'});
+		const module_text = SVG.Text(0, module_y + DIMENSIONS.module / 2 + 15, Localization.Localize(module.label), {'text-anchor': 'middle'});
 		module_link.appendChild(module_text);
 		SVG.TextWrap(module_text, DIMENSIONS.thing + DIMENSIONS.x_margin / 2);
 		const module_text_box = module_text.getBBox();
@@ -109,7 +109,7 @@ export const Things = {
 		if(thing.type === ThingType.Planet) {
 			return thing.name;
 		}
-		return Labels.Localize(thing.label);
+		return Localization.Localize(thing.label);
 	},
 	DrawImage: (thing: Thing): HTMLImageElement => {
 		return document.createFullElement('img', {src: Database.GetThingImage(thing), alt: Things.GetLabel(thing)});

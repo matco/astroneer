@@ -3,7 +3,7 @@ import '@matco/basic-tools/dom_extension.js';
 
 import {Forms} from './tools/forms.js';
 import {MOBILE_MEDIA} from './mobile';
-import {Labels} from './labels';
+import {Localization} from './localization';
 import {Router} from './router';
 import {Database, ThingType} from './database';
 import {Thing} from './types';
@@ -71,7 +71,7 @@ function provide_thing(search: string): Thing[] {
 
 function draw_thing(thing: Thing, value: string): HTMLLIElement {
 	//retrieve thing label
-	const label = thing.type === ThingType.Planet ? thing.name : Labels.Localize(thing.label);
+	const label = thing.type === ThingType.Planet ? thing.name : Localization.Localize(thing.label);
 	const thing_li = document.createFullElement('li', {'data-value': label});
 	thing_li.appendChild(document.createFullElement('img', {src: Database.GetThingImage(thing)}));
 	//prepare regexp to highlight part of ingredient matching the search
@@ -131,11 +131,11 @@ function levenshtein_distance(source: string, target: string): number {
 window.addEventListener(
 	'load',
 	async function() {
-		await Labels.Init();
+		await Localization.Init();
 		await Database.Init();
 		Settings.Init();
 
-		Labels.LocalizeLabels();
+		Localization.LocalizeLabels();
 
 		//register service workers used to cache application
 		const https = window.location.protocol === 'https:';

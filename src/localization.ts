@@ -5,7 +5,7 @@ const REGEXP = /{{ *([a-z_-]+?) *}}/gi;
 let selected_language;
 let labels;
 
-export const Labels = {
+export const Localization = {
 	Init: async () => {
 		const response = await fetch('/labels.json');
 		labels = await response.json();
@@ -26,7 +26,7 @@ export const Labels = {
 		if(!label) {
 			throw new Error(`No label with id ${label_id}`);
 		}
-		return Labels.Localize(label);
+		return Localization.Localize(label);
 	},
 	LocalizeLabels: () => {
 		//replace placeholders in text nodes
@@ -37,7 +37,7 @@ export const Labels = {
 		const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
 		let node;
 		while((node = walker.nextNode()) !== null) {
-			node.nodeValue = node.nodeValue.replaceAll(REGEXP, (_, part) => Labels.GetLabel(part));
+			node.nodeValue = node.nodeValue.replaceAll(REGEXP, (_, part) => Localization.GetLabel(part));
 		}
 		//replace placeholders in attributes
 		document.querySelectorAll('*').forEach(node => {
@@ -45,7 +45,7 @@ export const Labels = {
 			for(let i = 0; i < attributes.length; i++) {
 				const attribute = attributes[i];
 				if(attribute.value.startsWith('{{') && attribute.value.endsWith('}}')) {
-					attribute.value = attribute.value.replace(REGEXP, (_, part) => Labels.GetLabel(part));
+					attribute.value = attribute.value.replace(REGEXP, (_, part) => Localization.GetLabel(part));
 				}
 			}
 		});

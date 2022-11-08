@@ -2,7 +2,7 @@ import {Hash} from '@matco/basic-tools/hash.js';
 import {Database} from './database';
 import {Resources} from './resources';
 import {Items} from './items';
-import {Labels} from './labels';
+import {Localization} from './localization';
 import {Planets} from './planets';
 import {Item, Planet, Resource, Thing} from './types';
 import {Settings} from './settings';
@@ -44,7 +44,7 @@ export const Router = {
 		const hash = Hash.Encode(state);
 		//push state if necessary
 		if(location.hash !== hash) {
-			history.pushState(state, `${STATE_PREFIX} - ${Labels.Localize(resource.label)}`, hash);
+			history.pushState(state, `${STATE_PREFIX} - ${Localization.Localize(resource.label)}`, hash);
 		}
 	},
 	SelectItem: (item: Item) => {
@@ -56,7 +56,7 @@ export const Router = {
 		const hash = Hash.Encode(state);
 		//push state if necessary
 		if(location.hash !== hash) {
-			history.pushState(state, `${STATE_PREFIX} - ${Labels.Localize(item.label)}`, hash);
+			history.pushState(state, `${STATE_PREFIX} - ${Localization.Localize(item.label)}`, hash);
 		}
 	},
 	SelectPlanet: (planet: Planet) => {
