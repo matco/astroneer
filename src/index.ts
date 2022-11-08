@@ -128,69 +128,73 @@ function levenshtein_distance(source: string, target: string): number {
 	return matrix[target.length][source.length];
 }
 
+async function initialize() {
+	await Localization.Init();
+	await Database.Init();
+	Settings.Init();
+
+	Localization.LocalizeLabels();
+
+	//register service workers used to cache application
+	const https = window.location.protocol === 'https:';
+	//remove "index.html" from path if necessary
+	//enable cache worker over HTTPS (the browser will allow a service worker without HTTPS anyway) and in production mode
+	if(https) {
+		navigator.serviceWorker.register('/service-worker.js')
+			.then(registration => {
+				if(!registration.active) {
+					console.info(`Cache service worker registered successfully with scope ${registration.scope}`);
+				}
+			}).catch(error => {
+				console.error(`Cache service worker registration failed: ${error.message}`);
+			});
+	}
+
+	//retrieve all things and prepare them for a search, building a list of tags for each thing
+	things = Database.GetAll().map(thing => {
+		const label = Things.GetLabel(thing);
+		return {
+			thing,
+			label,
+			score: 0,
+			//keep only words with more than 2 characters
+			tags: normalize_text(label).split(' ').filter(t => t.length > 2)
+		};
+	});
+
+	Forms.Autocomplete(
+		document.getElementById('thing')['search'],
+		document.getElementById('things'),
+		provide_thing,
+		draw_thing,
+		select_thing
+	);
+
+	document.getElementById('thing').addEventListener(
+		'submit',
+		function(event) {
+			//the form is submitted and the autocomplete has not been used
+			event.stop();
+			const value = this['search'].value;
+			//trying to find the thing using the input value
+			const enhanced_thing = things.find(t => t.label === value) || things.find(t => t.tags.some(t => t === normalize_text(value)));
+			if(enhanced_thing) {
+				select_thing(enhanced_thing.thing);
+			}
+		}
+	);
+
+	//restore selected state
+	Router.Reload();
+	MOBILE_MEDIA.addEventListener('change', () => Router.Reload());
+
+	//enable interaction
+	document.body.classList.remove('disabled');
+}
+
 window.addEventListener(
 	'load',
-	async function() {
-		await Localization.Init();
-		await Database.Init();
-		Settings.Init();
-
-		Localization.LocalizeLabels();
-
-		//register service workers used to cache application
-		const https = window.location.protocol === 'https:';
-		//remove "index.html" from path if necessary
-		//enable cache worker over HTTPS (the browser will allow a service worker without HTTPS anyway) and in production mode
-		if(https) {
-			navigator.serviceWorker.register('/service-worker.js')
-				.then(registration => {
-					if(!registration.active) {
-						console.info(`Cache service worker registered successfully with scope ${registration.scope}`);
-					}
-				}).catch(error => {
-					console.error(`Cache service worker registration failed: ${error.message}`);
-				});
-		}
-
-		//retrieve all things and prepare them for a search, building a list of tags for each thing
-		things = Database.GetAll().map(thing => {
-			const label = Things.GetLabel(thing);
-			return {
-				thing,
-				label,
-				score: 0,
-				//keep only words with more than 2 characters
-				tags: normalize_text(label).split(' ').filter(t => t.length > 2)
-			};
-		});
-
-		Forms.Autocomplete(
-			document.getElementById('thing')['search'],
-			document.getElementById('things'),
-			provide_thing,
-			draw_thing,
-			select_thing
-		);
-
-		document.getElementById('thing').addEventListener(
-			'submit',
-			function(event) {
-				//the form is submitted and the autocomplete has not been used
-				event.stop();
-				const value = this['search'].value;
-				//trying to find the thing using the input value
-				const enhanced_thing = things.find(t => t.label === value) || things.find(t => t.tags.some(t => t === normalize_text(value)));
-				if(enhanced_thing) {
-					select_thing(enhanced_thing.thing);
-				}
-			}
-		);
-
-		//restore selected state
-		Router.Reload();
-		MOBILE_MEDIA.addEventListener('change', () => Router.Reload());
-
-		//enable interaction
-		document.body.classList.remove('disabled');
+	function() {
+		initialize().catch(() => console.error('Unable to initialize application'));
 	}
 );
