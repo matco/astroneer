@@ -14,7 +14,7 @@ enum ThingType {
 	Resource = 'resource',
 	Item = 'item',
 	Planet = 'planet'
-};
+}
 
 const Database = {
 	Init: async () => {

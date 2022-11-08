@@ -48,7 +48,7 @@ function provide_thing(search: string): Thing[] {
 			thing.score > 0 ? matching_things.push(thing) : other_things.push(thing);
 		}
 		//continue searching if here is not enough options and user's search is more than 3 characters
-		const word_inputs = inputs.filter(i => i.length > 3)
+		const word_inputs = inputs.filter(i => i.length > 3);
 		if(matching_things.length < 5 && word_inputs.length > 0) {
 			//fuzzy search
 			for(const thing of other_things) {

@@ -1,5 +1,3 @@
-import {Labels} from './labels';
-
 export const Settings = {
 	Init: () => {
 		document.getElementById('settings').addEventListener(

@@ -36,7 +36,7 @@ export const Labels = {
 		//see https://stackoverflow.com/questions/2579666/getelementsbytagname-equivalent-for-textnodes for the best solution to find text nodes in the DOM
 		const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
 		let node;
-		while(node = walker.nextNode()) {
+		while((node = walker.nextNode()) !== null) {
 			node.nodeValue = node.nodeValue.replaceAll(REGEXP, (_, part) => Labels.GetLabel(part));
 		}
 		//replace placeholders in attributes
