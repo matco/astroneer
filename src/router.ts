@@ -5,7 +5,7 @@ import {Items} from './items';
 import {Localization} from './localization';
 import {Planets} from './planets';
 import {Item, Planet, Resource, Thing} from './types';
-import {Settings} from './settings';
+import {Configuration} from './configuration';
 import {Home} from './home';
 
 const STATE_PREFIX = 'Astroneer Helper';
@@ -29,7 +29,7 @@ export const Router = {
 		Home.Open();
 	},
 	DisplaySettings: () => {
-		Settings.Open();
+		Configuration.Open();
 		//push state if necessary
 		if(location.hash !== '#settings') {
 			history.pushState(undefined, STATE_PREFIX, '#settings');

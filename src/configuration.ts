@@ -1,4 +1,4 @@
-export const Settings = {
+export const Configuration = {
 	Init: () => {
 		document.getElementById('settings').addEventListener(
 			'submit',

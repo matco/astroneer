@@ -7,7 +7,7 @@ import {Localization} from './localization';
 import {Router} from './router';
 import {Database, ThingType} from './database';
 import {Thing} from './types';
-import {Settings} from './settings';
+import {Configuration} from './configuration';
 import {Things} from './things';
 
 let things;
@@ -131,7 +131,7 @@ function levenshtein_distance(source: string, target: string): number {
 async function initialize() {
 	await Localization.Init();
 	await Database.Init();
-	Settings.Init();
+	Configuration.Init();
 
 	Localization.LocalizeLabels();
 
