@@ -66,7 +66,7 @@ export const Resources = {
 			if(resource.dependencies) {
 				//set display block to draw the SVG properly
 				document.getElementById('resource_crafted').style.display = 'block';
-				const resource_tree = <SVGElement><any>document.getElementById('resource_tree');
+				const resource_tree = document.getElementById('resource_tree') as unknown as SVGElement;
 				Things.DrawResourceTree(resource, resource_tree);
 			}
 			else {

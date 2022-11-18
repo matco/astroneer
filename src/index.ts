@@ -6,11 +6,11 @@ import {MOBILE_MEDIA} from './mobile';
 import {Localization} from './localization';
 import {Router} from './router';
 import {Database, ThingType} from './database';
-import {Thing} from './types';
 import {Configuration} from './configuration';
+import {Thing, ThingResult} from './types';
 import {Things} from './things';
 
-let things;
+let things: ThingResult[];
 
 function normalize_text(text: string): string {
 	return text.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
@@ -20,8 +20,8 @@ function provide_thing(search: string): Thing[] {
 	const inputs = normalize_text(search).split(' ');
 	//reset scores from previous searches
 	things.forEach(t => t.score = 0);
-	const matching_things = [];
-	let other_things = [];
+	const matching_things: ThingResult[] = [];
+	let other_things: ThingResult[] = [];
 	//find things that have a tag that starts with one of the inputs
 	for(const thing of things) {
 		for(const input of inputs) {
@@ -107,7 +107,7 @@ function levenshtein_distance(source: string, target: string): number {
 	if(target.length === 0) {
 		return source.length;
 	}
-	const matrix = [];
+	const matrix :number[][] = [];
 	for(let i = 0; i <= target.length; i++) {
 		matrix[i] = [i];
 	}
@@ -173,7 +173,7 @@ async function initialize() {
 		function(event) {
 			//the form is submitted and the autocomplete has not been used
 			event.stop();
-			const value = this['search'].value;
+			const value = (this['search'] as HTMLInputElement).value;
 			//trying to find the thing using the input value
 			const enhanced_thing = things.find(t => t.label === value) || things.find(t => t.tags.some(t => t === normalize_text(value)));
 			if(enhanced_thing) {

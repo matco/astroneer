@@ -5,7 +5,7 @@ import {Item} from './types';
 
 export const Items = {
 	Open: (item: Item) => {
-		const item_tree = <SVGElement><any>document.getElementById('item_tree');
+		const item_tree = document.getElementById('item_tree') as unknown as SVGElement;
 
 		//use display block to draw the SVG properly but hide the container while it is not fully loaded
 		document.getElementById('item').style.display = 'block';

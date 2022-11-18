@@ -14,9 +14,9 @@ export const Router = {
 	Reset: () => {
 		document.getElementById('home').style.display = 'none';
 		document.getElementById('settings').style.display = 'none';
-		document.querySelectorAll('section').forEach(i => i.style.display = 'none');
+		document.querySelectorAll('section').forEach((s: HTMLElement) => s.style.display = 'none');
 		document.getElementById('thing').style.display = 'none';
-		document.getElementById('thing')['search'].value = '';
+		(document.getElementById('thing')['search'] as HTMLInputElement).value = '';
 		window.scrollTo(0, 0);
 	},
 	GetURL: (thing: Thing): string => `#${thing.type}=${thing.id}`,
@@ -82,7 +82,7 @@ window.addEventListener(
 			Router.DisplaySettings();
 			return;
 		}
-		const data = Hash.Decode(location.hash);
+		const data = Hash.Decode(location.hash) as {[key: string]: string};
 		if(data.hasOwnProperty('resource')) {
 			//retrieve ingredient
 			const resource = Database.GetResource(data.resource);

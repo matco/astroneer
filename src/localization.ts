@@ -1,16 +1,18 @@
+import {Label, Labels, Settings} from './types';
+
 const LANGUAGES = ['en-US', 'fr-FR'];
 const DEFAULT_LANGUAGE = LANGUAGES[0];
 const REGEXP = /{{ *([a-z_-]+?) *}}/gi;
 
-let selected_language;
-let labels;
+let selected_language: string;
+let labels: Labels;
 
 export const Localization = {
 	Init: async () => {
 		const response = await fetch('/labels.json');
-		labels = await response.json();
+		labels = Object.seal(await response.json() as Labels);
 		//retrieve language saved in settings
-		const settings = localStorage.getObject('settings');
+		const settings = localStorage.getObject('settings') as Settings;
 		if(settings && settings['language'] && LANGUAGES.includes(settings['language'])) {
 			selected_language = settings['language'];
 		}
@@ -19,7 +21,7 @@ export const Localization = {
 			selected_language = LANGUAGES.find(l => l.includes(navigator.language)) || DEFAULT_LANGUAGE;
 		}
 	},
-	Localize: (label: {[key: string]: string}): string => label[selected_language] || label[DEFAULT_LANGUAGE],
+	Localize: (label: Label): string => label[selected_language] || label[DEFAULT_LANGUAGE],
 	GetLabel: (label_id: string): string => {
 		//check that label exist
 		const label = labels[label_id];
@@ -35,17 +37,17 @@ export const Localization = {
 		//this is because textContent returns the text in the node and in its descendants
 		//see https://stackoverflow.com/questions/2579666/getelementsbytagname-equivalent-for-textnodes for the best solution to find text nodes in the DOM
 		const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-		let node;
-		while((node = walker.nextNode()) !== null) {
-			node.nodeValue = node.nodeValue.replaceAll(REGEXP, (_, part) => Localization.GetLabel(part));
+		let node: Text;
+		while((node = walker.nextNode() as Text) !== null) {
+			node.nodeValue = node.nodeValue.replaceAll(REGEXP, (_, part: string) => Localization.GetLabel(part));
 		}
 		//replace placeholders in attributes
-		document.querySelectorAll('*').forEach(node => {
-			const attributes = node.attributes;
+		document.querySelectorAll('*').forEach((element: Element) => {
+			const attributes = element.attributes;
 			for(let i = 0; i < attributes.length; i++) {
 				const attribute = attributes[i];
 				if(attribute.value.startsWith('{{') && attribute.value.endsWith('}}')) {
-					attribute.value = attribute.value.replace(REGEXP, (_, part) => Localization.GetLabel(part));
+					attribute.value = attribute.value.replace(REGEXP, (_, part: string) => Localization.GetLabel(part));
 				}
 			}
 		});

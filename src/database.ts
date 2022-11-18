@@ -1,6 +1,6 @@
-import {Item, Planet, Resource, Thing} from './types';
+import {Database, Item, Planet, Resource, Thing} from './types';
 
-let database;
+let database: Database;
 
 function find_or_throw<T extends Thing>(things: T[], thing_id: string): T {
 	const thing = things.find(t => t.id === thing_id);
@@ -19,7 +19,7 @@ enum ThingType {
 const Database = {
 	Init: async () => {
 		const response = await fetch('/data.json');
-		database = Object.seal(await response.json());
+		database = Object.seal((await response.json()) as Database);
 		//add type to all things
 		database.resources.forEach(r => r.type = ThingType.Resource);
 		database.items.forEach(i => i.type = ThingType.Item);

@@ -6,10 +6,10 @@ import {MOBILE_MEDIA} from './mobile';
 import {Item, Resource, Thing} from './types';
 
 const DIMENSIONS = {
-	thing: undefined,
-	module: undefined,
-	x_margin: undefined,
-	y_margin: undefined
+	thing: undefined as number,
+	module: undefined as number,
+	x_margin: undefined as number,
+	y_margin: undefined as number
 };
 
 function update_dimensions() {

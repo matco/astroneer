@@ -36,3 +36,28 @@ export interface Dependency {
 }
 
 export type Thing = Resource | Item | Planet;
+
+export interface Database {
+	readonly resources: Resource[],
+	readonly items: Item[],
+	readonly planets: Planet[]
+}
+
+export interface ThingResult {
+	readonly thing: Thing,
+	readonly label: string,
+	readonly tags: string[],
+	score: number
+}
+
+export interface Settings {
+	language: string
+}
+
+export interface Label {
+	[key: string]: string
+}
+
+export interface Labels {
+	[key: string]: Label
+}
