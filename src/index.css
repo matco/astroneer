@@ -23,9 +23,9 @@ body {
 	color: var(--main-font-color);
 	background: linear-gradient(to bottom, #164ab2, #73d8c6);
 	width: 80%;
+	max-width: 70rem;
 	min-height: 100%;
 	margin: auto;
-	width: 70rem;
 }
 /* disable interaction on the web page */
 body.disabled {
