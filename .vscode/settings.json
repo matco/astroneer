@@ -5,11 +5,21 @@
 		"*.tgz": true,
 		"dist": true
 	},
+	"css.format.maxPreserveNewLines": 2,
+	"css.format.newlineBetweenRules": false,
+	"css.format.newlineBetweenSelectors": false,
+	"css.format.spaceAroundSelectorSeparator": true,
+	"css.lint.duplicateProperties": "error",
+	"css.lint.emptyRules": "error",
+	"css.lint.zeroUnits": "error",
+	"eslint.lintTask.enable": true,
+	"files.eol": "\n",
 	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
 	"javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
 	"javascript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
+	"javascript.preferences.quoteStyle": "single",
 	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
 	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
 	"typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": false,
-	"eslint.lintTask.enable": true
+	"typescript.preferences.quoteStyle": "single"
 }
