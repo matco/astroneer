@@ -140,14 +140,12 @@ async function initialize() {
 	//remove "index.html" from path if necessary
 	//enable cache worker over HTTPS (the browser will allow a service worker without HTTPS anyway) and in production mode
 	if(https) {
-		navigator.serviceWorker.register('/service-worker.js')
-			.then(registration => {
-				if(!registration.active) {
-					console.info(`Cache service worker registered successfully with scope ${registration.scope}`);
-				}
-			}).catch(error => {
-				console.error(`Cache service worker registration failed: ${error.message}`);
-			});
+		try {
+			await navigator.serviceWorker.register('/service-worker.js');
+		}
+		catch(_) {
+			console.error('Cache service worker registration failed');
+		}
 	}
 
 	//retrieve all things and prepare them for a search, building a list of tags for each thing
