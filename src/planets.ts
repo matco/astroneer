@@ -3,6 +3,7 @@ import {Planet} from './types';
 import {Localization} from './localization';
 import {Things} from './things';
 
+
 export const Planets = {
 	Open: (planet: Planet) => {
 		//update title

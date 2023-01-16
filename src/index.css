@@ -18,6 +18,7 @@
 html {
 	min-height: 100%;
 }
+
 body {
 	font-family: 'Astroneer';
 	color: var(--main-font-color);
@@ -27,11 +28,13 @@ body {
 	min-height: 100%;
 	margin: auto;
 }
+
 /* disable interaction on the web page */
 body.disabled {
 	opacity: 0;
 	pointer-events: none;
 }
+
 h1 {
 	font-family: 'Astroneer-Bold';
 	font-size: 2rem;
@@ -40,27 +43,33 @@ h1 {
 	text-transform: uppercase;
 	position: relative;
 }
-h1 > a {
+
+h1>a {
 	text-decoration: none;
 	color: white;
 }
-h1 > a:last-child {
+
+h1>a:last-child {
 	position: absolute;
 	top: 0.5rem;
 	right: 1rem;
 }
-h1 > a:last-child > img {
+
+h1>a:last-child>img {
 	width: 2rem;
 	height: 2rem;
 }
+
 ul {
 	list-style-type: none;
 	padding: 0;
 }
+
 select {
 	border-radius: 5px;
 	padding: 0.2 0.8rem;
 }
+
 button {
 	cursor: pointer;
 	padding: 0.5rem 0.8rem;
@@ -69,26 +78,32 @@ button {
 	border: 3px solid white;
 	border-radius: 5px;
 }
+
 button:hover {
 	border-color: #164ab2;
 }
+
 footer {
 	margin: 1rem;
 	font-size: 0.6rem;
 	text-align: center;
 	color: white;
 }
-footer > a {
+
+footer>a {
 	color: white;
 }
+
 svg {
 	margin: auto;
 }
+
 svg path {
 	fill: none;
 	stroke: black;
 	stroke-width: 3;
 }
+
 svg text {
 	font-size: 0.8rem;
 }
@@ -99,6 +114,7 @@ svg text {
 	text-decoration: none;
 	color: var(--main-font-color);
 }
+
 .thing img {
 	width: 2rem;
 	margin-right: 0.5rem;
@@ -109,6 +125,7 @@ svg text {
 	position: relative;
 	margin-top: 1rem;
 }
+
 #thing input {
 	font-family: 'Astroneer';
 	box-sizing: border-box;
@@ -120,12 +137,15 @@ svg text {
 	border: 5px solid var(--title-font-color);
 	border-radius: 5px;
 }
+
 #thing input:focus {
 	outline: none;
 }
+
 #thing input:focus::-moz-placeholder {
 	color: transparent;
 }
+
 #thing input:focus::-webkit-input-placeholder {
 	color: transparent;
 }
@@ -145,19 +165,23 @@ svg text {
 	border-radius: 5px;
 	box-shadow: 0 0 2rem var(--main-font-color);
 }
-#things > li {
+
+#things>li {
 	cursor: pointer;
 	color: #3e4544;
 	padding: 0.3rem;
 }
-#things > li.selected {
+
+#things>li.selected {
 	background-color: #263531;
 	color: white;
 }
-#things > li .highlight {
+
+#things>li .highlight {
 	color: #4ab2e3;
 }
-#things > li > img {
+
+#things>li>img {
 	width: 2rem;
 	margin-right: 0.5rem;
 	vertical-align: middle;
@@ -171,7 +195,8 @@ svg text {
 	border: 5px solid var(--title-font-color);
 	border-radius: 5px;
 }
-.section > h2 {
+
+.section>h2 {
 	font-size: 1.5rem;
 	color: var(--title-font-color);
 	text-align: center;
@@ -183,10 +208,12 @@ svg text {
 	border-color: var(--title-font-color);
 	border-width: 5px 0 5px 0;
 }
-.section > h2:first-child {
+
+.section>h2:first-child {
 	border-top: none;
 }
-.section > h2 > button {
+
+.section>h2>button {
 	font-family: 'Astroneer-Bold';
 	font-size: 1.5rem;
 	position: absolute;
@@ -197,27 +224,102 @@ svg text {
 	border: none;
 	cursor: pointer;
 }
-.section > h2 > img {
+
+.section>h2>img {
 	width: 2rem;
 	margin-right: 0.5rem;
 	vertical-align: middle;
 }
-.section > div, .section > form {
+
+.section>div,
+.section>form {
 	padding: 1rem;
 }
+
 .section h3 {
 	text-align: center;
 }
-#home_resources, #home_items, #home_planets {
+
+#home_resources,
+#home_items,
+#home_planets {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-:is(#home_resources, #home_items, #home_planets) > li {
+
+:is(#home_resources, #home_items, #home_planets)>li {
 	width: 20rem;
 }
 
+.thing:hover+.wiki,
+.thing+.wiki:hover {
+	display: grid;
+}
+
+.wiki {
+	position: absolute;
+	display: none;
+	width: 30%;
+	margin-left: -1rem;
+}
+
+.wiki .header {
+	color: #848384;
+	text-transform: uppercase;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 0.5rem;
+}
+
+.wiki .footer {
+	color: #ffffff;
+	text-transform: uppercase;
+	background-color: rgba(132, 131, 132, 0.9);
+	padding: 0.5rem;
+}
+
+.wiki .footer:hover {
+	background-color: rgba(90, 89, 90, 0.9);
+}
+
+.wiki .header img {
+	margin-right: 0.5rem;
+	width: 2rem;
+	float: left;
+}
+
+.wiki a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.section ul {
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+}
+
+.section ul li {
+	padding: 0 1rem;
+}
+
+.section ul li:hover {
+	background-color: #235EB5;
+}
+
+.section ul li:hover a {
+	color: #ffffff;
+}
+
 @media (max-width: 800px) {
+	.section ul {
+		display: grid;
+		grid-template-columns: 50% 50%;
+	}
+
+	.wiki {
+		width: 50%;
+	}
+
 	body {
 		width: 100%;
 		box-sizing: border-box;
