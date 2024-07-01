@@ -26,11 +26,11 @@ body {
 	max-width: 70rem;
 	min-height: 100%;
 	margin: auto;
-}
-/* disable interaction on the web page */
-body.disabled {
-	opacity: 0;
-	pointer-events: none;
+	/* disable interaction on the web page */
+	&.disabled {
+		opacity: 0;
+		pointer-events: none;
+	}
 }
 h1 {
 	font-family: 'Astroneer-Bold';
@@ -39,19 +39,21 @@ h1 {
 	text-align: center;
 	text-transform: uppercase;
 	position: relative;
-}
-h1 > a {
-	text-decoration: none;
-	color: white;
-}
-h1 > a:last-child {
-	position: absolute;
-	top: 0.5rem;
-	right: 1rem;
-}
-h1 > a:last-child > img {
-	width: 2rem;
-	height: 2rem;
+
+	& > a {
+		text-decoration: none;
+		color: white;
+		&:last-child {
+			position: absolute;
+			top: 0.5rem;
+			right: 1rem;
+
+			& > img {
+				width: 2rem;
+				height: 2rem;
+			}
+		}
+	}
 }
 ul {
 	list-style-type: none;
@@ -68,29 +70,32 @@ button {
 	background-color: #164ab2;
 	border: 3px solid white;
 	border-radius: 5px;
-}
-button:hover {
-	border-color: #164ab2;
+	&:hover {
+		border-color: #164ab2;
+	}
 }
 footer {
 	margin: 1rem;
 	font-size: 0.6rem;
 	text-align: center;
 	color: white;
-}
-footer > a {
-	color: white;
+
+	& > a {
+		color: white;
+	}
 }
 svg {
 	margin: auto;
-}
-svg path {
-	fill: none;
-	stroke: black;
-	stroke-width: 3;
-}
-svg text {
-	font-size: 0.8rem;
+
+	& path {
+		fill: none;
+		stroke: black;
+		stroke-width: 3;
+	}
+
+	& text {
+		font-size: 0.8rem;
+	}
 }
 
 .thing {
@@ -98,36 +103,35 @@ svg text {
 	padding: 0.5rem 0;
 	text-decoration: none;
 	color: var(--main-font-color);
-}
-.thing img {
-	width: 2rem;
-	margin-right: 0.5rem;
-	vertical-align: middle;
+
+	& img {
+		width: 2rem;
+		margin-right: 0.5rem;
+		vertical-align: middle;
+	}
 }
 
 #thing {
 	position: relative;
 	margin-top: 1rem;
-}
-#thing input {
-	font-family: 'Astroneer';
-	box-sizing: border-box;
-	width: 100%;
-	padding: 0.7rem;
-	font-size: 1.2rem;
-	text-align: center;
-	background-color: var(--main-background-color);
-	border: 5px solid var(--title-font-color);
-	border-radius: 5px;
-}
-#thing input:focus {
-	outline: none;
-}
-#thing input:focus::-moz-placeholder {
-	color: transparent;
-}
-#thing input:focus::-webkit-input-placeholder {
-	color: transparent;
+
+	& input {
+		font-family: 'Astroneer';
+		box-sizing: border-box;
+		width: 100%;
+		padding: 0.7rem;
+		font-size: 1.2rem;
+		text-align: center;
+		background-color: var(--main-background-color);
+		border: 5px solid var(--title-font-color);
+		border-radius: 5px;
+		&:focus {
+			outline: none;
+			&::placeholder {
+				color: transparent;
+			}
+		}
+	}
 }
 
 #things {
@@ -144,23 +148,25 @@ svg text {
 	border: 5px solid var(--title-font-color);
 	border-radius: 5px;
 	box-shadow: 0 0 2rem var(--main-font-color);
-}
-#things > li {
-	cursor: pointer;
-	color: #3e4544;
-	padding: 0.3rem;
-}
-#things > li.selected {
-	background-color: #263531;
-	color: white;
-}
-#things > li .highlight {
-	color: #4ab2e3;
-}
-#things > li > img {
-	width: 2rem;
-	margin-right: 0.5rem;
-	vertical-align: middle;
+
+	& > li {
+		cursor: pointer;
+		color: #3e4544;
+		padding: 0.3rem;
+		&.selected {
+			background-color: #263531;
+			color: white;
+		}
+
+		& .highlight {
+			color: #4ab2e3;
+		}
+		& > img {
+			width: 2rem;
+			margin-right: 0.5rem;
+			vertical-align: middle;
+		}
+	}
 }
 
 .section {
@@ -170,51 +176,56 @@ svg text {
 	background-color: var(--main-background-color);
 	border: 5px solid var(--title-font-color);
 	border-radius: 5px;
-}
-.section > h2 {
-	font-size: 1.5rem;
-	color: var(--title-font-color);
-	text-align: center;
-	text-decoration: none;
-	padding: 0.5rem 0;
-	margin: 0;
-	background-color: #4ab2e3;
-	border-style: solid;
-	border-color: var(--title-font-color);
-	border-width: 5px 0 5px 0;
-}
-.section > h2:first-child {
-	border-top: none;
-}
-.section > h2 > button {
-	font-family: 'Astroneer-Bold';
-	font-size: 1.5rem;
-	position: absolute;
-	left: 0;
-	padding: 0 1rem;
-	color: var(--title-font-color);
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-}
-.section > h2 > img {
-	width: 2rem;
-	margin-right: 0.5rem;
-	vertical-align: middle;
-}
-.section > div, .section > form {
-	padding: 1rem;
-}
-.section h3 {
-	text-align: center;
+
+	& > h2 {
+		font-size: 1.5rem;
+		color: var(--title-font-color);
+		text-align: center;
+		text-decoration: none;
+		padding: 0.5rem 0;
+		margin: 0;
+		background-color: #4ab2e3;
+		border-style: solid;
+		border-color: var(--title-font-color);
+		border-width: 5px 0 5px 0;
+		&:first-child {
+			border-top: none;
+		}
+
+		& > button {
+			font-family: 'Astroneer-Bold';
+			font-size: 1.5rem;
+			position: absolute;
+			left: 0;
+			padding: 0 1rem;
+			color: var(--title-font-color);
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+		}
+		& > img {
+			width: 2rem;
+			margin-right: 0.5rem;
+			vertical-align: middle;
+		}
+	}
+
+	& > div, & > form {
+		padding: 1rem;
+	}
+
+	& h3 {
+		text-align: center;
+	}
 }
 #home_resources, #home_items, #home_planets {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-}
-:is(#home_resources, #home_items, #home_planets) > li {
-	width: 20rem;
+
+	& > li {
+		width: 20rem;
+	}
 }
 
 @media (max-width: 800px) {
