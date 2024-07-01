@@ -1385,7 +1385,7 @@
 			]
 		},
 		{
-			"id": "medium_platform_A",
+			"id": "medium_platform_a",
 			"label": {
 				"en-US": "Medium Platform A",
 				"fr-FR": "Plateforme moyenne A"
@@ -1399,7 +1399,7 @@
 			]
 		},
 		{
-			"id": "medium_platform_B",
+			"id": "medium_platform_b",
 			"label": {
 				"en-US": "Medium Platform B",
 				"fr-FR": "Plateforme moyenne B"
@@ -1413,7 +1413,7 @@
 			]
 		},
 		{
-			"id": "medium_platform_C",
+			"id": "medium_platform_c",
 			"label": {
 				"en-US": "Medium Platform C",
 				"fr-FR": "Plateforme moyenne C"
@@ -2539,7 +2539,7 @@
 			]
 		},
 		{
-			"id": "large_sensor_hoop_A",
+			"id": "large_sensor_hoop_a",
 			"label": {
 				"en-US": "Large Sensor Hoop A",
 				"fr-FR": "Grand arceau à capteur A"
@@ -2557,7 +2557,7 @@
 			]
 		},
 		{
-			"id": "large_sensor_hoop_B",
+			"id": "large_sensor_hoop_b",
 			"label": {
 				"en-US": "Large Sensor Hoop B",
 				"fr-FR": "Grand arceau à capteur B"
@@ -2575,7 +2575,7 @@
 			]
 		},
 		{
-			"id": "xl_sensor_hoop_A",
+			"id": "xl_sensor_hoop_a",
 			"label": {
 				"en-US": "XL Sensor Hoop A",
 				"fr-FR": "Arceau à capteur XL A"
@@ -2593,7 +2593,7 @@
 			]
 		},
 		{
-			"id": "xl_sensor_hoop_B",
+			"id": "xl_sensor_hoop_b",
 			"label": {
 				"en-US": "XL Sensor Hoop B",
 				"fr-FR": "Arceau à capteur XL B"
@@ -2611,7 +2611,7 @@
 			]
 		},
 		{
-			"id": "extra_large_platform_A",
+			"id": "extra_large_platform_a",
 			"label": {
 				"en-US": "Extra Large Platform A",
 				"fr-FR": "Plateforme extra grande A"
@@ -2629,7 +2629,7 @@
 			]
 		},
 		{
-			"id": "extra_large_platform_B",
+			"id": "extra_large_platform_b",
 			"label": {
 				"en-US": "Extra Large Platform B",
 				"fr-FR": "Plateforme extra grande B"
@@ -2643,7 +2643,7 @@
 			]
 		},
 		{
-			"id": "extra_large_platform_C",
+			"id": "extra_large_platform_c",
 			"label": {
 				"en-US": "Extra Large Platform C",
 				"fr-FR": "Plateforme extra grande C"
