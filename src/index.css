@@ -4,8 +4,8 @@
 }
 
 @font-face {
-	font-family: 'Astroneer-Bold';
-	font-weight: 700;
+	font-family: 'Astroneer';
+	font-weight: bold;
 	src: url('fonts/NDAstroneer-Bold.ttf') format('truetype');
 }
 
@@ -13,13 +13,13 @@
 	--title-font-color: white;
 	--main-background-color: #e1eef8;
 	--main-font-color: #3e4544;
+	font-family: 'Astroneer';
 }
 
 html {
 	min-height: 100%;
 }
 body {
-	font-family: 'Astroneer';
 	color: var(--main-font-color);
 	background: linear-gradient(to bottom, #164ab2, #73d8c6);
 	width: 80%;
@@ -33,7 +33,6 @@ body {
 	}
 }
 h1 {
-	font-family: 'Astroneer-Bold';
 	font-size: 2rem;
 	margin: 0;
 	text-align: center;
@@ -117,7 +116,7 @@ svg {
 	margin-top: 1rem;
 
 	& input {
-		font-family: 'Astroneer';
+		font-family: inherit;
 		box-sizing: border-box;
 		width: 100%;
 		padding: 0.7rem;
@@ -194,7 +193,8 @@ svg {
 		}
 
 		& > button {
-			font-family: 'Astroneer-Bold';
+			font-family: inherit;
+			font-weight: bold;
 			font-size: 1.5rem;
 			position: absolute;
 			left: 0;
