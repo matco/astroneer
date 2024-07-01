@@ -43,16 +43,6 @@ h1 {
 	& > a {
 		text-decoration: none;
 		color: white;
-		&:last-child {
-			position: absolute;
-			top: 0.5rem;
-			right: 1rem;
-
-			& > img {
-				width: 2rem;
-				height: 2rem;
-			}
-		}
 	}
 }
 ul {
@@ -95,6 +85,17 @@ svg {
 
 	& text {
 		font-size: 0.8rem;
+	}
+}
+
+#settings_link {
+	position: absolute;
+	top: 0.5rem;
+	right: 1rem;
+
+	& > img {
+		width: 2rem;
+		height: 2rem;
 	}
 }
 
