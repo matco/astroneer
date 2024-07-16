@@ -30,7 +30,12 @@ function provide_thing(search: string): Thing[] {
 				thing.score += 100;
 			}
 		}
-		thing.score > 0 ? matching_things.push(thing) : other_things.push(thing);
+		if(thing.score > 0) {
+			matching_things.push(thing);
+		}
+		else {
+			other_things.push(thing);
+		}
 	}
 	//continue searching if there is not enough options
 	if(matching_things.length < 5) {
@@ -45,7 +50,12 @@ function provide_thing(search: string): Thing[] {
 					thing.score += 10;
 				}
 			}
-			thing.score > 0 ? matching_things.push(thing) : other_things.push(thing);
+			if(thing.score > 0) {
+				matching_things.push(thing);
+			}
+			else {
+				other_things.push(thing);
+			}
 		}
 		//continue searching if here is not enough options and user's search is more than 3 characters
 		const word_inputs = inputs.filter(i => i.length > 3);
@@ -143,7 +153,7 @@ async function initialize() {
 		try {
 			await navigator.serviceWorker.register('/service-worker.js');
 		}
-		catch(_) {
+		catch {
 			console.error('Cache service worker registration failed');
 		}
 	}
