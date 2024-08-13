@@ -11,7 +11,7 @@ export const Forms = {
 		}
 
 		//close results on a click outside
-		document.addEventListener('click', function(event) {
+		document.addEventListener('click', event => {
 			if(!list.contains(event.target) && !input.contains(event.target)) {
 				destroy_list();
 			}
@@ -19,9 +19,7 @@ export const Forms = {
 
 		function unselect_all() {
 			selection = undefined;
-			list.querySelectorAll('li').forEach(function(item) {
-				item.classList.remove('selected');
-			});
+			list.querySelectorAll('li').forEach(i => i.classList.remove('selected'));
 		}
 
 		function manage_selection() {
@@ -89,7 +87,7 @@ export const Forms = {
 					}
 				}
 				//update results list
-				list.querySelectorAll('li').forEach(function(item) {
+				list.querySelectorAll('li').forEach(item => {
 					if(item.item === selection) {
 						item.classList.add('selected');
 					}
@@ -121,7 +119,7 @@ export const Forms = {
 				//ask for matching items and draw them
 				candidates = items_provider(value);
 				if(candidates.length > 0) {
-					candidates.map(function(candidate) {
+					candidates.map(candidate => {
 						const item_ui = item_drawer(candidate, value);
 						//enhance element
 						item_ui.item = candidate;
