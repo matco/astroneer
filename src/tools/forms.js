@@ -36,12 +36,18 @@ export const Forms = {
 			return false;
 		}
 
+		/**
+		 * @this {HTMLElement}
+		 */
 		function manage_mouse_over() {
 			unselect_all();
 			selection = candidates[parseInt(this.dataset['candidateIndex'])];
 			this.classList.add('selected');
 		}
 
+		/**
+		 * @this {HTMLElement}
+		 */
 		function manage_mouse_out() {
 			unselect_all();
 			this.classList.remove('selected');
@@ -102,6 +108,9 @@ export const Forms = {
 			}
 		}
 
+		/**
+		 * @this {HTMLInputElement}
+		 */
 		function manage_update() {
 			const value = this.value;
 
