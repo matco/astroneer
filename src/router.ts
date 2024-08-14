@@ -85,19 +85,19 @@ window.addEventListener(
 		const data = Hash.Decode(location.hash) as {[key: string]: string};
 		if(data.hasOwnProperty('resource')) {
 			//retrieve ingredient
-			const resource = Database.GetResource(data.resource);
+			const resource = Database.GetResource(data['resource']);
 			Router.SelectResource(resource);
 			return;
 		}
 		if(data.hasOwnProperty('item')) {
 			//retrieve ingredient
-			const printer = Database.GetItem(data.item);
+			const printer = Database.GetItem(data['item']);
 			Router.SelectItem(printer);
 			return;
 		}
 		if(data.hasOwnProperty('planet')) {
 			//retrieve ingredient
-			const planet = Database.GetPlanet(data.planet);
+			const planet = Database.GetPlanet(data['planet']);
 			Router.SelectPlanet(planet);
 			return;
 		}
