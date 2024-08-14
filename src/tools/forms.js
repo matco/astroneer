@@ -38,7 +38,7 @@ export const Forms = {
 
 		function manage_mouse_over() {
 			unselect_all();
-			selection = this.item;
+			selection = candidates[parseInt(this.dataset['candidateIndex'])];
 			this.classList.add('selected');
 		}
 
@@ -87,8 +87,9 @@ export const Forms = {
 					}
 				}
 				//update results list
+				const candidate_index = candidates.indexOf(selection);
 				list.querySelectorAll('li').forEach(item => {
-					if(item.item === selection) {
+					if(parseInt(item.dataset['candidateIndex']) === candidate_index) {
 						item.classList.add('selected');
 					}
 					else {
@@ -119,10 +120,10 @@ export const Forms = {
 				//ask for matching items and draw them
 				candidates = items_provider(value);
 				if(candidates.length > 0) {
-					candidates.map(candidate => {
+					candidates.map((candidate, index) => {
 						const item_ui = item_drawer(candidate, value);
 						//enhance element
-						item_ui.item = candidate;
+						item_ui.dataset.candidateIndex = index;
 						item_ui.addEventListener('mouseout', manage_mouse_out);
 						item_ui.addEventListener('mouseover', manage_mouse_over);
 						item_ui.addEventListener('click', manage_selection);
