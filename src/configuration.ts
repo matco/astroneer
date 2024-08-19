@@ -17,8 +17,8 @@ export const Configuration = {
 	},
 	Open: () => {
 		const settings = localStorage.getObject('settings') as Settings;
-		const settings_form = document.getElementById('settings');
-		(settings_form['language'] as HTMLSelectElement).value = settings ? settings['language'] : '';
+		const settings_form = document.getElementById('settings') as HTMLFormElement;
+		(settings_form.elements['language'] as HTMLSelectElement).value = settings ? settings['language'] : '';
 		settings_form.style.display = 'block';
 	}
 };
