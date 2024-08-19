@@ -31,7 +31,6 @@
 		"outDir": "out"
 	},
 	"exclude": [
-		"node_modules",
 		"dist",
 		"webpack.common.js",
 		"webpack.dev.js",
