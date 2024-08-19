@@ -6,7 +6,8 @@ export default tseslint.config(
 	{
 		extends: [
 			js.configs.recommended,
-			...tseslint.configs.recommended,
+			...tseslint.configs.recommendedTypeChecked,
+			...tseslint.configs.stylisticTypeChecked,
 		],
 		ignores: ['dist/*', 'src/tools/*', 'webpack*'],
 		plugins: {
@@ -48,7 +49,9 @@ export default tseslint.config(
 			'spaced-comment': ['error', 'never'],
 			'strict': 'error',
 			'template-curly-spacing': ['error', 'never'],
-			'@typescript-eslint/unbound-method': 'off'
+			'@typescript-eslint/unbound-method': 'off',
+			'@typescript-eslint/prefer-nullish-coalescing': 'off',
+			'@typescript-eslint/dot-notation': 'off'
 		}
 	}
 );

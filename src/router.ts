@@ -82,7 +82,7 @@ window.addEventListener(
 			Router.DisplaySettings();
 			return;
 		}
-		const data = Hash.Decode(location.hash) as {[key: string]: string};
+		const data = Hash.Decode(location.hash) as Record<string, string>;
 		if(data.hasOwnProperty('resource')) {
 			//retrieve ingredient
 			const resource = Database.GetResource(data['resource']);

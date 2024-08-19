@@ -7,14 +7,14 @@ export interface ThingProperties {
 
 export interface Resource extends ThingProperties {
 	type: ThingType.Resource
-	readonly label: {[key: string]: string}
+	readonly label: Record<string, string>
 	readonly crafted?: string
 	readonly dependencies: Dependency[]
 }
 
 export interface Item extends ThingProperties {
 	type: ThingType.Item
-	readonly label: {[key: string]: string}
+	readonly label: Record<string, string>
 	readonly printed?: string
 	readonly printer: boolean
 	readonly crafter: boolean
@@ -54,10 +54,6 @@ export interface Settings {
 	language: string
 }
 
-export interface Label {
-	[key: string]: string
-}
+export type Label = Record<string, string>;
 
-export interface Labels {
-	[key: string]: Label
-}
+export type Labels = Record<string, Label>;

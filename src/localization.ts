@@ -13,7 +13,7 @@ export const Localization = {
 		labels = Object.seal(await response.json() as Labels);
 		//retrieve language saved in settings
 		const settings = localStorage.getObject('settings') as Settings;
-		if(settings && settings['language'] && LANGUAGES.includes(settings['language'])) {
+		if(settings?.['language'] && LANGUAGES.includes(settings['language'])) {
 			selected_language = settings['language'];
 		}
 		//manage navigator language hazardously
@@ -44,6 +44,8 @@ export const Localization = {
 		//replace placeholders in attributes
 		document.querySelectorAll('*').forEach((element: Element) => {
 			const attributes = element.attributes;
+			//NamedNodeMap is not iterable so it's not possible to use a for-of loop
+			//eslint-disable-next-line @typescript-eslint/prefer-for-of
 			for(let i = 0; i < attributes.length; i++) {
 				const attribute = attributes[i];
 				if(attribute.value.startsWith('{{') && attribute.value.endsWith('}}')) {

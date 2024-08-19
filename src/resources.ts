@@ -79,7 +79,7 @@ export const Resources = {
 		}
 
 		//items
-		const items = Database.GetItems().filter(i => i.dependencies && i.dependencies.some(d => d.id === resource.id));
+		const items = Database.GetItems().filter(i => i.dependencies?.some(d => d.id === resource.id));
 		if(!items.isEmpty()) {
 			items
 				.map(i => Things.DrawForList(i))
@@ -88,7 +88,7 @@ export const Resources = {
 		}
 
 		//crafted resources
-		const crafted_resources = Database.GetResources().filter(r => r.dependencies && r.dependencies.some(d => d.id === resource.id));
+		const crafted_resources = Database.GetResources().filter(r => r.dependencies?.some(d => d.id === resource.id));
 		if(!crafted_resources.isEmpty()) {
 			crafted_resources
 				.map(r => Things.DrawForList(r))
