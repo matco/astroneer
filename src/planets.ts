@@ -1,4 +1,4 @@
-import {Database} from './database';
+import {Repository} from './repository';
 import {Planet} from './types';
 import {Localization} from './localization';
 import {Things} from './things';
@@ -13,19 +13,19 @@ export const Planets = {
 		planet_name.appendChild(document.createTextNode(planet.name));
 
 		planet.primary_resources
-			.map(Database.GetResource)
+			.map(Repository.GetResource)
 			.map(r => Things.DrawForList(r))
 			.forEach(Node.prototype.appendChild, document.getElementById('planet_primary_resources').empty());
 		planet.secondary_resources
-			.map(Database.GetResource)
+			.map(Repository.GetResource)
 			.map(r => Things.DrawForList(r))
 			.forEach(Node.prototype.appendChild, document.getElementById('planet_secondary_resources').empty());
 		planet.at_core
-			.map(Database.GetResource)
+			.map(Repository.GetResource)
 			.map(r => Things.DrawForList(r))
 			.forEach(Node.prototype.appendChild, document.getElementById('planet_at_core').empty());
 		planet.atmospheric_resources
-			.map(Database.GetResource)
+			.map(Repository.GetResource)
 			.map(r => Things.DrawForList(r))
 			.forEach(Node.prototype.appendChild, document.getElementById('planet_atmospheric_resources').empty());
 		document.getElementById('planet').style.display = 'block';

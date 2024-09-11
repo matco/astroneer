@@ -5,7 +5,7 @@ import {Forms} from './tools/forms.js';
 import {MOBILE_MEDIA} from './mobile';
 import {Localization} from './localization';
 import {Router} from './router';
-import {Database, ThingType} from './database';
+import {Repository, ThingType} from './repository';
 import {Configuration} from './configuration';
 import {Thing, ThingResult} from './types';
 import {Things} from './things';
@@ -111,7 +111,7 @@ function draw_thing(thing: Thing, value: string): HTMLLIElement {
 	//retrieve thing label
 	const label = thing.type === ThingType.Planet ? thing.name : Localization.Localize(thing.label);
 	const thing_li = document.createFullElement('li', {'data-value': label});
-	thing_li.appendChild(document.createFullElement('img', {src: Database.GetThingImage(thing)}));
+	thing_li.appendChild(document.createFullElement('img', {src: Repository.GetThingImage(thing)}));
 	//prepare regexp to highlight part of ingredient matching the search
 	const regexp = new RegExp(`(${value})`, 'gi');
 	const thing_label = document.createElement('span');
@@ -140,7 +140,7 @@ function select_thing(thing: Thing) {
 
 async function initialize() {
 	await Localization.Init();
-	await Database.Init();
+	await Repository.Init();
 	Configuration.Init();
 
 	Localization.LocalizeLabels();
@@ -159,7 +159,7 @@ async function initialize() {
 	}
 
 	//retrieve all things and prepare them for a search, building a list of tags for each thing
-	things = Database.GetAll().map(thing => {
+	things = Repository.GetAll().map(thing => {
 		const label = Things.GetLabel(thing);
 		return {
 			thing,

@@ -1,6 +1,6 @@
 import {SVG} from '@matco/basic-tools/svg.js';
 import {Localization} from './localization';
-import {Database, ThingType} from './database';
+import {Repository, ThingType} from './repository';
 import {Router} from './router';
 import {MOBILE_MEDIA} from './mobile';
 import {Item, Resource, Thing} from './types';
@@ -24,7 +24,7 @@ function get_level(thing: Resource | Item): number {
 		return 0;
 	}
 	return thing.dependencies
-		.map(d => Database.GetResource(d.id))
+		.map(d => Repository.GetResource(d.id))
 		.reduce((value, resource) => Math.max(1 + get_level(resource), value), 0);
 }
 
@@ -38,7 +38,7 @@ function get_natural_resources_number(thing: Resource | Item): number {
 		return 1;
 	}
 	return thing.dependencies
-		.map(d => Database.GetResource(d.id))
+		.map(d => Repository.GetResource(d.id))
 		.map(get_natural_resources_number)
 		.reduce((total, value) => total + value, 0);
 }
@@ -62,7 +62,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 	//dram thing
 	const link = SVG.Link(Router.GetURL(thing));
 	group.appendChild(link);
-	link.appendChild(SVG.ImageCentered(0, 0, DIMENSIONS.thing, DIMENSIONS.thing, Database.GetThingImage(thing)));
+	link.appendChild(SVG.ImageCentered(0, 0, DIMENSIONS.thing, DIMENSIONS.thing, Repository.GetThingImage(thing)));
 	const thing_text = SVG.Text(0, DIMENSIONS.thing / 2 + 15, Localization.Localize(thing.label), {'text-anchor': 'middle'});
 	link.appendChild(thing_text);
 	SVG.TextWrap(thing_text, DIMENSIONS.thing + DIMENSIONS.x_margin / 2);
@@ -79,7 +79,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 		let dependency_offset = x - resource_width / 2;
 		const module_y = -DIMENSIONS.y_margin / 2 - DIMENSIONS.thing / 2;
 		thing.dependencies.forEach(dependency => {
-			const resource = Database.GetResource(dependency.id);
+			const resource = Repository.GetResource(dependency.id);
 			const dependency_dependencies_number = get_natural_resources_number(resource);
 			const dependency_width = (dependency_dependencies_number || 1) * (DIMENSIONS.thing + DIMENSIONS.x_margin);
 			const dependency_x = dependency_offset + dependency_width / 2;
@@ -91,10 +91,10 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 			draw_resource_tree(svg, dependency_x, dependency_y, resource, dependency.quantity);
 		});
 		//draw module
-		const module = thing.type === ThingType.Item ? Database.GetItem(thing.printed) : Database.GetItem(thing.crafted);
+		const module = thing.type === ThingType.Item ? Repository.GetItem(thing.printed) : Repository.GetItem(thing.crafted);
 		const module_link = SVG.Link(Router.GetURL(module));
 		group.appendChild(module_link);
-		module_link.appendChild(SVG.ImageCentered(0, module_y, DIMENSIONS.module, DIMENSIONS.module, Database.GetThingImage(module)));
+		module_link.appendChild(SVG.ImageCentered(0, module_y, DIMENSIONS.module, DIMENSIONS.module, Repository.GetThingImage(module)));
 		const module_text = SVG.Text(0, module_y + DIMENSIONS.module / 2 + 15, Localization.Localize(module.label), {'text-anchor': 'middle'});
 		module_link.appendChild(module_text);
 		SVG.TextWrap(module_text, DIMENSIONS.thing + DIMENSIONS.x_margin / 2);
@@ -112,7 +112,7 @@ export const Things = {
 		return Localization.Localize(thing.label);
 	},
 	DrawImage: (thing: Thing): HTMLImageElement => {
-		return document.createFullElement('img', {src: Database.GetThingImage(thing), alt: Things.GetLabel(thing)});
+		return document.createFullElement('img', {src: Repository.GetThingImage(thing), alt: Things.GetLabel(thing)});
 	},
 	Draw: (thing: Thing): HTMLAnchorElement => {
 		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(thing)});

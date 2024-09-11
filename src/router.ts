@@ -1,5 +1,5 @@
 import {Hash} from '@matco/basic-tools/hash.js';
-import {Database} from './database';
+import {Repository} from './repository';
 import {Resources} from './resources';
 import {Items} from './items';
 import {Localization} from './localization';
@@ -85,19 +85,19 @@ window.addEventListener(
 		const data = Hash.Decode(location.hash) as Record<string, string>;
 		if(data.hasOwnProperty('resource')) {
 			//retrieve ingredient
-			const resource = Database.GetResource(data['resource']);
+			const resource = Repository.GetResource(data['resource']);
 			Router.SelectResource(resource);
 			return;
 		}
 		if(data.hasOwnProperty('item')) {
 			//retrieve ingredient
-			const printer = Database.GetItem(data['item']);
+			const printer = Repository.GetItem(data['item']);
 			Router.SelectItem(printer);
 			return;
 		}
 		if(data.hasOwnProperty('planet')) {
 			//retrieve ingredient
-			const planet = Database.GetPlanet(data['planet']);
+			const planet = Repository.GetPlanet(data['planet']);
 			Router.SelectPlanet(planet);
 			return;
 		}

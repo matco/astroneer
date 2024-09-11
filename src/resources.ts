@@ -1,4 +1,4 @@
-import {Database} from './database';
+import {Repository} from './repository';
 import {Things} from './things';
 import {Localization} from './localization';
 import {Resource} from './types';
@@ -25,7 +25,7 @@ export const Resources = {
 
 		if(!resource.crafted) {
 			//primary planets
-			const primary_planets = Database.GetPlanets().filter(p => p.primary_resources.includes(resource.id));
+			const primary_planets = Repository.GetPlanets().filter(p => p.primary_resources.includes(resource.id));
 			if(!primary_planets.isEmpty()) {
 				primary_planets
 					.map(p => Things.DrawForList(p))
@@ -36,7 +36,7 @@ export const Resources = {
 				document.getElementById('resource_in_primary_planets').style.display = 'none';
 			}
 			//secondary planets
-			const secondary_planets = Database.GetPlanets().filter(p => p.secondary_resources.includes(resource.id));
+			const secondary_planets = Repository.GetPlanets().filter(p => p.secondary_resources.includes(resource.id));
 			if(!secondary_planets.isEmpty()) {
 				secondary_planets
 					.map(p => Things.DrawForList(p))
@@ -47,7 +47,7 @@ export const Resources = {
 				document.getElementById('resource_in_secondary_planets').style.display = 'none';
 			}
 			//at core planets
-			const at_core_planets = Database.GetPlanets().filter(p => p.at_core.includes(resource.id));
+			const at_core_planets = Repository.GetPlanets().filter(p => p.at_core.includes(resource.id));
 			if(!at_core_planets.isEmpty()) {
 				at_core_planets
 					.map(p => Things.DrawForList(p))
@@ -70,7 +70,7 @@ export const Resources = {
 				Things.DrawResourceTree(resource, resource_tree);
 			}
 			else {
-				Database.GetPlanets()
+				Repository.GetPlanets()
 					.filter(p => p.atmospheric_resources.includes(resource.id))
 					.map(p => Things.DrawForList(p))
 					.forEach(Node.prototype.appendChild, resource_planets);
@@ -79,7 +79,7 @@ export const Resources = {
 		}
 
 		//items
-		const items = Database.GetItems().filter(i => i.dependencies?.some(d => d.id === resource.id));
+		const items = Repository.GetItems().filter(i => i.dependencies?.some(d => d.id === resource.id));
 		if(!items.isEmpty()) {
 			items
 				.map(i => Things.DrawForList(i))
@@ -88,7 +88,7 @@ export const Resources = {
 		}
 
 		//crafted resources
-		const crafted_resources = Database.GetResources().filter(r => r.dependencies?.some(d => d.id === resource.id));
+		const crafted_resources = Repository.GetResources().filter(r => r.dependencies?.some(d => d.id === resource.id));
 		if(!crafted_resources.isEmpty()) {
 			crafted_resources
 				.map(r => Things.DrawForList(r))

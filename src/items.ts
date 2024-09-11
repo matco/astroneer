@@ -1,5 +1,5 @@
 import {Localization} from './localization';
-import {Database} from './database';
+import {Repository} from './repository';
 import {Things} from './things';
 import {Item} from './types';
 
@@ -31,7 +31,7 @@ export const Items = {
 		const item_is_printer = document.getElementById('item_is_printer');
 		item_is_printer.style.display = 'none';
 		if(item.printer) {
-			Database.GetItems()
+			Repository.GetItems()
 				.filter(i => i.printed === item.id)
 				.sort((i1, i2) => Localization.Localize(i1.label).compareTo(Localization.Localize(i2.label)))
 				.map(i => Things.DrawForList(i))
@@ -42,7 +42,7 @@ export const Items = {
 		const item_is_crafter = document.getElementById('item_is_crafter');
 		item_is_crafter.style.display = 'none';
 		if(item.crafter) {
-			Database.GetResources()
+			Repository.GetResources()
 				.filter(r => r.crafted === item.id)
 				.map(r => Things.DrawForList(r))
 				.forEach(Node.prototype.appendChild, document.getElementById('item_craft_resources').empty());

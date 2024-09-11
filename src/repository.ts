@@ -16,7 +16,7 @@ enum ThingType {
 	Planet = 'planet'
 }
 
-const Database = {
+const Repository = {
 	Init: async() => {
 		const response = await fetch('/data.json');
 		database = Object.seal((await response.json()) as Database);
@@ -37,11 +37,11 @@ const Database = {
 	},
 	GetThingImage: (thing: Thing): string => `images/${thing.type}/${thing.id}.png`,
 	GetResources: (): Resource[] => database.resources.slice(),
-	GetResource: (resource_id: string): Resource => find_or_throw(Database.GetResources(), resource_id),
+	GetResource: (resource_id: string): Resource => find_or_throw(Repository.GetResources(), resource_id),
 	GetItems: (): Item[] => database.items.slice(),
-	GetItem: (item_id: string): Item => find_or_throw(Database.GetItems(), item_id),
+	GetItem: (item_id: string): Item => find_or_throw(Repository.GetItems(), item_id),
 	GetPlanets: (): Planet[] => database.planets.slice(),
-	GetPlanet: (planet_id: string): Planet => find_or_throw(Database.GetPlanets(), planet_id)
+	GetPlanet: (planet_id: string): Planet => find_or_throw(Repository.GetPlanets(), planet_id)
 };
 
-export {Database, ThingType};
+export {Repository, ThingType};

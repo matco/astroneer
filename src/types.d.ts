@@ -1,4 +1,4 @@
-import {ThingType} from './database';
+import {ThingType} from './repository';
 
 export interface ThingProperties {
 	readonly id: string;

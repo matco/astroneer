@@ -1,17 +1,17 @@
-import {Database} from './database';
+import {Repository} from './repository';
 import {Things} from './things';
 
 export const Home = {
 	Open: () => {
-		Database.GetResources()
+		Repository.GetResources()
 			.sort(Things.Sort)
 			.map(r => Things.DrawForList(r))
 			.forEach(Node.prototype.appendChild, document.getElementById('home_resources').empty());
-		Database.GetItems()
+		Repository.GetItems()
 			.sort(Things.Sort)
 			.map(i => Things.DrawForList(i))
 			.forEach(Node.prototype.appendChild, document.getElementById('home_items').empty());
-		Database.GetPlanets()
+		Repository.GetPlanets()
 			.sort(Things.Sort)
 			.map(p => Things.DrawForList(p))
 			.forEach(Node.prototype.appendChild, document.getElementById('home_planets').empty());
