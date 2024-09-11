@@ -16,6 +16,34 @@ function normalize_text(text: string): string {
 	return text.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
 }
 
+function levenshtein_distance(source: string, target: string): number {
+	if(source.length === 0) {
+		return target.length;
+	}
+	if(target.length === 0) {
+		return source.length;
+	}
+	const matrix :number[][] = [];
+	for(let i = 0; i <= target.length; i++) {
+		matrix[i] = [i];
+	}
+	for(let i = 0; i <= source.length; i++) {
+		matrix[0][i] = i;
+	}
+
+	for(let i = 1; i <= target.length; i++) {
+		for(let j = 1; j <= source.length; j++) {
+			const cost = target.charAt(i - 1) === source.charAt(j - 1) ? 0 : 1;
+			matrix[i][j] = Math.min(
+				matrix[i - 1][j - 1] + cost,
+				matrix[i][j - 1] + 1,
+				matrix[i - 1][j] + 1
+			);
+		}
+	}
+	return matrix[target.length][source.length];
+}
+
 function provide_thing(search: string): Thing[] {
 	const inputs = normalize_text(search).split(' ');
 	//reset scores from previous searches
@@ -108,34 +136,6 @@ function select_thing(thing: Thing) {
 			break;
 		}
 	}
-}
-
-function levenshtein_distance(source: string, target: string): number {
-	if(source.length === 0) {
-		return target.length;
-	}
-	if(target.length === 0) {
-		return source.length;
-	}
-	const matrix :number[][] = [];
-	for(let i = 0; i <= target.length; i++) {
-		matrix[i] = [i];
-	}
-	for(let i = 0; i <= source.length; i++) {
-		matrix[0][i] = i;
-	}
-
-	for(let i = 1; i <= target.length; i++) {
-		for(let j = 1; j <= source.length; j++) {
-			const cost = target.charAt(i - 1) === source.charAt(j - 1) ? 0 : 1;
-			matrix[i][j] = Math.min(
-				matrix[i - 1][j - 1] + cost,
-				matrix[i][j - 1] + 1,
-				matrix[i - 1][j] + 1
-			);
-		}
-	}
-	return matrix[target.length][source.length];
 }
 
 async function initialize() {
