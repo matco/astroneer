@@ -5,6 +5,11 @@ export interface ThingProperties {
 	type: ThingType;
 }
 
+export interface Dependency {
+	readonly id: string;
+	readonly quantity: number;
+}
+
 export interface Resource extends ThingProperties {
 	type: ThingType.Resource;
 	readonly label: Record<string, string>;
@@ -28,11 +33,6 @@ export interface Planet extends ThingProperties {
 	readonly secondary_resources: string[];
 	readonly at_core: string[];
 	readonly atmospheric_resources: string[];
-}
-
-export interface Dependency {
-	readonly id: string;
-	readonly quantity: number;
 }
 
 export type Thing = Resource | Item | Planet;
