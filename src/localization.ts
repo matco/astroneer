@@ -8,7 +8,7 @@ let selected_language: string;
 let labels: Labels;
 
 export const Localization = {
-	Init: async () => {
+	Init: async() => {
 		const response = await fetch('/labels.json');
 		labels = Object.seal(await response.json() as Labels);
 		//retrieve language saved in settings

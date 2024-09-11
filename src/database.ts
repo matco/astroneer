@@ -17,7 +17,7 @@ enum ThingType {
 }
 
 const Database = {
-	Init: async () => {
+	Init: async() => {
 		const response = await fetch('/data.json');
 		database = Object.seal((await response.json()) as Database);
 		//add type to all things

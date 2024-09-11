@@ -19,7 +19,7 @@ function update_dimensions() {
 	DIMENSIONS.y_margin = DIMENSIONS.thing * (MOBILE_MEDIA.matches ? 3 : 2.5);
 }
 
-function get_level(thing: Resource|Item): number {
+function get_level(thing: Resource | Item): number {
 	if(!thing.dependencies) {
 		return 0;
 	}
@@ -33,7 +33,7 @@ function get_level(thing: Resource|Item): number {
  * @param {Resource|Item} thing the thing (resource of item) used to perform the calculation
  * @returns the number of natural resources required to build the thing
  */
-function get_natural_resources_number(thing: Resource|Item): number {
+function get_natural_resources_number(thing: Resource | Item): number {
 	if(!thing.dependencies) {
 		return 1;
 	}
@@ -55,7 +55,7 @@ function get_natural_resources_number(thing: Resource|Item): number {
  * y is a useless parameter (it has been kept because it could be used for an alternative representation)
  * the y-axis coordinate is absolute and is calculated according to the thing level
  */
-function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resource|Item, quantity?: number) {
+function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resource | Item, quantity?: number) {
 	//create a group at the thing position
 	const group = SVG.Group({transform: `translate(${x},${y + DIMENSIONS.thing / 2})`});
 	svg.appendChild(group);
@@ -70,14 +70,14 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 	if(quantity) {
 		const quantity_circle = SVG.Circle(DIMENSIONS.thing / 2 - 10, DIMENSIONS.thing / 2 - 10, 10, {style: 'opacity: 0.8; fill: red;'});
 		link.appendChild(quantity_circle);
-		const quantity_text = SVG.Text(DIMENSIONS.thing / 2 - 10, DIMENSIONS.thing / 2 - 5, quantity, {'text-anchor': 'middle', style: 'font-size: 1rem; fill: white;'});
+		const quantity_text = SVG.Text(DIMENSIONS.thing / 2 - 10, DIMENSIONS.thing / 2 - 5, quantity, {'text-anchor': 'middle', 'style': 'font-size: 1rem; fill: white;'});
 		link.appendChild(quantity_text);
 	}
 	//draw dependencies
 	if(thing.dependencies) {
 		const resource_width = get_natural_resources_number(thing) * (DIMENSIONS.thing + DIMENSIONS.x_margin);
 		let dependency_offset = x - resource_width / 2;
-		const module_y = -DIMENSIONS.y_margin / 2 -DIMENSIONS.thing / 2;
+		const module_y = -DIMENSIONS.y_margin / 2 - DIMENSIONS.thing / 2;
 		thing.dependencies.forEach(dependency => {
 			const resource = Database.GetResource(dependency.id);
 			const dependency_dependencies_number = get_natural_resources_number(resource);
@@ -130,7 +130,7 @@ export const Things = {
 		return element;
 	},
 	Sort: (thing1: Thing, thing2: Thing): number => thing1.id.compareTo(thing2.id),
-	DrawResourceTree: (thing: Resource|Item, svg: SVGElement) => {
+	DrawResourceTree: (thing: Resource | Item, svg: SVGElement) => {
 		update_dimensions();
 		//find selected item level
 		const item_level = get_level(thing);

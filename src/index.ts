@@ -23,7 +23,7 @@ function levenshtein_distance(source: string, target: string): number {
 	if(target.length === 0) {
 		return source.length;
 	}
-	const matrix :number[][] = [];
+	const matrix: number[][] = [];
 	for(let i = 0; i <= target.length; i++) {
 		matrix[i] = [i];
 	}
