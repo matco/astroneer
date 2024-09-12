@@ -4,7 +4,10 @@ import {Resources} from './resources';
 import {Items} from './items';
 import {Localization} from './localization';
 import {Planets} from './planets';
-import {Item, Planet, Resource, Thing} from './types';
+import {Thing} from './model/thing';
+import {Resource} from './model/resource';
+import {Item} from './model/item';
+import {Planet} from './model/planet';
 import {Configuration} from './configuration';
 import {Home} from './home';
 

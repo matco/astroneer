@@ -1,5 +1,5 @@
 import {Repository} from './repository';
-import {Planet} from './types';
+import {Planet} from './model/planet';
 import {Localization} from './localization';
 import {Things} from './things';
 

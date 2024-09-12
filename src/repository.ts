@@ -1,4 +1,9 @@
-import {Database, Item, Planet, Resource, Thing} from './types';
+import {ThingType} from './model/thing_types';
+import {Database} from './model/database';
+import {Item} from './model/item';
+import {Planet} from './model/planet';
+import {Resource} from './model/resource';
+import {Thing} from './model/thing';
 
 let database: Database;
 
@@ -8,12 +13,6 @@ function find_or_throw<T extends Thing>(things: T[], thing_id: string): T {
 		throw new Error(`No thing with id ${thing_id}`);
 	}
 	return thing;
-}
-
-enum ThingType {
-	Resource = 'resource',
-	Item = 'item',
-	Planet = 'planet'
 }
 
 const Repository = {

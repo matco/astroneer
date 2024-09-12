@@ -1,9 +1,12 @@
 import {SVG} from '@matco/basic-tools/svg.js';
 import {Localization} from './localization';
-import {Repository, ThingType} from './repository';
+import {Repository} from './repository';
 import {Router} from './router';
 import {MOBILE_MEDIA} from './mobile';
-import {Item, Resource, Thing} from './types';
+import {ThingType} from './model/thing_types';
+import {Resource} from './model/resource';
+import {Item} from './model/item';
+import {Thing} from './model/thing';
 
 const DIMENSIONS = {
 	thing: undefined as number,

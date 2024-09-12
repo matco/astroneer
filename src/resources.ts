@@ -1,7 +1,7 @@
 import {Repository} from './repository';
 import {Things} from './things';
 import {Localization} from './localization';
-import {Resource} from './types';
+import {Resource} from './model/resource';
 
 export const Resources = {
 	Open: (resource: Resource) => {

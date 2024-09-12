@@ -1,4 +1,6 @@
-import {Label, Labels, Settings} from './types';
+import {Label} from './model/label';
+import {Labels} from './model/labels';
+import {Settings} from './model/settings';
 
 const LANGUAGES = ['en-US', 'fr-FR'];
 const DEFAULT_LANGUAGE = LANGUAGES[0];

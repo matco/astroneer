@@ -1,7 +1,7 @@
 import {Localization} from './localization';
 import {Repository} from './repository';
 import {Things} from './things';
-import {Item} from './types';
+import {Item} from './model/item';
 
 export const Items = {
 	Open: (item: Item) => {
