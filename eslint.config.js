@@ -14,7 +14,6 @@ export default tseslint.config(
 			'@typescript-eslint': tseslint.plugin,
 		},
 		languageOptions: {
-			sourceType: 'module',
 			globals: {
 				...globals.browser
 			},
