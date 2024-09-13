@@ -16,12 +16,12 @@ export default tseslint.config(
 		languageOptions: {
 			sourceType: 'module',
 			globals: {
-				...globals.browser,
+				...globals.browser
 			},
 			parser: tseslint.parser,
 			parserOptions: {
 				projectService: true,
-				tsconfigRootDir: import.meta.dirname,
+				tsconfigRootDir: import.meta.dirname
 			}
 		},
 		rules: {
