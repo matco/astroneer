@@ -7,6 +7,7 @@ export const Forms = {
 			list.empty();
 			list.style.display = 'none';
 			//stop listening keyboard
+			//eslint-disable-next-line no-use-before-define
 			document.removeEventListener('keydown', manage_keys);
 		}
 

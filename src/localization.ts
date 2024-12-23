@@ -47,7 +47,6 @@ export const Localization = {
 		document.querySelectorAll('*').forEach((element: Element) => {
 			const attributes = element.attributes;
 			//NamedNodeMap is not iterable so it's not possible to use a for-of loop
-			//eslint-disable-next-line @typescript-eslint/prefer-for-of
 			for(let i = 0; i < attributes.length; i++) {
 				const attribute = attributes[i];
 				if(attribute.value.startsWith('{{') && attribute.value.endsWith('}}')) {
