@@ -1367,6 +1367,24 @@
 			]
 		},
 		{
+			"id": "large_battery",
+			"label": {
+				"en-US": "Large Battery",
+				"fr-FR": "Grande batterie"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "lithium",
+					"quantity": 2
+				},
+				{
+					"id": "zinc",
+					"quantity": 1
+				}
+			]
+		},
+		{
 			"id": "rtg",
 			"label": {
 				"en-US": "RTG",
@@ -1445,6 +1463,20 @@
 			"label": {
 				"en-US": "Medium T-Platform",
 				"fr-FR": "Plateforme moyenne en T"
+			},
+			"printed": "small_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "medium_stacked_platform",
+			"label": {
+				"en-US": "Medium Stacked Platform",
+				"fr-FR": "Plateforme empilée moyenne"
 			},
 			"printed": "small_printer",
 			"dependencies": [
@@ -2041,6 +2073,20 @@
 				{
 					"id": "resin",
 					"quantity": 2
+				}
+			]
+		},
+		{
+			"id": "large_stacked_platform",
+			"label": {
+				"en-US": "Large Stacked Platform",
+				"fr-FR": "Grande plateforme empilée"
+			},
+			"printed": "medium_printer",
+			"dependencies": [
+				{
+					"id": "resin",
+					"quantity": 3
 				}
 			]
 		},
