@@ -4,7 +4,6 @@
 		"allowSyntheticDefaultImports": true,
 		"checkJs": true,
 		"declaration": false,
-		"downlevelIteration": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"forceConsistentCasingInFileNames": true,
@@ -14,8 +13,8 @@
 			/*"WebWorker", do not include web workers because it conflicts with ESNext*/
 			"DOM"
 		],
-		"module": "ESNext",
-		"moduleResolution": "node",
+		"module": "esnext",
+		"moduleResolution": "bundler",
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitOverride": true,
 		"noImplicitReturns": true,
@@ -23,15 +22,18 @@
 		"noPropertyAccessFromIndexSignature": true,
 		"noUnusedLocals": true,
 		"outDir": "out",
+		"rootDir": "src",
 		"strict": false,
 		"strictBindCallApply": true,
 		"sourceMap": true,
 		"strictNullChecks": false,
 		"strictPropertyInitialization": false,
-		"target": "ESNext"
+		"target": "ESNext",
+		"types": []
 	},
 	"exclude": [
 		"dist",
+		"eslint.config.js",
 		"webpack.common.js",
 		"webpack.dev.js",
 		"webpack.prod.js",
