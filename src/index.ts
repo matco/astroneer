@@ -1,7 +1,7 @@
 import '@matco/basic-tools/extension.js';
 import '@matco/basic-tools/dom_extension.js';
 
-import {Forms} from './tools/forms.js';
+import {Forms} from './tools/forms';
 import {MOBILE_MEDIA} from './mobile';
 import {Localization} from './localization';
 import {Router} from './router';
@@ -9,7 +9,7 @@ import {Repository} from './repository';
 import {Configuration} from './configuration';
 import {ThingType} from './model/thing_types';
 import {ThingResult} from './model/thing_result';
-import {Thing} from './model/thing.js';
+import {Thing} from './model/thing';
 import {Things} from './things';
 
 let things: ThingResult[];
