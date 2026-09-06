@@ -94,8 +94,8 @@ function provide_thing(search: string): Thing[] {
 			for(const thing of other_things) {
 				let min_distance = 10;
 				for(const input of word_inputs) {
-					min_distance = Math.min(...thing.tags.map(t => levenshtein_distance(t.substring(0, input.length), input)));
-					//continue calculating the distance with other inputs to find the minimal distance
+					//keep the minimal distance found across all inputs and tags
+					min_distance = Math.min(min_distance, ...thing.tags.map(t => levenshtein_distance(t.substring(0, input.length), input)));
 				}
 				if(min_distance < 3) {
 					thing.score += 10 - min_distance;
