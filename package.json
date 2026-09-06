@@ -32,20 +32,20 @@
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@stylistic/eslint-plugin": "^5.10.0",
-		"copy-webpack-plugin": "^12.0.2",
-		"css-loader": "^7.1.2",
-		"eslint": "^10.0.1",
+		"copy-webpack-plugin": "^14.0.0",
+		"css-loader": "^7.1.5",
+		"eslint": "^10.10.0",
 		"globals": "^17.12.0",
-		"html-webpack-plugin": "^5.6.3",
+		"html-webpack-plugin": "^5.6.8",
 		"http-server": "^14.1.1",
 		"node-static": "^0.7.11",
 		"style-loader": "^4.0.0",
-		"ts-loader": "^9.5.1",
+		"ts-loader": "^9.6.2",
 		"typescript": "^5.7.2",
 		"typescript-eslint": "^8.69.0",
-		"webpack": "^5.97.1",
-		"webpack-cli": "^6.0.1",
-		"webpack-dev-server": "^5.2.0",
-		"workbox-webpack-plugin": "^7.3.0"
+		"webpack": "^5.110.3",
+		"webpack-cli": "^7.2.3",
+		"webpack-dev-server": "^6.0.0",
+		"workbox-webpack-plugin": "^7.4.1"
 	}
 }
