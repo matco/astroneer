@@ -60,7 +60,7 @@ export default [
 			'strict': 'error', //suggestion
 			'yoda': 'error', //suggestion
 			//stylistic rules
-			...stylistic.configs['recommended-flat'].rules,
+			...stylistic.configs['recommended'].rules,
 			'@stylistic/arrow-parens': ['error', 'as-needed'],
 			'@stylistic/comma-dangle': ['error', 'never'],
 			'@stylistic/eol-last': ['error', 'always'],
