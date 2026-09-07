@@ -33,7 +33,7 @@ function get_level(thing: Resource | Item): number {
 
 /**
  *
- * @param {Resource|Item} thing the thing (resource of item) used to perform the calculation
+ * @param {Resource|Item} thing the thing (resource or item) used to perform the calculation
  * @returns the number of natural resources required to build the thing
  */
 function get_natural_resources_number(thing: Resource | Item): number {
@@ -62,7 +62,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 	//create a group at the thing position
 	const group = SVG.Group({transform: `translate(${x},${y + DIMENSIONS.thing / 2})`});
 	svg.appendChild(group);
-	//dram thing
+	//draw thing
 	const link = SVG.Link(Router.GetURL(thing));
 	group.appendChild(link);
 	link.appendChild(SVG.ImageCentered(0, 0, DIMENSIONS.thing, DIMENSIONS.thing, Repository.GetThingImage(thing)));

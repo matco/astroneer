@@ -67,7 +67,7 @@ function provide_thing(search: string): Thing[] {
 			other_things.push(thing);
 		}
 	}
-	//continue searching if there is not enough options
+	//continue searching if there are not enough options
 	if(matching_things.length < 5) {
 		//update rest things
 		const rest_things = other_things.slice();
@@ -87,7 +87,7 @@ function provide_thing(search: string): Thing[] {
 				other_things.push(thing);
 			}
 		}
-		//continue searching if here is not enough options and user's search is more than 3 characters
+		//continue searching if there are not enough options and user's search is more than 3 characters
 		const word_inputs = inputs.filter(i => i.length > 3);
 		if(matching_things.length < 5 && word_inputs.length > 0) {
 			//fuzzy search
@@ -147,10 +147,9 @@ async function initialize() {
 
 	Localization.LocalizeLabels();
 
-	//register service workers used to cache application
+	//register the service worker used to cache the application
+	//only register over HTTPS, as browsers do not allow service workers on insecure origins (except localhost)
 	const https = window.location.protocol === 'https:';
-	//remove "index.html" from path if necessary
-	//enable cache worker over HTTPS (the browser will allow a service worker without HTTPS anyway) and in production mode
 	if(https) {
 		try {
 			await navigator.serviceWorker.register('/service-worker.js');
