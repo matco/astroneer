@@ -24,3 +24,5 @@ jobs:
         run: npm run lint
       - name: Run TypeScript compiler check
         run: npm run tsc-check
+      - name: Build the application
+        run: npm run build
