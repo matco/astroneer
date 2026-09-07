@@ -9,10 +9,6 @@ export default defineConfig(({mode}) => ({
 		emptyOutDir: true,
 		sourcemap: mode === 'development'
 	},
-	server: {
-		port: 9000,
-		host: '0.0.0.0'
-	},
 	plugins: [
 		viteStaticCopy({
 			targets: [
