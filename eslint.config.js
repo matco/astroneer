@@ -44,7 +44,6 @@ export default [
 			'no-new-wrappers': 'error', //suggestion
 			'no-promise-executor-return': 'error', //possible problem
 			'no-proto': 'error', //suggestion
-			'no-prototype-builtins': 'off', //default possible problem, but disabled
 			'no-unmodified-loop-condition': 'error', //possible problem
 			'no-unreachable-loop': 'error', //possible problem
 			'no-use-before-define': 'error', //possible problem
