@@ -171,22 +171,24 @@ async function initialize() {
 		};
 	});
 
+	const thing_form = document.getElementById('thing') as HTMLFormElement;
+
 	Forms.Autocomplete(
-		document.getElementById('thing')['search'],
+		thing_form.elements.namedItem('search'),
 		document.getElementById('things'),
 		provide_thing,
 		draw_thing,
 		select_thing
 	);
 
-	document.getElementById('thing').addEventListener(
+	thing_form.addEventListener(
 		'submit',
-		function(event) {
+		event => {
 			//the form is submitted and the autocomplete has not been used
 			event.stop();
-			const value = (this['search'] as HTMLInputElement).value;
+			const value = (thing_form.elements.namedItem('search') as HTMLInputElement).value;
 			//trying to find the thing using the input value
-			const enhanced_thing = things.find(t => t.label === value) || things.find(t => t.tags.some(t => t === normalize_text(value)));
+			const enhanced_thing = things.find(t => t.label === value) || things.find(t => t.tags.some(tag => tag === normalize_text(value)));
 			if(enhanced_thing) {
 				select_thing(enhanced_thing.thing);
 			}

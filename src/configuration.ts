@@ -2,11 +2,12 @@ import {Settings} from './model/settings';
 
 export const Configuration = {
 	Init: () => {
-		document.getElementById('settings').addEventListener(
+		const settings_form = document.getElementById('settings') as HTMLFormElement;
+		settings_form.addEventListener(
 			'submit',
-			function(event) {
+			event => {
 				event.stop();
-				const language = (this['language'] as HTMLSelectElement).value;
+				const language = (settings_form.elements.namedItem('language') as HTMLSelectElement).value;
 				const settings: Settings = {language};
 				localStorage.setObject('settings', settings);
 				//reload the page to refresh the label
@@ -18,7 +19,7 @@ export const Configuration = {
 	Open: () => {
 		const settings = localStorage.getObject('settings') as Settings;
 		const settings_form = document.getElementById('settings') as HTMLFormElement;
-		(settings_form.elements['language'] as HTMLSelectElement).value = settings ? settings['language'] : '';
+		(settings_form.elements.namedItem('language') as HTMLSelectElement).value = settings ? settings.language : '';
 		settings_form.style.display = 'block';
 	}
 };

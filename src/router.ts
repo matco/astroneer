@@ -18,8 +18,9 @@ export const Router = {
 		document.getElementById('home').style.display = 'none';
 		document.getElementById('settings').style.display = 'none';
 		document.querySelectorAll('section').forEach((s: HTMLElement) => s.style.display = 'none');
-		document.getElementById('thing').style.display = 'none';
-		(document.getElementById('thing')['search'] as HTMLInputElement).value = '';
+		const thing_form = document.getElementById('thing') as HTMLFormElement;
+		thing_form.style.display = 'none';
+		(thing_form.elements.namedItem('search') as HTMLInputElement).value = '';
 		window.scrollTo(0, 0);
 	},
 	GetURL: (thing: Thing): string => `#${thing.type}=${thing.id}`,
