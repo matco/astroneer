@@ -25,8 +25,40 @@ export const Router = {
 	},
 	GetURL: (thing: Thing): string => `#${thing.type}=${thing.id}`,
 	Reload: () => {
-		const event = new UIEvent('hashchange', {bubbles: true, cancelable: true, detail: 1});
-		window.dispatchEvent(event);
+		Router.Route();
+	},
+	Route: () => {
+		Router.Reset();
+		//retrieve data encoded in hash
+		if(location.hash === '#settings') {
+			Router.DisplaySettings();
+			return;
+		}
+		//an empty hash means the home page
+		if(!location.hash) {
+			Router.DisplayHome();
+			return;
+		}
+		const data = Hash.Decode(location.hash) as Record<string, string>;
+		if(Object.hasOwn(data, 'resource')) {
+			//retrieve resource
+			const resource = Repository.GetResource(data['resource']);
+			Router.SelectResource(resource);
+			return;
+		}
+		if(Object.hasOwn(data, 'item')) {
+			//retrieve item
+			const item = Repository.GetItem(data['item']);
+			Router.SelectItem(item);
+			return;
+		}
+		if(Object.hasOwn(data, 'planet')) {
+			//retrieve planet
+			const planet = Repository.GetPlanet(data['planet']);
+			Router.SelectPlanet(planet);
+			return;
+		}
+		Router.DisplayHome();
 	},
 	DisplayHome: () => {
 		document.getElementById('thing').style.display = 'block';
@@ -77,34 +109,6 @@ export const Router = {
 	}
 };
 
-window.addEventListener(
-	'hashchange',
-	function() {
-		Router.Reset();
-		//retrieve data encoded in hash
-		if(location.hash === '#settings') {
-			Router.DisplaySettings();
-			return;
-		}
-		const data = Hash.Decode(location.hash) as Record<string, string>;
-		if(Object.hasOwn(data, 'resource')) {
-			//retrieve resource
-			const resource = Repository.GetResource(data['resource']);
-			Router.SelectResource(resource);
-			return;
-		}
-		if(Object.hasOwn(data, 'item')) {
-			//retrieve item
-			const item = Repository.GetItem(data['item']);
-			Router.SelectItem(item);
-			return;
-		}
-		if(Object.hasOwn(data, 'planet')) {
-			//retrieve planet
-			const planet = Repository.GetPlanet(data['planet']);
-			Router.SelectPlanet(planet);
-			return;
-		}
-		Router.DisplayHome();
-	}
-);
+//route on hash change and on history navigation
+window.addEventListener('hashchange', () => Router.Route());
+window.addEventListener('popstate', () => Router.Route());
