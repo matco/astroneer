@@ -18,9 +18,11 @@ export const Localization = {
 		if(settings?.['language'] && LANGUAGES.includes(settings['language'])) {
 			selected_language = settings['language'];
 		}
-		//manage navigator language hazardously
+		//fall back to the navigator language, matching on the primary language subtag
+		//navigator.language may be a short tag like "fr" or a different region like "fr-CA"
 		else {
-			selected_language = LANGUAGES.find(l => l.includes(navigator.language)) || DEFAULT_LANGUAGE;
+			const navigator_language = navigator.language.split('-')[0];
+			selected_language = LANGUAGES.find(l => l.split('-')[0] === navigator_language) || DEFAULT_LANGUAGE;
 		}
 	},
 	Localize: (label: Label): string => label[selected_language] || label[DEFAULT_LANGUAGE],
