@@ -6,7 +6,7 @@ import globals from 'globals';
 export default [
 	{
 		files: ['**/*.js', '**/*.ts'],
-		ignores: ['dist/*', 'webpack*'],
+		ignores: ['dist/**', 'vite.config.ts'],
 		plugins: {
 			'@stylistic': stylistic,
 			'@typescript-eslint': tseslint.plugin
