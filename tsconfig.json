@@ -29,7 +29,7 @@
 		"strictNullChecks": false,
 		"strictPropertyInitialization": false,
 		"target": "ESNext",
-		"types": []
+		"types": ["vite/client"]
 	},
 	"exclude": [
 		"dist",

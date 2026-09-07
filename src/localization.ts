@@ -12,7 +12,7 @@ let labels: Labels;
 
 export const Localization = {
 	Init: async() => {
-		const response = await fetch('/labels.json');
+		const response = await fetch(`${import.meta.env.BASE_URL}labels.json`);
 		//deep freeze the labels to prevent any mutation
 		labels = deep_freeze(await response.json() as Labels);
 		//retrieve language saved in settings

@@ -152,7 +152,7 @@ async function initialize() {
 	const https = window.location.protocol === 'https:';
 	if(https) {
 		try {
-			await navigator.serviceWorker.register('/service-worker.js');
+			await navigator.serviceWorker.register(`${import.meta.env.BASE_URL}service-worker.js`);
 		}
 		catch {
 			console.error('Cache service worker registration failed');
