@@ -109,15 +109,45 @@ function provide_thing(search: string): Thing[] {
 	return matching_things.slice(0, 10).map(t => t.thing);
 }
 
+//build a document fragment where every case-insensitive occurrence of "value" in "text" is wrapped in a highlight span
+//the match is done literally (not as a regular expression), so special characters in the search cannot break the rendering
+function highlight_match(text: string, value: string): DocumentFragment {
+	const fragment = document.createDocumentFragment();
+	//nothing to highlight: return the raw text
+	if(!value) {
+		fragment.appendChild(document.createTextNode(text));
+		return fragment;
+	}
+	const lower_text = text.toLowerCase();
+	const lower_value = value.toLowerCase();
+	let index = 0;
+	let match = lower_text.indexOf(lower_value, index);
+	while(match !== -1) {
+		//append the text preceding the match
+		if(match > index) {
+			fragment.appendChild(document.createTextNode(text.substring(index, match)));
+		}
+		//append the matched text, preserving its original casing, wrapped in a highlight span
+		const highlight = document.createFullElement('span', {class: 'highlight'}, text.substring(match, match + value.length));
+		fragment.appendChild(highlight);
+		index = match + value.length;
+		match = lower_text.indexOf(lower_value, index);
+	}
+	//append the remaining text after the last match
+	if(index < text.length) {
+		fragment.appendChild(document.createTextNode(text.substring(index)));
+	}
+	return fragment;
+}
+
 function draw_thing(thing: Thing, value: string): HTMLLIElement {
 	//retrieve thing label
 	const label = thing.type === ThingType.Planet ? thing.name : Localization.Localize(thing.label);
 	const thing_li = document.createFullElement('li', {'data-value': label});
 	thing_li.appendChild(document.createFullElement('img', {src: Repository.GetThingImage(thing)}));
-	//prepare regexp to highlight part of ingredient matching the search
-	const regexp = new RegExp(`(${value})`, 'gi');
 	const thing_label = document.createElement('span');
-	thing_label.innerHTML = label.replace(regexp, '<span class="highlight">$1</span>');
+	//highlight the part of the label matching the search
+	thing_label.appendChild(highlight_match(label, value));
 	thing_li.appendChild(thing_label);
 	return thing_li;
 }
