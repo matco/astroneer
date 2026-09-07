@@ -73,7 +73,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 	if(quantity) {
 		const quantity_circle = SVG.Circle(DIMENSIONS.thing / 2 - 10, DIMENSIONS.thing / 2 - 10, 10, {style: 'opacity: 0.8; fill: red;'});
 		link.appendChild(quantity_circle);
-		const quantity_text = SVG.Text(DIMENSIONS.thing / 2 - 10, DIMENSIONS.thing / 2 - 5, quantity, {'text-anchor': 'middle', 'style': 'font-size: 1rem; fill: white;'});
+		const quantity_text = SVG.Text(DIMENSIONS.thing / 2 - 10, DIMENSIONS.thing / 2 - 5, (quantity ?? 0).toString(), {'text-anchor': 'middle', 'style': 'font-size: 1rem; fill: white;'});
 		link.appendChild(quantity_text);
 	}
 	//draw dependencies
