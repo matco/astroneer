@@ -86,19 +86,19 @@ window.addEventListener(
 			return;
 		}
 		const data = Hash.Decode(location.hash) as Record<string, string>;
-		if(data.hasOwnProperty('resource')) {
+		if(Object.hasOwn(data, 'resource')) {
 			//retrieve resource
 			const resource = Repository.GetResource(data['resource']);
 			Router.SelectResource(resource);
 			return;
 		}
-		if(data.hasOwnProperty('item')) {
+		if(Object.hasOwn(data, 'item')) {
 			//retrieve item
 			const item = Repository.GetItem(data['item']);
 			Router.SelectItem(item);
 			return;
 		}
-		if(data.hasOwnProperty('planet')) {
+		if(Object.hasOwn(data, 'planet')) {
 			//retrieve planet
 			const planet = Repository.GetPlanet(data['planet']);
 			Router.SelectPlanet(planet);
