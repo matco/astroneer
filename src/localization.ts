@@ -1,6 +1,7 @@
 import {Label} from './model/label';
 import {Labels} from './model/labels';
 import {Settings} from './model/settings';
+import {deep_freeze} from './tools/freeze';
 
 const LANGUAGES = ['en-US', 'fr-FR'];
 const DEFAULT_LANGUAGE = LANGUAGES[0];
@@ -12,7 +13,8 @@ let labels: Labels;
 export const Localization = {
 	Init: async() => {
 		const response = await fetch('/labels.json');
-		labels = Object.seal(await response.json() as Labels);
+		//deep freeze the labels to prevent any mutation
+		labels = deep_freeze(await response.json() as Labels);
 		//retrieve language saved in settings
 		const settings = localStorage.getObject('settings') as Settings;
 		if(settings?.['language'] && LANGUAGES.includes(settings['language'])) {

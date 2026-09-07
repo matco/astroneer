@@ -4,19 +4,9 @@ import {Item} from './model/item';
 import {Planet} from './model/planet';
 import {Resource} from './model/resource';
 import {Thing} from './model/thing';
+import {deep_freeze} from './tools/freeze';
 
 let database: Database;
-
-//recursively freeze an object and all of its nested objects and arrays
-function deep_freeze<T>(value: T): T {
-	//only objects (including arrays) can be frozen; skip primitives and null
-	if(value !== null && typeof value === 'object') {
-		//freeze children before freezing the object itself
-		Object.values(value).forEach(deep_freeze);
-		Object.freeze(value);
-	}
-	return value;
-}
 
 function find_or_throw<T extends Thing>(things: T[], thing_id: string): T {
 	const thing = things.find(t => t.id === thing_id);
