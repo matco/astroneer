@@ -7,6 +7,7 @@ import {ThingType} from './model/thing_types';
 import {Resource} from './model/resource';
 import {Item} from './model/item';
 import {Thing} from './model/thing';
+import {QuickView} from './quick_view';
 
 const DIMENSIONS = {
 	thing: undefined as number,
@@ -65,6 +66,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 	//draw thing
 	const link = SVG.Link(Router.GetURL(thing));
 	group.appendChild(link);
+	QuickView.Attach(link, thing);
 	link.appendChild(SVG.ImageCentered(0, 0, DIMENSIONS.thing, DIMENSIONS.thing, Repository.GetThingImage(thing)));
 	const thing_text = SVG.Text(0, DIMENSIONS.thing / 2 + 15, Localization.Localize(thing.label), {'text-anchor': 'middle'});
 	link.appendChild(thing_text);
@@ -97,6 +99,7 @@ function draw_resource_tree(svg: SVGElement, x: number, y: number, thing: Resour
 		const module = thing.type === ThingType.Item ? Repository.GetItem(thing.printed) : Repository.GetItem(thing.crafted);
 		const module_link = SVG.Link(Router.GetURL(module));
 		group.appendChild(module_link);
+		QuickView.Attach(module_link, module);
 		module_link.appendChild(SVG.ImageCentered(0, module_y, DIMENSIONS.module, DIMENSIONS.module, Repository.GetThingImage(module)));
 		const module_text = SVG.Text(0, module_y + DIMENSIONS.module / 2 + 15, Localization.Localize(module.label), {'text-anchor': 'middle'});
 		module_link.appendChild(module_text);
@@ -121,6 +124,7 @@ export const Things = {
 		const link = document.createFullElement('a', {class: 'thing', href: Router.GetURL(thing)});
 		link.appendChild(Things.DrawImage(thing));
 		link.appendChild(document.createTextNode(Things.GetLabel(thing)));
+		QuickView.Attach(link, thing);
 		return link;
 	},
 	DrawForList: (thing: Thing, quantity?: number): HTMLLIElement => {

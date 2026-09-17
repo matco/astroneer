@@ -12,22 +12,14 @@ export const Planets = {
 		planet_name.appendChild(Things.DrawImage(planet));
 		planet_name.appendChild(document.createTextNode(planet.name));
 
-		planet.primary_resources
-			.map(Repository.GetResource)
-			.map(r => Things.DrawForList(r))
-			.forEach(Node.prototype.appendChild, document.getElementById('planet_primary_resources').empty());
-		planet.secondary_resources
-			.map(Repository.GetResource)
-			.map(r => Things.DrawForList(r))
-			.forEach(Node.prototype.appendChild, document.getElementById('planet_secondary_resources').empty());
-		planet.at_core
-			.map(Repository.GetResource)
-			.map(r => Things.DrawForList(r))
-			.forEach(Node.prototype.appendChild, document.getElementById('planet_at_core').empty());
-		planet.atmospheric_resources
-			.map(Repository.GetResource)
-			.map(r => Things.DrawForList(r))
-			.forEach(Node.prototype.appendChild, document.getElementById('planet_atmospheric_resources').empty());
+		const common_resources = Repository.GetResources().filter(resource => resource.all_planets && !planet.at_core.includes(resource.id)).map(resource => resource.id);
+		const groups = {common_resources, primary_resources: planet.primary_resources, secondary_resources: planet.secondary_resources, at_core: planet.at_core, atmospheric_resources: planet.atmospheric_resources};
+		for(const [group, resources] of Object.entries(groups)) {
+			const list = document.getElementById(`planet_${group}`);
+			list.replaceChildren(...resources.map(Repository.GetResource).map(resource => Things.DrawForList(resource)));
+			list.hidden = resources.length === 0;
+			(list.previousElementSibling as HTMLElement).hidden = list.hidden;
+		}
 		document.getElementById('planet').style.display = 'block';
 	}
 };

@@ -2,6 +2,7 @@ import {Localization} from './localization';
 import {Repository} from './repository';
 import {Things} from './things';
 import {Item} from './model/item';
+import {QuickView} from './quick_view';
 
 export const Items = {
 	Open: (item: Item) => {
@@ -18,6 +19,12 @@ export const Items = {
 		item_name.appendChild(document.createFullElement('button', {title: Localization.GetLabel('go_back')}, '←', {click: () => window.history.back()}));
 		item_name.appendChild(Things.DrawImage(item));
 		item_name.appendChild(document.createTextNode(Localization.Localize(item.label)));
+
+		const item_meta = document.getElementById('item_meta');
+		item_meta.textContent = QuickView.GetItemTierLabel(item);
+		const item_description = document.getElementById('item_description');
+		item_description.textContent = QuickView.GetItemDescription(item);
+		(document.getElementById('item_wiki_source') as HTMLAnchorElement).href = QuickView.GetItemWikiURL(item);
 
 		if(item.printed) {
 			//draw resource tree after the container is displayed

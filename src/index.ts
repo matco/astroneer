@@ -11,6 +11,7 @@ import {ThingType} from './model/thing_types';
 import {ThingResult} from './model/thing_result';
 import {Thing} from './model/thing';
 import {Things} from './things';
+import {QuickView} from './quick_view';
 
 let things: ThingResult[];
 
@@ -149,6 +150,7 @@ function draw_thing(thing: Thing, value: string): HTMLLIElement {
 	//highlight the part of the label matching the search
 	thing_label.appendChild(highlight_match(label, value));
 	thing_li.appendChild(thing_label);
+	QuickView.Attach(thing_li, thing);
 	return thing_li;
 }
 
@@ -208,7 +210,9 @@ async function initialize() {
 		document.getElementById('things'),
 		provide_thing,
 		draw_thing,
-		select_thing
+		select_thing,
+		(thing: Thing) => QuickView.Show(document.querySelector('#things .selected'), thing),
+		QuickView.Hide
 	);
 
 	thing_form.addEventListener(

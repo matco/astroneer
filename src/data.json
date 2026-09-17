@@ -5,112 +5,149 @@
 			"label": {
 				"en-US": "Resin",
 				"fr-FR": "Résine"
-			}
+			},
+			"all_planets": true,
+			"location": "found_on_surface_and_in_caves"
 		},
 		{
 			"id": "quartz",
 			"label": {
 				"en-US": "Quartz",
 				"fr-FR": "Quartz"
-			}
+			},
+			"all_planets": true,
+			"location": "found_in_caves"
 		},
 		{
 			"id": "compound",
 			"label": {
 				"en-US": "Compound",
 				"fr-FR": "Composite"
-			}
+			},
+			"all_planets": true,
+			"location": "found_on_surface_and_in_caves"
 		},
 		{
 			"id": "organic",
 			"label": {
 				"en-US": "Organic",
 				"fr-FR": "Organique"
-			}
+			},
+			"all_planets": true
 		},
 		{
 			"id": "wolframite",
 			"label": {
 				"en-US": "Wolframite",
 				"fr-FR": "Wolframite"
-			}
+			},
+			"material": "tungsten",
+			"primary_location": "found_in_caves",
+			"secondary_location": "found_on_mountains"
 		},
 		{
 			"id": "clay",
 			"label": {
 				"en-US": "Clay",
 				"fr-FR": "Argile"
-			}
+			},
+			"all_planets": true,
+			"location": "found_on_surface"
 		},
 		{
 			"id": "hematite",
 			"label": {
 				"en-US": "Hematite",
 				"fr-FR": "Hématite"
-			}
+			},
+			"material": "iron",
+			"primary_location": "found_in_caves",
+			"secondary_location": "found_on_surface"
 		},
 		{
 			"id": "malachite",
 			"label": {
 				"en-US": "Malachite",
 				"fr-FR": "Malachite"
-			}
+			},
+			"material": "copper",
+			"primary_location": "found_in_caves",
+			"secondary_location": "found_on_mountains"
 		},
 		{
 			"id": "laterite",
 			"label": {
 				"en-US": "Laterite",
 				"fr-FR": "Laterite"
-			}
+			},
+			"material": "aluminium",
+			"all_planets": true,
+			"location": "found_in_caves"
 		},
 		{
 			"id": "ammonium",
 			"label": {
 				"en-US": "Ammonium",
 				"fr-FR": "Ammonium"
-			}
+			},
+			"all_planets": true,
+			"location": "found_on_surface_and_in_caves"
 		},
 		{
 			"id": "graphite",
 			"label": {
 				"en-US": "Graphite",
 				"fr-FR": "Graphite"
-			}
+			},
+			"all_planets": true,
+			"location": "found_on_surface_and_in_caves"
 		},
 		{
 			"id": "titanite",
 			"label": {
 				"en-US": "Titanite",
 				"fr-FR": "Titanite"
-			}
+			},
+			"material": "titanium",
+			"primary_location": "found_in_caves",
+			"secondary_location": "found_on_mountains"
 		},
 		{
 			"id": "lithium",
 			"label": {
 				"en-US": "Lithium",
 				"fr-FR": "Lithium"
-			}
+			},
+			"primary_location": "found_in_caves",
+			"secondary_location": "found_on_mountains"
 		},
 		{
 			"id": "sphalerite",
 			"label": {
 				"en-US": "Sphalerite",
 				"fr-FR": "Sphalerite"
-			}
+			},
+			"material": "zinc",
+			"primary_location": "found_in_caves",
+			"secondary_location": "found_on_mountains"
 		},
 		{
 			"id": "astronium",
 			"label": {
 				"en-US": "Astronium",
 				"fr-FR": "Astronium"
-			}
+			},
+			"all_planets": true,
+			"location": "found_in_outer_core"
 		},
 		{
 			"id": "exo_chip",
 			"label": {
 				"en-US": "EXO Chip",
 				"fr-FR": "Puce EXO"
-			}
+			},
+			"all_planets": true,
+			"location": "found_in_exo_caches"
 		},
 		{
 			"id": "glass",
@@ -516,20 +553,6 @@
 		}
 	],
 	"items": [
-		{
-			"id": "large_platform_b",
-			"label": {
-				"en-US": "Large Platform B",
-				"fr-FR": "Plateforme large B"
-			},
-			"printed": "large_printer",
-			"dependencies": [
-				{
-					"id": "resin",
-					"quantity": 3
-				}
-			]
-		},
 		{
 			"id": "backpack",
 			"label": {
@@ -1168,7 +1191,8 @@
 					"id": "zinc",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "storage_sensor",
@@ -1186,7 +1210,8 @@
 					"id": "zinc",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "battery_sensor",
@@ -1204,7 +1229,8 @@
 					"id": "zinc",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "button_repeater",
@@ -1218,7 +1244,8 @@
 					"id": "zinc",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "count_repeater",
@@ -1232,7 +1259,8 @@
 					"id": "zinc",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "delay_repeater",
@@ -1246,7 +1274,8 @@
 					"id": "zinc",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "extenders",
@@ -1260,7 +1289,8 @@
 					"id": "copper",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "power_switch",
@@ -1274,7 +1304,8 @@
 					"id": "copper",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "splitter",
@@ -1720,7 +1751,8 @@
 					"id": "aluminium",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "tall_rail_post_bundle",
@@ -1738,7 +1770,8 @@
 					"id": "aluminium",
 					"quantity": 1
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "rail_junction_bundle",
@@ -1752,7 +1785,8 @@
 					"id": "aluminium",
 					"quantity": 2
 				}
-			]
+			],
+			"tier": 1
 		},
 		{
 			"id": "large_printer",
@@ -2892,18 +2926,9 @@
 			"id": "sylva",
 			"name": "Sylva",
 			"primary_resources": [
-				"resin",
-				"compound",
-				"organic",
-				"laterite",
-				"ammonium",
-				"graphite",
-				"sphalerite",
-				"exo_chip"
+				"sphalerite"
 			],
 			"secondary_resources": [
-				"quartz",
-				"clay",
 				"malachite"
 			],
 			"at_core": [
@@ -2918,18 +2943,9 @@
 			"id": "desolo",
 			"name": "Desolo",
 			"primary_resources": [
-				"resin",
-				"compound",
-				"organic",
-				"wolframite",
-				"laterite",
-				"graphite",
-				"exo_chip"
+				"wolframite"
 			],
 			"secondary_resources": [
-				"quartz",
-				"clay",
-				"ammonium",
 				"sphalerite"
 			],
 			"at_core": [
@@ -2941,18 +2957,10 @@
 			"id": "calidor",
 			"name": "Calidor",
 			"primary_resources": [
-				"resin",
-				"quartz",
-				"compound",
-				"organic",
-				"malachite",
-				"exo_chip"
+				"malachite"
 			],
 			"secondary_resources": [
-				"wolframite",
-				"clay",
-				"laterite",
-				"graphite"
+				"wolframite"
 			],
 			"at_core": [
 				"astronium"
@@ -2966,18 +2974,9 @@
 			"id": "vesania",
 			"name": "Vesania",
 			"primary_resources": [
-				"resin",
-				"quartz",
-				"compound",
-				"organic",
-				"graphite",
-				"lithium",
-				"exo_chip"
+				"lithium"
 			],
 			"secondary_resources": [
-				"clay",
-				"laterite",
-				"ammonium",
 				"titanite"
 			],
 			"at_core": [
@@ -2993,18 +2992,9 @@
 			"id": "novus",
 			"name": "Novus",
 			"primary_resources": [
-				"organic",
-				"hematite",
-				"laterite",
-				"exo_chip"
+				"hematite"
 			],
 			"secondary_resources": [
-				"resin",
-				"quartz",
-				"compound",
-				"clay",
-				"ammonium",
-				"graphite",
 				"lithium"
 			],
 			"at_core": [
@@ -3019,19 +3009,10 @@
 			"id": "glacio",
 			"name": "Glacio",
 			"primary_resources": [
-				"resin",
-				"compound",
-				"organic",
-				"titanite",
-				"exo_chip"
+				"titanite"
 			],
 			"secondary_resources": [
-				"quartz",
-				"clay",
-				"hematite",
-				"laterite",
-				"ammonium",
-				"graphite"
+				"hematite"
 			],
 			"at_core": [
 				"astronium"
@@ -3043,19 +3024,8 @@
 		{
 			"id": "atrox",
 			"name": "Atrox",
-			"primary_resources": [
-				"quartz",
-				"organic",
-				"laterite",
-				"exo_chip"
-			],
-			"secondary_resources": [
-				"resin",
-				"compound",
-				"clay",
-				"ammonium",
-				"graphite"
-			],
+			"primary_resources": [],
+			"secondary_resources": [],
 			"at_core": [
 				"astronium"
 			],

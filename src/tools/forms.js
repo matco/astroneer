@@ -55,6 +55,9 @@ export const Forms = {
 		}
 
 		function manage_keys(event) {
+			if(event.target !== input && !list.contains(event.target)) {
+				return;
+			}
 			//enter
 			if(event.key === 'Enter') {
 				if(manage_selection()) {
@@ -66,11 +69,12 @@ export const Forms = {
 			//escape
 			if(event.key === 'Escape') {
 				selection = undefined;
-				list.style.display = 'none';
+				destroy_list();
 				return;
 			}
 			//down or up
 			if(event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+				event.preventDefault();
 				//going down
 				if(event.key === 'ArrowDown') {
 					//initialize selection on the top candidate
@@ -134,9 +138,13 @@ export const Forms = {
 						const item_ui = item_drawer(candidate, value);
 						//enhance element
 						item_ui.dataset.candidateIndex = index;
-						item_ui.addEventListener('mouseout', manage_mouse_out);
-						item_ui.addEventListener('mouseover', manage_mouse_over);
-						item_ui.addEventListener('click', manage_selection);
+						item_ui.addEventListener('mouseleave', manage_mouse_out);
+						item_ui.addEventListener('mouseenter', manage_mouse_over);
+						item_ui.addEventListener('focus', manage_mouse_over);
+						item_ui.addEventListener('click', () => {
+							selection = candidate;
+							manage_selection();
+						});
 						//add tab index to make the item ui focusable
 						//this is important when used in a "tagger" because "tagger" must be able to detect if the input focus is lost to the autocomplete list
 						//this is possible only if autocomplete elements are focusable

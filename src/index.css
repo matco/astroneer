@@ -111,6 +111,96 @@ svg {
 	}
 }
 
+.has-quick-view {
+	cursor: help;
+}
+
+.quick-view-tooltip {
+	position: fixed;
+	z-index: 1000;
+	box-sizing: border-box;
+	width: min(22rem, calc(100vw - 1.5rem));
+	padding: 0.85rem 1rem;
+	color: white;
+	background: rgba(24, 42, 55, 0.97);
+	border: 3px solid white;
+	border-radius: 7px;
+	box-shadow: 0 0.75rem 2rem rgba(9, 23, 34, 0.35);
+	max-height: calc(100vh - 1.5rem);
+	overflow-y: auto;
+	line-height: 1.35;
+
+	&[hidden] {
+		display: none;
+	}
+}
+
+.quick-view-title {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.quick-view-meta {
+	margin: 0.15rem 0 0;
+	color: #72dff0;
+	font-size: 0.9rem;
+}
+
+.quick-view-description,
+.quick-view-location {
+	margin: 0.55rem 0 0;
+	font-size: 0.9rem;
+}
+
+.quick-view-location + .quick-view-location {
+	margin-top: 0.2rem;
+}
+
+.quick-view-locations {
+	list-style-type: disc;
+	padding-left: 1.25rem;
+	margin: 0.2rem 0 0;
+	font-size: 0.9rem;
+	line-height: 1.45;
+}
+
+.thing-summary {
+	max-width: 48rem;
+	margin: 0 auto 1rem;
+	padding: 0.8rem 1rem 1rem;
+	background: rgba(255, 255, 255, 0.48);
+	border-radius: 5px;
+}
+
+.item-summary {
+	text-align: center;
+}
+
+.resource-summary .quick-view-meta,
+.resource-summary a {
+	color: #164ab2;
+}
+
+.resource-summary .quick-view-meta {
+	font-weight: bold;
+}
+
+.item-meta {
+	margin: 0;
+	color: #164ab2;
+	font-weight: bold;
+}
+
+.thing-description {
+	margin: 0.55rem 0;
+	line-height: 1.45;
+}
+
+.wiki-source {
+	color: #164ab2;
+	font-size: 0.9rem;
+}
+
 #thing {
 	position: relative;
 	margin-top: 1rem;

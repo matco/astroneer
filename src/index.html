@@ -53,27 +53,9 @@
 		<section id="resource" class="section">
 			<h2 id="resource_name"></h2>
 			<div>
-				<div id="resource_natural">
-					<p>{{ natural_resource }}</p>
-					<div id="resource_in_primary_planets">
-						<h3>{{ resource_primary_planets }}</h3>
-						<ul id="resource_primary_planets"></ul>
-					</div>
-					<div id="resource_in_secondary_planets">
-						<h3>{{ resource_secondary_planets }}</h3>
-						<ul id="resource_secondary_planets"></ul>
-					</div>
-					<div id="resource_in_at_core">
-						<h3>{{ resource_at_core }}</h3>
-						<ul id="resource_at_core"></ul>
-					</div>
-				</div>
+				<div id="resource_summary" class="thing-summary resource-summary"></div>
 				<div id="resource_crafted">
 					<svg id="resource_tree" xmlns="http://www.w3.org/2000/svg"></svg>
-				</div>
-				<div id="resource_in_atmosphere">
-					<h3>{{ resource_planets }}</h3>
-					<ul id="resource_planets"></ul>
 				</div>
 				<div id="resource_in_items">
 					<h3>{{ resource_items }}</h3>
@@ -88,6 +70,11 @@
 		<section id="item" class="section">
 			<h2 id="item_name"></h2>
 			<div>
+				<div class="thing-summary item-summary">
+					<p id="item_meta" class="item-meta"></p>
+					<p id="item_description" class="thing-description" lang="en"></p>
+					<a id="item_wiki_source" class="wiki-source" href="https://astroneer.fandom.com/wiki/Items" target="_blank" rel="noopener noreferrer">{{ wiki_source }}</a>
+				</div>
 				<svg id="item_tree" xmlns="http://www.w3.org/2000/svg"></svg>
 				<div id="item_is_printer">
 					<h3>{{ item_printer_items }}</h3>
@@ -102,6 +89,8 @@
 		<section id="planet" class="section">
 			<h2 id="planet_name"></h2>
 			<div>
+				<h3>{{ planet_common_resources }}</h3>
+				<ul id="planet_common_resources"></ul>
 				<h3>{{ planet_primary_resources }}</h3>
 				<ul id="planet_primary_resources"></ul>
 				<h3>{{ planet_secondary_resources }}</h3>

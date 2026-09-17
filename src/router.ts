@@ -10,11 +10,13 @@ import {Item} from './model/item';
 import {Planet} from './model/planet';
 import {Configuration} from './configuration';
 import {Home} from './home';
+import {QuickView} from './quick_view';
 
 const STATE_PREFIX = 'Astroneer Helper';
 
 export const Router = {
 	Reset: () => {
+		QuickView.Hide();
 		document.getElementById('home').style.display = 'none';
 		document.getElementById('settings').style.display = 'none';
 		document.querySelectorAll('section').forEach((s: HTMLElement) => s.style.display = 'none');

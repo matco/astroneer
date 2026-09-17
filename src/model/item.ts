@@ -6,6 +6,7 @@ export interface Item extends ThingProperties {
 	type: ThingType.Item;
 	readonly label: Record<string, string>;
 	readonly printed?: string;
+	readonly tier?: number;
 	readonly printer: boolean;
 	readonly crafter: boolean;
 	readonly dependencies: Dependency[];
